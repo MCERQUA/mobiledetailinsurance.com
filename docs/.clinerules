@@ -1,0 +1,233 @@
+# Base Template Site Guidelines
+
+## IMPORTANT
+- **REQUIRED**: Review this document before making any changes to the template
+- **REQUIRED**: Verify all critical elements after implementation (see Critical Implementation Checklist)
+
+## Overview
+This template is designed for creating professional service landing pages with consistent structure, strong SEO, and high conversion rates. All sites use Netlify for form handling and include reCAPTCHA integration.
+
+## File Structure
+```
+├── index.html          # Main landing page
+├── success.html        # Form submission success page
+├── css/
+│   └── styles.css      # Core styles and customization
+├── js/
+│   └── main.js         # Core functionality
+├── data/
+│   └── schema.json     # SEO schema template
+├── images/
+│   ├── company-logo.webp   # Main company logo
+│   └── logo-[1-5].webp     # Partner/certification logos
+└── docs/
+    └── .clinerules     # Template guidelines
+```
+
+## Customization Areas
+
+### Required Changes
+1. Company Information
+   - Company name and tagline
+   - Contact information (address, phone, email)
+   - About section content
+   - Service descriptions
+   - Value propositions
+
+2. Visual Elements
+   - Replace company-logo.webp with new image in /images folder (with the actual company name) (hero image)
+   - Replace logo-[1-5].webp (partner/certification logos)
+   - Update color scheme in styles.css
+   - Adjust typography if needed
+
+3. SEO Elements
+   - Page title
+   - Meta description (2-3 sentences about main service/value proposition)
+   - Schema markup in data/schema.json
+   - Image alt texts (descriptive, keyword-rich)
+   - Canonical URLs
+   - Open Graph and Twitter Card meta tags
+
+### Form Integration
+- Forms are pre-configured with Netlify
+- Each form includes:
+  - Name field
+  - Email field
+  - Phone field
+  - Company field
+  - reCAPTCHA validation
+  - Custom success page redirect
+  - Client-side validation
+
+## Design Guidelines
+- Mobile-first responsive design
+- Accessible color contrast ratios (WCAG compliant)
+- Clear call-to-action buttons
+- Consistent spacing and typography
+- Professional, clean aesthetic
+
+## Critical Implementation Checklist
+
+### Technical Implementation
+- [ ] Verify reCAPTCHA appears on BOTH forms (main and modal)
+- [ ] Verify floating contact button is visible and functional
+- [ ] Verify both schema blocks (LocalBusiness and FAQ) are complete
+- [ ] Verify FAQ content matches schema exactly
+- [ ] Verify Open Graph and Twitter Card tags are properly set
+- [ ] Verify NO placeholder content remains (search for "[" and "]")
+
+### Content Verification
+- [ ] Verify total word count is 1,500+ words
+- [ ] Verify consistent voice and tone throughout
+- [ ] Verify all placeholder images have been replaced
+- [ ] Verify hero section title text is clearly visible
+- [ ] Verify company name in header is clearly visible
+
+### FAQ Automation
+- [ ] ONLY edit data/faq.md for FAQ content
+- [ ] NEVER manually edit FAQ section in index.html
+- [ ] NEVER manually edit FAQ schema in head section
+- [ ] Verify build-faq.js script is unmodified
+- [ ] Verify package.json contains correct build script
+- [ ] Verify netlify.toml is configured properly
+
+## Best Practices
+1. SEO
+   - Keep meta descriptions under 160 characters
+   - Use descriptive alt text for images
+   - Maintain proper heading hierarchy
+   - Update schema.json with accurate business info
+   - **Content Length**: Aim for 1,500+ words of high-quality content
+   - **Image Filenames**: Use keyword-rich filenames (e.g., "concrete-contractor-insurance-arizona.webp")
+   - **Internal Linking**: Include links to related services/content
+   - **NAP Consistency**: Ensure Name, Address, Phone consistency with Google My Business listing
+
+2. Performance
+   - Optimize images as .webp format
+   - Compress images to <100KB when possible
+   - Maintain minimal JavaScript
+   - Use system fonts for performance
+   - Keep external dependencies minimal
+   - Implement Tailwind CSS purging for production builds
+
+3. Conversion Optimization
+   - Prominent call-to-action buttons
+   - Social proof elements
+   - Clear value propositions
+   - Multiple contact options
+   - Responsive form design
+   - Immediate confirmation messages
+
+## Content Guidelines
+1. Hero Section
+   - Clear value proposition
+   - Industry-specific imagery
+   - Direct call-to-action
+   - Solution-focused headline (what problem you solve)
+
+2. Features Section
+   - 3-4 key benefits
+   - Icon-based design
+   - Concise descriptions
+   - Benefit-oriented language (not just features)
+
+3. Testimonials
+   - 2-3 customer quotes
+   - Include customer details
+   - Industry-specific results
+   - Include specific metrics/outcomes when possible
+
+4. FAQ Section
+   - 4-5 common questions
+   - Clear, direct answers
+   - Industry-specific concerns
+   - Structured with schema markup for rich snippets
+
+## Style Implementation Protocol
+
+1. For any style changes:
+   - First check tailwind.config.js for existing colors/classes
+   - Prefer using Tailwind classes directly in HTML
+   - Only use custom CSS when absolutely necessary
+   - Document changes in brand-style-guide.md
+
+2. Verification Steps:
+   - [ ] Test changes in development mode
+   - [ ] Verify production build
+   - [ ] Check multiple browsers
+   - [ ] Clear cache before testing
+
+## Implementation Phases
+
+### Phase 1: Project Setup
+- Brand and identity setup (colors, typography)
+- Company information updates
+- SEO research and documentation
+
+### Phase 2: Technical Implementation  
+- Meta information updates
+- Schema markup implementation
+- Technical optimizations (image compression, lazy loading)
+
+### Phase 3: Content Implementation
+- Header/hero section updates
+- Problem/solution section
+- Benefits/features section
+- Social proof section
+- FAQ section and automation
+- Contact/lead capture section
+
+### Phase 4: Final Verification
+- Complete Critical Implementation Checklist
+- Validate all forms and interactive elements
+- Test across devices and browsers
+
+## Security Enhancements
+- reCAPTCHA integration on all forms
+- Netlify form spam protection
+- Secure contact form handling
+- No exposed API keys or credentials
+- **Content Security Policy**: Implement CSP headers or meta tags
+- **HTTPS Enforcement**: Ensure proper HTTPS configuration
+- **External Resource Integrity**: Add integrity and crossorigin attributes
+- **Cookie Compliance**: Implement cookie consent banner for GDPR/CCPA
+- **Form Validation**: Add client-side validation for all inputs
+
+## Technical SEO
+- **Canonical Tags**: Implement to prevent duplicate content issues
+- **Open Graph Tags**: Add for improved social sharing
+- **Twitter Card Tags**: Add for Twitter sharing preview
+- **JSON-LD Structured Data**: Complete LocalBusiness and FAQPage schema
+- **Mobile Optimization**: Ensure passing Google's mobile-friendly test
+- **Core Web Vitals**: Optimize for LCP, FID, and CLS metrics
+- **Meta Tags**: Include all relevant meta tags
+- **XML Sitemap**: Generate after site completion
+- **Robots.txt**: Configure appropriately
+
+## Accessibility
+- Ensure color contrast meets WCAG AA standards
+- Add proper aria-labels to interactive elements
+- Implement keyboard navigation support
+- Ensure proper heading structure (H1 → H6)
+- Add alt text to all images
+- Ensure form labels are properly associated with inputs
+
+## Maintenance
+- Regular updates to dependencies
+- Schema markup validation
+- Form submission monitoring
+- Analytics integration (optional)
+- Regular Google Search Console monitoring
+- Periodic content updates for freshness signals
+- Monitor backlink profile for toxic links
+
+## Deployment Checklist
+- Replace all placeholder content
+- Validate HTML and CSS
+- Test forms submission and success page
+- Verify mobile responsiveness
+- Validate structured data with Google's testing tool
+- Test page speed with PageSpeed Insights
+- Configure Google Analytics or preferred analytics
+- Test all interactive elements (modals, menus, etc.)
+- Verify all links work properly

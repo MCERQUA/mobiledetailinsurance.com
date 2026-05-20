@@ -1,0 +1,51 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[COMPANY NAME]",
+    "description": "[COMPANY DESCRIPTION - 1-2 SENTENCES ABOUT YOUR MAIN SERVICE]",
+    "url": "[COMPANY WEBSITE URL]",
+    "sameAs": [
+      "[FACEBOOK URL]",
+      "[LINKEDIN URL]"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[STREET ADDRESS]",
+      "addressLocality": "[CITY]",
+      "addressRegion": "[STATE]",
+      "postalCode": "[ZIP CODE]",
+      "addressCountry": "US"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "[FAQ QUESTION 1]",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "[FAQ ANSWER 1]"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "[FAQ QUESTION 2]",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "[FAQ ANSWER 2]"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "[FAQ QUESTION 3]",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "[FAQ ANSWER 3]"
+        }
+      }
+    ]
+  }
+]

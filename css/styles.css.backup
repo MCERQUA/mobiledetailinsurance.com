@@ -1,0 +1,322 @@
+/* Base styles in case Tailwind fails */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+}
+
+.announcement-bar {
+    background-color: #EAB308;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.header-section {
+    background-color: #1E3A8A;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #EAB308;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #D97706;
+}
+
+.section {
+    padding: 3rem 1rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.problem-solution {
+    background-color: white;
+}
+
+.problem-box {
+    background-color: #F3F4F6;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.solution-box {
+    background-color: #EFF6FF;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.features-section {
+    background-color: #F3F4F6;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    background-color: #DBEAFE;
+    color: #1E3A8A;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card {
+    background-color: #F9FAFB;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #E5E7EB;
+    margin-bottom: 1rem;
+}
+
+.faq-section {
+    background-color: #F3F4F6;
+}
+
+.faq-item {
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-section {
+    background-color: #1E3A8A;
+    color: white;
+}
+
+.contact-form {
+    background-color: white;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.form-field {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.25rem;
+}
+
+.footer {
+    background-color: #111827;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+.footer-heading {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.footer-link {
+    margin-bottom: 0.5rem;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: env(safe-area-inset-bottom, 1rem);
+    right: 1rem;
+    background-color: #10B981;
+    color: white;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    transition: transform 0.2s, box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+}
+
+.floating-button:hover,
+.floating-button:focus {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.floating-button:active {
+    transform: scale(0.95);
+}
+
+/* Add padding to account for the floating button */
+body {
+    padding-bottom: env(safe-area-inset-bottom, 4rem);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Section animations */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card animations */
+.feature-card, .testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover, .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Modal styles */
+#contactModal {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#contactModal.visible {
+    opacity: 1;
+}
+
+#contactModal > div {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+#contactModal.visible > div {
+    transform: scale(1);
+}
+
+@media (max-width: 767px) {
+    #contactModal > div {
+        margin: 1rem;
+        padding: 1rem;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (min-width: 768px) {
+    #contactModal > div {
+        width: 500px;
+        max-width: 90%;
+        max-height: none;
+        height: auto;
+        overflow: visible;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .flex-row {
+        display: flex;
+    }
+    
+    .flex-half {
+        width: 50%;
+    }
+    
+    .flex-half:first-child {
+        padding-right: 1.5rem;
+    }
+    
+    .flex-half:last-child {
+        padding-left: 1.5rem;
+    }
+    
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
