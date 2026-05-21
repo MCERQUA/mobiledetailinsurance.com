@@ -254,128 +254,97 @@
     <!-- reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-    <!-- LocalBusiness Schema -->
-    <script type="application/ld+json" id="localBusinessSchema">
+    <!-- JSON-LD: Page graph -->
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Detailer Shield Insurance — Florida",
-      "description": "Mobile detailing and pressure washing insurance for Florida-based detailers and power-washing contractors. A program of Contractors Choice Agency.",
-      "url": "https://www.mobiledetailinsurance.com/states/florida.html",
-      "telephone": "844-967-5247",
-      "priceRange": "$$",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://www.mobiledetailinsurance.com/images/company-logo.webp",
-        "width": "800",
-        "height": "600"
-      },
-      "provider": {
-        "@type": "InsuranceAgency",
-        "name": "Contractors Choice Agency",
-        "url": "https://www.contractorschoiceagency.com",
-        "telephone": "844-967-5247"
-      },
-      "areaServed": {
-        "@type": "State",
-        "name": "Florida"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "12220 E Riggs Road, Suite #105",
-        "addressLocality": "Chandler",
-        "addressRegion": "AZ",
-        "postalCode": "85249",
-        "addressCountry": "US"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "17:00"
-      }
-    }
-    </script>
-
-    <!-- Service Schema -->
-    <script type="application/ld+json" id="serviceSchema">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Mobile Detailing Insurance",
-      "name": "Mobile Detailing & Pressure Washing Insurance in Florida",
-      "description": "Specialty insurance for Florida mobile detailers and pressure washers. Equipment, general liability, garage keepers, commercial auto, workers' comp, and inland marine — with hurricane and humidity-specific endorsements.",
-      "provider": {
-        "@type": "InsuranceAgency",
-        "name": "Contractors Choice Agency",
-        "telephone": "844-967-5247",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "12220 E Riggs Road, Suite #105",
-          "addressLocality": "Chandler",
-          "addressRegion": "AZ",
-          "postalCode": "85249",
-          "addressCountry": "US"
-        }
-      },
-      "areaServed": {
-        "@type": "State",
-        "name": "Florida"
-      },
-      "audience": {
-        "@type": "BusinessAudience",
-        "audienceType": "Mobile Detailers, Pressure Washers, Auto Reconditioning Pros"
-      },
-      "datePublished": "2026-05-21",
-      "dateModified": "2026-05-21"
-    }
-    </script>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json" id="faqSchema">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
+        { "@type": "Organization", "@id": "https://www.contractorschoiceagency.com/#organization" },
+        { "@type": "LocalBusiness", "@id": "https://www.contractorschoiceagency.com/#localbusiness" },
+        { "@type": "WebSite", "@id": "https://www.contractorschoiceagency.com/#website" },
         {
-          "@type": "Question",
-          "name": "Does my Florida mobile detailing insurance cover pressure washing too?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Often yes — many Florida detailers offer both services, and our policies are written to combine mobile detailing and pressure washing exposures under one general liability and equipment policy. Classification matters, though: residential exterior soft-washing, commercial pressure washing, and detail-only work each carry different underwriting weight. Disclose both services up front so your policy doesn't have a coverage gap if a pressure-washing job triggers a claim."
-          }
+          "@type": "LocalBusiness",
+          "@id": "https://www.contractorschoiceagency.com/states/florida.html#localbusiness-florida",
+          "name": "Detailer Shield Insurance — Florida",
+          "parentOrganization": { "@id": "https://www.contractorschoiceagency.com/#organization" },
+          "url": "https://www.contractorschoiceagency.com/states/florida.html",
+          "telephone": "+1-844-967-5247",
+          "priceRange": "$$",
+          "image": "https://www.contractorschoiceagency.com/images/optimized/company-logo-large.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "12220 E Riggs Road, Suite #105",
+            "addressLocality": "Chandler",
+            "addressRegion": "AZ",
+            "postalCode": "85249",
+            "addressCountry": "US"
+          },
+          "areaServed": { "@type": "State", "name": "Florida" }
         },
         {
-          "@type": "Question",
-          "name": "Do I need a separate hurricane or windstorm endorsement in Florida?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "If you store equipment, supplies, or a mobile rig in a fixed location in Florida, named-storm and windstorm losses are usually subject to a separate, percentage-based deductible — typically 2% to 10% of the insured property value rather than a flat dollar amount. Equipment kept inside a vehicle while it's parked at your home is treated differently than property in a garage or warehouse. We walk Florida policyholders through that distinction so the wind deductible doesn't surprise them after a storm."
-          }
+          "@type": "Service",
+          "@id": "https://www.contractorschoiceagency.com/states/florida.html#service-florida-mobile-detailing-insurance",
+          "name": "Mobile Detailing & Pressure Washing Insurance in Florida",
+          "serviceType": "Mobile Detailing Insurance",
+          "provider": { "@id": "https://www.contractorschoiceagency.com/#organization" },
+          "areaServed": { "@type": "State", "name": "Florida" },
+          "description": "Specialty insurance for Florida mobile detailers and pressure washers — equipment, general liability, garage keepers, commercial auto, workers' compensation, and inland marine with hurricane and humidity-aware endorsements.",
+          "url": "https://www.contractorschoiceagency.com/states/florida.html"
         },
         {
-          "@type": "Question",
-          "name": "What is the minimum workers' compensation requirement in Florida for mobile detailers?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Florida generally requires workers' compensation when a non-construction business has four or more employees, including part-time. Construction-classified businesses have a stricter threshold (one or more). Mobile detailing typically classifies as service, not construction, but 1099 contractors can still trigger coverage requirements depending on how the relationship is structured. Always verify current requirements with the Florida Division of Workers' Compensation — this is general industry guidance, not legal advice."
-          }
+          "@type": "BreadcrumbList",
+          "@id": "https://www.contractorschoiceagency.com/states/florida.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.contractorschoiceagency.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Coverage by State", "item": "https://www.contractorschoiceagency.com/coverage-by-state.html" },
+            { "@type": "ListItem", "position": 3, "name": "Florida", "item": "https://www.contractorschoiceagency.com/states/florida.html" }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "Are mold-remediation pressure washing jobs covered under my GL policy?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Standard general liability often excludes mold and fungus losses, which is a problem in a humid state like Florida where soft-washing roofs and siding is half the business. Mold-related liability typically needs to be added back as an endorsement or written into the policy form. If you advertise mold-removal or mold-remediation services specifically, you may also need a contractor or restoration classification — disclose the work scope so you don't get denied a claim later."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Florida humidity affect my equipment insurance coverage?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Humidity itself isn't usually a covered cause of loss — gradual deterioration, rust, and corrosion are standard exclusions on equipment policies. However, sudden electrical failure of a polisher, pressure washer pump, or steamer caused by a covered event (theft, fire, vehicle accident) is covered. For coastal Florida detailers dealing with saltwater corrosion on mobile rigs, we recommend bundling inland marine with scheduled equipment so high-value items have specific named-perils coverage."
-          }
+          "@type": "FAQPage",
+          "@id": "https://www.contractorschoiceagency.com/states/florida.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does my Florida mobile detailing insurance cover pressure washing too?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Often yes — many Florida detailers offer both services, and our policies are written to combine mobile detailing and pressure washing exposures under one general liability and equipment policy. Classification matters, though: residential exterior soft-washing, commercial pressure washing, and detail-only work each carry different underwriting weight. Disclose both services up front so your policy doesn't have a coverage gap if a pressure-washing job triggers a claim."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need a separate hurricane or windstorm endorsement in Florida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If you store equipment, supplies, or a mobile rig in a fixed location in Florida, named-storm and windstorm losses are usually subject to a separate, percentage-based deductible — typically 2% to 10% of the insured property value rather than a flat dollar amount. Equipment kept inside a vehicle while it's parked at your home is treated differently than property in a garage or warehouse. We walk Florida policyholders through that distinction so the wind deductible doesn't surprise them after a storm."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the minimum workers' compensation requirement in Florida for mobile detailers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Florida generally requires workers' compensation when a non-construction business has four or more employees, including part-time. Construction-classified businesses have a stricter threshold (one or more). Mobile detailing typically classifies as service, not construction, but 1099 contractors can still trigger coverage requirements depending on how the relationship is structured. Always verify current requirements with the Florida Division of Workers' Compensation — this is general industry guidance, not legal advice."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are mold-remediation pressure washing jobs covered under my GL policy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard general liability often excludes mold and fungus losses, which is a problem in a humid state like Florida where soft-washing roofs and siding is half the business. Mold-related liability typically needs to be added back as an endorsement or written into the policy form. If you advertise mold-removal or mold-remediation services specifically, you may also need a contractor or restoration classification — disclose the work scope so you don't get denied a claim later."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Florida humidity affect my equipment insurance coverage?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Humidity itself isn't usually a covered cause of loss — gradual deterioration, rust, and corrosion are standard exclusions on equipment policies. However, sudden electrical failure of a polisher, pressure washer pump, or steamer caused by a covered event (theft, fire, vehicle accident) is covered. For coastal Florida detailers dealing with saltwater corrosion on mobile rigs, we recommend bundling inland marine with scheduled equipment so high-value items have specific named-perils coverage."
+              }
+            }
+          ]
         }
       ]
     }
