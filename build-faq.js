@@ -93,8 +93,8 @@ function generateFaqHtml(faqData) {
 const publisherConfig = {
   name: "Detailer Shield Insurance",
   parentName: "Contractors Choice Agency",
-  url: "https://www.contractorschoiceagency.com",
-  logo: "https://www.contractorschoiceagency.com/images/optimized/company-logo-large.webp",
+  url: "https://www.mobiledetailinsurance.com",
+  logo: "https://www.mobiledetailinsurance.com/images/optimized/company-logo-large.webp",
   phone: "+1-844-967-5247",
   email: "josh@contractorschoiceagency.com",
   address: {

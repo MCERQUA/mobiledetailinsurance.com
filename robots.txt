@@ -6,7 +6,7 @@ Disallow: /.netlify/
 Disallow: /scripts/
 Disallow: /*.bat$
 
-Sitemap: https://www.contractorschoiceagency.com/sitemap.xml
+Sitemap: https://www.mobiledetailinsurance.com/sitemap.xml
 
 User-agent: Amazonbot
 Allow: /
