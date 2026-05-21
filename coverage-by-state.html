@@ -99,12 +99,12 @@
     </div>
 
     <!-- Header Section -->
-    <header class="header-section">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <div style="font-size: 1.5rem; font-weight: bold;">Mobile Detail Insurance</div>
-                <nav style="display: block;">
-                    <ul style="display: flex; gap: 1.5rem;">
+    <header class="header-section py-6 md:py-10 lg:py-16">
+        <div class="container px-4 md:px-8 lg:px-16">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 gap-4 md:gap-6">
+                <div class="text-xl md:text-2xl lg:text-3xl font-bold">Mobile Detail Insurance</div>
+                <nav class="hidden md:block">
+                    <ul class="flex gap-4 md:gap-6 lg:gap-8">
                         <li><a href="coverage.html" style="color: white;">Coverage</a></li>
                         <li><a href="index.html#testimonials" style="color: white;">Testimonials</a></li>
                         <li><a href="trust-faqs.html" style="color: white;">FAQ</a></li>
@@ -112,7 +112,7 @@
                         <li><a href="get-a-quote.html" class="cta-button" style="padding: 0.5rem 1rem;">Get a Quote</a></li>
                     </ul>
                 </nav>
-                <button id="menuButton" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; border: none;">Menu</button>
+                <button id="menuButton" class="md:hidden" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; border: none;">Menu</button>
             </div>
 
             <div id="mobileMenu" style="display: none; margin-bottom: 1.5rem;">
@@ -126,20 +126,21 @@
             </div>
 
             <!-- Hero -->
-            <div class="flex-row">
-                <div class="flex-half" style="margin-bottom: 2rem;">
-                    <h1 class="hero-title">Mobile Detail Insurance Coverage by State</h1>
-                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">Specialized mobile detailing and power washing insurance available nationwide. Pick your state to get coverage tailored to local licensing rules, climate risks, and DMV requirements.</p>
-                    <a href="get-a-quote.html" class="cta-button">Get a Quote</a>
+            <div class="flex-row flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-12 items-center">
+                <div class="flex-half w-full lg:w-1/2 mb-6 md:mb-8 lg:mb-0">
+                    <h1 class="hero-title text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 md:mb-6">Mobile Detail Insurance Coverage by State</h1>
+                    <p class="text-base md:text-lg lg:text-xl mb-6 md:mb-8 leading-relaxed max-w-2xl">Specialized mobile detailing and power washing insurance available nationwide. Pick your state to get coverage tailored to local licensing rules, climate risks, and DMV requirements.</p>
+                    <a href="get-a-quote.html" class="cta-button inline-block px-5 md:px-7 lg:px-9 py-3 md:py-4 text-base md:text-lg">Get a Quote</a>
                 </div>
-                <div class="flex-half">
+                <div class="flex-half w-full lg:w-1/2">
                     <!-- TODO: replace placeholder with real asset -->
                     <img
                         src="/images/placeholder-state-map.webp"
                         alt="USA coverage map placeholder"
                         width="800"
                         height="600"
-                        style="width: 100%; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: rgba(255,255,255,0.05);"
+                        class="w-full rounded-lg shadow-lg"
+                        style="background-color: rgba(255,255,255,0.05);"
                         loading="eager"
                         decoding="async">
                 </div>
@@ -148,13 +149,13 @@
     </header>
 
     <!-- State Grid Section -->
-    <section class="section" id="state-directory">
-        <div class="container">
-            <h2 class="section-title">Find Coverage in Your State</h2>
-            <p style="text-align: center; font-size: 1.125rem; margin-bottom: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto;">Choose your state below to view coverage availability and start a quote. We're licensed in all 50 states.</p>
+    <section class="section py-12 md:py-16 lg:py-24" id="state-directory">
+        <div class="container px-4 md:px-8 lg:px-16">
+            <h2 class="section-title text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-3 md:mb-4">Find Coverage in Your State</h2>
+            <p class="text-center text-base md:text-lg mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed">Choose your state below to view coverage availability and start a quote. We're licensed in all 50 states.</p>
 
             <!-- TODO: link to per-state landing pages once content is ready -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-3 lg:gap-4">
                 <a href="#" class="block bg-white border border-gray-200 rounded-md px-3 py-3 text-center hover:bg-yellow-50 hover:border-yellow-400 transition-colors" style="text-decoration: none; color: #1E3A8A;">
                     <span style="font-weight: 700; font-size: 0.75rem; color: #EAB308;">AL</span>
                     <span style="display: block; font-weight: 600; color: #1E3A8A;">Alabama</span>
@@ -360,13 +361,13 @@
     </section>
 
     <!-- Featured States Section -->
-    <section class="section" style="background-color: #F1F5F9;">
-        <div class="container">
-            <h2 class="section-title">Featured States</h2>
-            <p style="text-align: center; font-size: 1.125rem; margin-bottom: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto;">High-volume detailing markets we serve every day. Click through for a state-aware quote.</p>
+    <section class="section py-12 md:py-16 lg:py-24" style="background-color: #F1F5F9;">
+        <div class="container px-4 md:px-8 lg:px-16">
+            <h2 class="section-title text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-3 md:mb-4">Featured States</h2>
+            <p class="text-center text-base md:text-lg mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed">High-volume detailing markets we serve every day. Click through for a state-aware quote.</p>
 
             <!-- TODO: per-state regulatory details and testimonials -->
-            <div class="grid-3">
+            <div class="grid-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 <div id="state-CA" class="feature-card">
                     <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem; color: #1E3A8A;">California</h3>
                     <p style="font-weight: 600; color: #10B981; margin: 0 0 0.75rem 0;">Licensed in California</p>
@@ -408,12 +409,12 @@
     </section>
 
     <!-- Why State-Specific Coverage Matters -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Why State-Specific Coverage Matters</h2>
-            <p style="text-align: center; font-size: 1.125rem; margin-bottom: 2rem; max-width: 48rem; margin-left: auto; margin-right: auto;">Detailing rules, climate risks, and commercial-vehicle requirements vary by state. We tailor every policy to local conditions.</p>
+    <section class="section py-12 md:py-16 lg:py-24">
+        <div class="container px-4 md:px-8 lg:px-16">
+            <h2 class="section-title text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-3 md:mb-4">Why State-Specific Coverage Matters</h2>
+            <p class="text-center text-base md:text-lg mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed">Detailing rules, climate risks, and commercial-vehicle requirements vary by state. We tailor every policy to local conditions.</p>
 
-            <div class="grid-3">
+            <div class="grid-3 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 2rem; height: 2rem;">
@@ -463,24 +464,24 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="section" style="background-color: #1E3A8A; color: white;">
-        <div class="container" style="text-align: center;">
-            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: white;">Not Sure Which Coverage You Need?</h2>
-            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; max-width: 42rem; margin-left: auto; margin-right: auto; color: rgba(255,255,255,0.85);">Get a free state-specific quote and we'll match your policy to your state's rules, climate, and your day-to-day mobile detailing operations.</p>
-            <a href="get-a-quote.html" class="cta-button" style="display: inline-block;">Get a Free State-Specific Quote</a>
+    <section class="section py-12 md:py-16 lg:py-24" style="background-color: #1E3A8A; color: white;">
+        <div class="container text-center px-4 md:px-8 lg:px-16">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 text-white">Not Sure Which Coverage You Need?</h2>
+            <p class="text-base md:text-lg lg:text-xl mb-6 md:mb-8 lg:mb-10 max-w-2xl mx-auto leading-relaxed" style="color: rgba(255,255,255,0.85);">Get a free state-specific quote and we'll match your policy to your state's rules, climate, and your day-to-day mobile detailing operations.</p>
+            <a href="get-a-quote.html" class="cta-button inline-block px-6 md:px-8 lg:px-10 py-3 md:py-4 text-base md:text-lg">Get a Free State-Specific Quote</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="flex-row">
-                <div class="flex-half" style="margin-bottom: 2rem;">
-                    <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Mobile Detail Insurance</div>
-                    <p style="max-width: 20rem;">Specialized insurance solutions for mobile detailing and power washing businesses nationwide.</p>
+    <footer class="footer py-10 md:py-12 lg:py-16">
+        <div class="container px-4 md:px-8 lg:px-16">
+            <div class="flex-row flex flex-col md:flex-row gap-8 md:gap-12">
+                <div class="flex-half w-full md:w-1/2 mb-6 md:mb-0">
+                    <div class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Mobile Detail Insurance</div>
+                    <p class="max-w-md text-sm md:text-base">Specialized insurance solutions for mobile detailing and power washing businesses nationwide.</p>
                 </div>
 
-                <div class="flex-half" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div class="flex-half w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
                     <div>
                         <h3 class="footer-heading">Coverage</h3>
                         <ul class="footer-links">
