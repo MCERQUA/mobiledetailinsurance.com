@@ -91,10 +91,12 @@ function generateFaqHtml(faqData) {
 
 // Configurable publisher info
 const publisherConfig = {
-  name: "Contractors Choice Agency",
+  name: "Detailer Shield Insurance",
+  parentName: "Contractors Choice Agency",
   url: "https://www.contractorschoiceagency.com",
-  logo: "https://www.contractorschoiceagency.com/images/company-logo.webp",
-  phone: "844-967-5247",
+  logo: "https://www.contractorschoiceagency.com/images/optimized/company-logo-large.webp",
+  phone: "+1-844-967-5247",
+  email: "josh@contractorschoiceagency.com",
   address: {
     street: "12220 E Riggs Road, Suite #105",
     city: "Chandler",
@@ -103,94 +105,144 @@ const publisherConfig = {
   }
 };
 
-// Function to generate schema JSON
+// Function to generate the canonical @graph + FAQPage
+// Emits ONE <script type="application/ld+json"> with the full graph
+// (Organization + LocalBusiness + WebSite + Service + BreadcrumbList + FAQPage)
 function generateSchemas(faqData) {
   const today = new Date().toISOString().split('T')[0];
-  
-  // Create LocalBusiness schema
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": publisherConfig.name,
-    "description": faqData.title ? `${faqData.title} - ${publisherConfig.name}` : publisherConfig.name,
-    "url": publisherConfig.url,
-    "telephone": publisherConfig.phone,
-    "priceRange": "$$$",
-    "image": {
-      "@type": "ImageObject",
-      "url": publisherConfig.logo,
-      "width": "800",
-      "height": "600"
+
+  const orgRef = `${publisherConfig.url}/#organization`;
+  const lbRef = `${publisherConfig.url}/#localbusiness`;
+  const wsRef = `${publisherConfig.url}/#website`;
+  const serviceRef = `${publisherConfig.url}/#service-mobile-detailing-insurance`;
+  const breadcrumbRef = `${publisherConfig.url}/#breadcrumb-home`;
+  const faqRef = `${publisherConfig.url}/#faqpage`;
+
+  const graph = [
+    {
+      "@type": "Organization",
+      "@id": orgRef,
+      "name": publisherConfig.name,
+      "alternateName": "Detailer Shield",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": publisherConfig.parentName,
+        "url": publisherConfig.url
+      },
+      "url": publisherConfig.url,
+      "logo": {
+        "@type": "ImageObject",
+        "url": publisherConfig.logo,
+        "width": 800,
+        "height": 600
+      },
+      "telephone": publisherConfig.phone,
+      "email": publisherConfig.email,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": publisherConfig.address.street,
+        "addressLocality": publisherConfig.address.city,
+        "addressRegion": publisherConfig.address.state,
+        "postalCode": publisherConfig.address.zip,
+        "addressCountry": "US"
+      }
     },
-    "sameAs": [],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": publisherConfig.address.street,
-      "addressLocality": publisherConfig.address.city,
-      "addressRegion": publisherConfig.address.state,
-      "postalCode": publisherConfig.address.zip,
-      "addressCountry": {
+    {
+      "@type": "LocalBusiness",
+      "@id": lbRef,
+      "name": publisherConfig.name,
+      "image": publisherConfig.logo,
+      "url": publisherConfig.url,
+      "telephone": publisherConfig.phone,
+      "email": publisherConfig.email,
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": publisherConfig.address.street,
+        "addressLocality": publisherConfig.address.city,
+        "addressRegion": publisherConfig.address.state,
+        "postalCode": publisherConfig.address.zip,
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.3062,
+        "longitude": -111.8413
+      },
+      "areaServed": {
         "@type": "Country",
-        "name": "US"
+        "name": "United States"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
       }
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "17:00"
+    {
+      "@type": "WebSite",
+      "@id": wsRef,
+      "url": publisherConfig.url,
+      "name": publisherConfig.name,
+      "publisher": { "@id": orgRef },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Service",
+      "@id": serviceRef,
+      "name": "Mobile Detailing Insurance",
+      "serviceType": "Mobile Detailing Insurance",
+      "provider": { "@id": orgRef },
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "description": "Specialized business insurance for mobile detailing operators — general liability, equipment, tools, vehicle, and pollution coverage tailored to mobile detailing operations.",
+      "url": publisherConfig.url + "/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": breadcrumbRef,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": publisherConfig.url + "/"
+        }
+      ]
     }
+  ];
+
+  // Append FAQPage only when there are real questions
+  if (faqData && Array.isArray(faqData.questions) && faqData.questions.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": faqRef,
+      "name": faqData.title || "Frequently Asked Questions",
+      "description": faqData.title
+        ? `${faqData.title} - Frequently Asked Questions`
+        : "Frequently Asked Questions",
+      "datePublished": today,
+      "dateModified": today,
+      "publisher": { "@id": orgRef },
+      "inLanguage": "en-US",
+      "mainEntity": faqData.questions.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+          "datePublished": today
+        }
+      }))
+    });
+  }
+
+  const graphSchema = {
+    "@context": "https://schema.org",
+    "@graph": graph
   };
 
-  // Create FAQ schema
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    'name': faqData.title || 'FAQ',
-    'description': faqData.title ? `${faqData.title} - Frequently Asked Questions` : 'Frequently Asked Questions',
-    'datePublished': today,
-    'dateModified': today,
-    'publisher': {
-      '@type': 'Organization',
-      'name': publisherConfig.name,
-      'url': publisherConfig.url,
-      'logo': {
-        '@type': 'ImageObject',
-        'url': publisherConfig.logo,
-        'width': 800,
-        'height': 600
-      },
-      'address': {
-        '@type': 'PostalAddress',
-        'streetAddress': publisherConfig.address.street,
-        'addressLocality': publisherConfig.address.city,
-        'addressRegion': publisherConfig.address.state,
-        'postalCode': publisherConfig.address.zip,
-        'addressCountry': 'US'
-      },
-      'telephone': publisherConfig.phone
-    },
-    'mainEntity': faqData.questions.map(item => ({
-      '@type': 'Question',
-      'name': item.question,
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': item.answer,
-        'datePublished': today
-      }
-    }))
-  };
-
-  return {
-    localBusinessSchema,
-    faqSchema
-  };
+  return { graphSchema };
 }
 
 // Main execution

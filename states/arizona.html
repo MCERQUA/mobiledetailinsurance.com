@@ -259,141 +259,102 @@
     <!-- reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-    <!-- LocalBusiness Schema (Arizona-anchored — HQ address used directly) -->
-    <script type="application/ld+json" id="localBusinessSchema">
+    <!-- JSON-LD: Page graph -->
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Detailer Shield Insurance — Arizona",
-      "description": "Arizona's specialty mobile detailing insurance broker, headquartered in Chandler, AZ. A program of Contractors Choice Agency serving Phoenix, Mesa, Scottsdale, Tucson, and the entire state.",
-      "url": "https://www.mobiledetailinsurance.com/states/arizona.html",
-      "telephone": "844-967-5247",
-      "priceRange": "$$",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://www.mobiledetailinsurance.com/images/company-logo.webp",
-        "width": "800",
-        "height": "600"
-      },
-      "provider": {
-        "@type": "InsuranceAgency",
-        "name": "Contractors Choice Agency",
-        "url": "https://www.contractorschoiceagency.com",
-        "telephone": "844-967-5247"
-      },
-      "areaServed": [
-        {"@type": "State", "name": "Arizona"},
-        {"@type": "City", "name": "Phoenix"},
-        {"@type": "City", "name": "Chandler"},
-        {"@type": "City", "name": "Mesa"},
-        {"@type": "City", "name": "Scottsdale"},
-        {"@type": "City", "name": "Tucson"},
-        {"@type": "City", "name": "Gilbert"},
-        {"@type": "City", "name": "Tempe"},
-        {"@type": "City", "name": "Glendale"},
-        {"@type": "City", "name": "Flagstaff"}
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "12220 E Riggs Road, Suite #105",
-        "addressLocality": "Chandler",
-        "addressRegion": "AZ",
-        "postalCode": "85249",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 33.2384,
-        "longitude": -111.7374
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "17:00"
-      }
-    }
-    </script>
-
-    <!-- Service Schema -->
-    <script type="application/ld+json" id="serviceSchema">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Mobile Detailing Insurance",
-      "name": "Mobile Detailing Insurance in Arizona",
-      "description": "Specialty insurance for Arizona mobile detailers. Heat-rated equipment coverage, monsoon endorsements, waterless-system underwriting, and in-person service from a Chandler, AZ-based broker.",
-      "provider": {
-        "@type": "InsuranceAgency",
-        "name": "Contractors Choice Agency",
-        "telephone": "844-967-5247",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "12220 E Riggs Road, Suite #105",
-          "addressLocality": "Chandler",
-          "addressRegion": "AZ",
-          "postalCode": "85249",
-          "addressCountry": "US"
-        }
-      },
-      "areaServed": {
-        "@type": "State",
-        "name": "Arizona"
-      },
-      "audience": {
-        "@type": "BusinessAudience",
-        "audienceType": "Mobile Detailers, Auto Reconditioning Pros, Waterless Wash Operators"
-      },
-      "datePublished": "2026-05-21",
-      "dateModified": "2026-05-21"
-    }
-    </script>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json" id="faqSchema">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
+        { "@type": "Organization", "@id": "https://www.contractorschoiceagency.com/#organization" },
+        { "@type": "LocalBusiness", "@id": "https://www.contractorschoiceagency.com/#localbusiness" },
+        { "@type": "WebSite", "@id": "https://www.contractorschoiceagency.com/#website" },
         {
-          "@type": "Question",
-          "name": "Do I need workers' compensation in Arizona if I have one employee?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — Arizona is among the strictest states. Workers' compensation is generally required for any business with one or more employees, including part-time, full-time, and many family-member arrangements. Independent contractors can be carved out if the relationship genuinely meets the IRS and Arizona Industrial Commission tests, but misclassification is a high-frequency claim. Always verify current requirements with the Industrial Commission of Arizona."
-          }
+          "@type": "LocalBusiness",
+          "@id": "https://www.contractorschoiceagency.com/states/arizona.html#localbusiness-arizona",
+          "name": "Detailer Shield Insurance — Arizona",
+          "parentOrganization": { "@id": "https://www.contractorschoiceagency.com/#organization" },
+          "url": "https://www.contractorschoiceagency.com/states/arizona.html",
+          "telephone": "+1-844-967-5247",
+          "priceRange": "$$",
+          "image": "https://www.contractorschoiceagency.com/images/optimized/company-logo-large.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "12220 E Riggs Road, Suite #105",
+            "addressLocality": "Chandler",
+            "addressRegion": "AZ",
+            "postalCode": "85249",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.2384,
+            "longitude": -111.7374
+          },
+          "areaServed": { "@type": "State", "name": "Arizona" }
         },
         {
-          "@type": "Question",
-          "name": "What commercial auto coverage do Phoenix mobile detailers need?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Arizona's statutory minimums are $25K bodily injury per person, $50K per accident, and $15K property damage. That's the floor — and it's almost never enough for a working mobile detailing rig in Phoenix or Tucson traffic. Most commercial detailing fleets carry $300K to $1M combined single limit, plus hired and non-owned auto coverage if employees or 1099s drive their own vehicles to jobsites. We quote Arizona-appropriate limits, not minimums."
-          }
+          "@type": "Service",
+          "@id": "https://www.contractorschoiceagency.com/states/arizona.html#service-arizona-mobile-detailing-insurance",
+          "name": "Mobile Detailing Insurance in Arizona",
+          "serviceType": "Mobile Detailing Insurance",
+          "provider": { "@id": "https://www.contractorschoiceagency.com/#organization" },
+          "areaServed": { "@type": "State", "name": "Arizona" },
+          "description": "Specialty insurance for Arizona mobile detailers — heat-rated equipment coverage, monsoon endorsements, waterless-system underwriting, and in-person service from a Chandler, AZ-based broker.",
+          "url": "https://www.contractorschoiceagency.com/states/arizona.html"
         },
         {
-          "@type": "Question",
-          "name": "Does Arizona allow waterless or steam detailing — and does insurance change?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — waterless and low-water detailing are popular in Arizona because of water conservation rules, HOA restrictions, and ADEQ stormwater compliance in Maricopa County. From an underwriting perspective, waterless systems can reduce runoff-related liability exposure but introduce different equipment (rechargeable polishers, large microfiber inventory) that needs to be scheduled correctly. The policy structure is the same — we just adjust the equipment and chemical-liability sections to match how you actually operate."
-          }
+          "@type": "BreadcrumbList",
+          "@id": "https://www.contractorschoiceagency.com/states/arizona.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.contractorschoiceagency.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Coverage by State", "item": "https://www.contractorschoiceagency.com/coverage-by-state.html" },
+            { "@type": "ListItem", "position": 3, "name": "Arizona", "item": "https://www.contractorschoiceagency.com/states/arizona.html" }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "How does extreme Arizona heat affect my equipment insurance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Equipment policies generally exclude losses caused by gradual heat damage or wear-and-tear, but they do cover sudden failures triggered by a covered event — fire, theft, vehicle accident, or electrical surge. The bigger heat-related risk in Arizona is lithium battery failure in cordless polishers and rechargeable pressure washers; we recommend scheduled coverage on high-value rechargeable equipment so a sudden electrical failure or thermal event has a clear claim path."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where is Detailer Shield Insurance located?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our HQ is at 12220 E Riggs Road, Suite #105, Chandler, AZ 85249. Detailer Shield Insurance is a program of Contractors Choice Agency, based right here in the East Valley. We serve Arizona detailers in-person and by phone — call 844-967-5247 to talk to an Arizona-based agent who knows your zip code."
-          }
+          "@type": "FAQPage",
+          "@id": "https://www.contractorschoiceagency.com/states/arizona.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do I need workers' compensation in Arizona if I have one employee?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — Arizona is among the strictest states. Workers' compensation is generally required for any business with one or more employees, including part-time, full-time, and many family-member arrangements. Independent contractors can be carved out if the relationship genuinely meets the IRS and Arizona Industrial Commission tests, but misclassification is a high-frequency claim. Always verify current requirements with the Industrial Commission of Arizona."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What commercial auto coverage do Phoenix mobile detailers need?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Arizona's statutory minimums are $25K bodily injury per person, $50K per accident, and $15K property damage. That's the floor — and it's almost never enough for a working mobile detailing rig in Phoenix or Tucson traffic. Most commercial detailing fleets carry $300K to $1M combined single limit, plus hired and non-owned auto coverage if employees or 1099s drive their own vehicles to jobsites. We quote Arizona-appropriate limits, not minimums."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Arizona allow waterless or steam detailing — and does insurance change?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — waterless and low-water detailing are popular in Arizona because of water conservation rules, HOA restrictions, and ADEQ stormwater compliance in Maricopa County. From an underwriting perspective, waterless systems can reduce runoff-related liability exposure but introduce different equipment (rechargeable polishers, large microfiber inventory) that needs to be scheduled correctly. The policy structure is the same — we just adjust the equipment and chemical-liability sections to match how you actually operate."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does extreme Arizona heat affect my equipment insurance?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Equipment policies generally exclude losses caused by gradual heat damage or wear-and-tear, but they do cover sudden failures triggered by a covered event — fire, theft, vehicle accident, or electrical surge. The bigger heat-related risk in Arizona is lithium battery failure in cordless polishers and rechargeable pressure washers; we recommend scheduled coverage on high-value rechargeable equipment so a sudden electrical failure or thermal event has a clear claim path."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where is Detailer Shield Insurance located?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our HQ is at 12220 E Riggs Road, Suite #105, Chandler, AZ 85249. Detailer Shield Insurance is a program of Contractors Choice Agency, based right here in the East Valley. We serve Arizona detailers in-person and by phone — call 844-967-5247 to talk to an Arizona-based agent who knows your zip code."
+              }
+            }
+          ]
         }
       ]
     }

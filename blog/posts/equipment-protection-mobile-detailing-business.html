@@ -309,6 +309,53 @@
             font-weight: 600;
             color: #374151;
         }
+
+        /* === Animated FAQ Accordion === */
+        .faq-section { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #E5E7EB; }
+        .faq-section h2 { color: #1E3A8A; font-family: 'Montserrat', sans-serif; font-size: 1.875rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid #06B6D4; display: inline-block; }
+        .faq-intro { font-size: 1.0625rem; color: #475569; margin-bottom: 2rem; line-height: 1.7; }
+        .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+        .faq-item { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 0.75rem; overflow: hidden; transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+        .faq-item:hover { border-color: #06B6D4; box-shadow: 0 4px 16px rgba(6, 182, 212, 0.08); }
+        .faq-item[open] { border-color: #06B6D4; box-shadow: 0 6px 20px rgba(30, 58, 138, 0.08); }
+        .faq-question { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.125rem 1.25rem; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.0625rem; line-height: 1.45; color: #1E3A8A; list-style: none; user-select: none; transition: background-color 0.2s ease, color 0.2s ease; }
+        .faq-question::-webkit-details-marker { display: none; }
+        .faq-question:hover { background-color: rgba(6, 182, 212, 0.04); }
+        .faq-question:focus-visible { outline: 2px solid #06B6D4; outline-offset: -2px; }
+        .faq-q-text { flex: 1; }
+        .faq-chevron { color: #06B6D4; font-size: 1.5rem !important; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex-shrink: 0; }
+        .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+        .faq-answer { padding: 0 1.25rem 1.25rem; animation: faqFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+        .faq-answer p { font-size: 1rem; line-height: 1.7; color: #374151; margin: 0 0 0.75rem; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer a { color: #0891B2; text-decoration: underline; text-decoration-color: rgba(6, 182, 212, 0.4); text-underline-offset: 3px; }
+        .faq-answer a:hover { color: #06B6D4; text-decoration-color: #06B6D4; }
+        @keyframes faqFadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+        @media (prefers-reduced-motion: reduce) { .faq-item, .faq-chevron, .faq-answer { transition: none !important; animation: none !important; } }
+
+        /* === Animated CTA Enhancements === */
+        @keyframes ctaShimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        @keyframes ctaPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4); } 50% { box-shadow: 0 0 0 12px rgba(234, 179, 8, 0); } }
+        @keyframes badgeFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+        .cta-primary { position: relative; background-image: linear-gradient(90deg, #EAB308 0%, #FBBF24 40%, #EAB308 60%, #EAB308 100%); background-size: 200% 100%; animation: ctaShimmer 3s linear infinite, ctaPulse 2.5s ease-in-out infinite; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(234, 179, 8, 0.35); animation-play-state: paused; }
+        .cta-primary .cta-arrow { transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cta-primary:hover .cta-arrow { transform: translateX(4px); }
+        .cta-secondary { position: relative; overflow: hidden; transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
+        .cta-secondary:hover { transform: translateY(-2px); background-color: rgba(255, 255, 255, 0.2); border-color: rgba(6, 182, 212, 0.6); }
+        .cta-badge { animation: badgeFloat 3.5s ease-in-out infinite; }
+
+        .inline-cta { margin: 2.5rem 0; border-radius: 1rem; padding: 1.75rem 1.5rem; background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(30, 58, 138, 0.05)); border: 1px solid rgba(6, 182, 212, 0.25); display: flex; flex-direction: column; gap: 1rem; position: relative; overflow: hidden; }
+        .inline-cta::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #06B6D4, #1E3A8A); }
+        .inline-cta-label { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; color: #0E7490; }
+        .inline-cta h4 { color: #1E3A8A !important; font-family: 'Montserrat', sans-serif; font-size: 1.25rem !important; font-weight: 800 !important; margin: 0 !important; line-height: 1.35 !important; }
+        .inline-cta p { margin: 0 !important; color: #374151; }
+        .inline-cta-button { display: inline-flex; align-items: center; gap: 0.5rem; background-color: #1E3A8A; color: #FFFFFF !important; font-weight: 700; padding: 0.75rem 1.25rem; border-radius: 0.5rem; text-decoration: none !important; align-self: flex-start; transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease; }
+        .inline-cta-button:hover { transform: translateY(-2px); background-color: #06B6D4; box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3); color: #FFFFFF !important; }
+        .inline-cta-button .material-symbols-outlined { transition: transform 0.25s ease; }
+        .inline-cta-button:hover .material-symbols-outlined { transform: translateX(3px); }
+        @media (min-width: 768px) { .inline-cta { padding: 2rem 2.25rem; flex-direction: row; align-items: center; justify-content: space-between; gap: 1.5rem; } .inline-cta-button { align-self: center; flex-shrink: 0; } }
+        @media (prefers-reduced-motion: reduce) { .cta-primary, .cta-badge, .inline-cta-button, .inline-cta-button .material-symbols-outlined { animation: none !important; transition: none !important; } .cta-primary { background-image: linear-gradient(90deg, #EAB308, #EAB308); } }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-electric-cyan selection:text-white">
@@ -460,7 +507,7 @@
         <div class="cta-box">
             <h3>Protect Your Equipment Investment</h3>
             <p>Don&apos;t let equipment theft or damage shut down your business. Get specialized mobile equipment coverage designed for detailing professionals.</p>
-            <a href="../../get-a-quote.html" class="cta-button">Get Equipment Quote</a>
+            <a href="../../get-a-quote.html" class="cta-button cta-secondary">Get Equipment Quote</a>
         </div>
 
         <h3>Weather-Related Protection</h3>
@@ -481,6 +528,18 @@
             <li>Overheating of electronic components</li>
             <li>Pressure buildup in sealed containers</li>
         </ul>
+
+        <aside class="inline-cta" aria-label="Quote callout">
+            <div>
+                <span class="inline-cta-label"><span class="material-symbols-outlined text-base">local_shipping</span> 2-minute schedule</span>
+                <h4>What&apos;s your gear actually worth — and is it scheduled correctly?</h4>
+                <p>List your major equipment. We&apos;ll quote inland marine that pays replacement cost if your van is broken into tonight, not depreciated value next quarter.</p>
+            </div>
+            <a class="inline-cta-button" href="../../get-a-quote.html">
+                Quote my equipment
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+        </aside>
 
         <h2>Equipment Valuation and Coverage Limits</h2>
         
