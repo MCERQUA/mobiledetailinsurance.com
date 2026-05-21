@@ -261,8 +261,8 @@ try {
   // Generate the FAQ HTML
   const faqHtml = generateFaqHtml(faqData);
 
-  // Generate the schemas
-  const { localBusinessSchema, faqSchema } = generateSchemas(faqData);
+  // Generate the schemas (single @graph)
+  const { graphSchema } = generateSchemas(faqData);
 
   // Read the index.html file
   const indexPath = path.join(__dirname, 'index.html');
@@ -276,16 +276,14 @@ try {
       ${faqHtml}
     </div>
   </section>`;
-  
+
   indexHtml = indexHtml.replace(faqSectionRegex, newFaqSection);
 
-  // Create schema script tags
+  // Single canonical @graph schema for index.html
+  // Includes Organization + LocalBusiness + WebSite + Service + BreadcrumbList + FAQPage
   const schemaScripts = `
-    <script type="application/ld+json" id="localBusinessSchema">
-      ${JSON.stringify(localBusinessSchema, null, 2)}
-    </script>
-    <script type="application/ld+json" id="faqSchema">
-      ${JSON.stringify(faqSchema, null, 2)}
+    <script type="application/ld+json" id="siteGraphSchema">
+      ${JSON.stringify(graphSchema, null, 2)}
     </script>`;
 
   // Remove all existing schema scripts
