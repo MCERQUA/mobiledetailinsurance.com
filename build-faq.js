@@ -96,10 +96,10 @@ const publisherConfig = {
   logo: "https://www.contractorschoiceagency.com/images/company-logo.webp",
   phone: "844-967-5247",
   address: {
-    street: "[STREET ADDRESS]",
-    city: "[CITY]",
-    state: "[STATE]",
-    zip: "[ZIP CODE]"
+    street: "12220 E Riggs Road, Suite #105",
+    city: "Chandler",
+    state: "AZ",
+    zip: "85249"
   }
 };
 
@@ -122,10 +122,7 @@ function generateSchemas(faqData) {
       "width": "800",
       "height": "600"
     },
-    "sameAs": [
-      "[FACEBOOK URL]",
-      "[LINKEDIN URL]"
-    ],
+    "sameAs": [],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": publisherConfig.address.street,

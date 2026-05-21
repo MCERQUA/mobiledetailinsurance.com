@@ -194,88 +194,36 @@
     </script>
 
     <!-- Blog JSON-LD schema -->
-    <script type="application/ld+json" id="blogSchema">
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Mobile Detailing Insurance Blog",
-      "description": "Expert articles for mobile detailers on insurance, equipment protection, and liability coverage.",
-      "url": "https://www.mobiledetailinsurance.com/blog/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Contractors Choice Agency",
-        "url": "https://www.contractorschoiceagency.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.contractorschoiceagency.com/images/company-logo.webp",
-          "width": 800,
-          "height": 600
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "12220 E Riggs Road, Suite #105",
-          "addressLocality": "Chandler",
-          "addressRegion": "AZ",
-          "postalCode": "85249",
-          "addressCountry": "US"
-        },
-        "telephone": "844-967-5247"
-      },
-      "blogPost": [
+      "@graph": [
+        { "@type": "Organization", "@id": "https://www.contractorschoiceagency.com/#organization" },
+        { "@type": "LocalBusiness", "@id": "https://www.contractorschoiceagency.com/#localbusiness" },
+        { "@type": "WebSite", "@id": "https://www.contractorschoiceagency.com/#website" },
         {
-          "@type": "BlogPosting",
-          "headline": "General Liability Insurance for Mobile Detailing: What It Covers, What It Doesn't, and What It Costs",
-          "description": "What general liability insurance for mobile detailing actually covers, real claim scenarios, typical premium ranges, and the add-ons that turn GL into a real mobile detailing policy.",
-          "url": "https://www.mobiledetailinsurance.com/blog/posts/general-liability-insurance-for-mobile-detailing.html",
-          "datePublished": "2026-05-21",
-          "author": {
-            "@type": "Organization",
-            "name": "Detailer Shield Insurance"
-          }
+          "@type": "Blog",
+          "@id": "https://www.contractorschoiceagency.com/blog/#blog",
+          "name": "Detailer Shield Insurance Blog",
+          "url": "https://www.contractorschoiceagency.com/blog/",
+          "description": "Expert articles for mobile detailers on insurance coverage, equipment protection, ceramic coating liability, and starting a detailing business.",
+          "publisher": { "@id": "https://www.contractorschoiceagency.com/#organization" },
+          "inLanguage": "en-US",
+          "blogPost": [
+            { "@type": "BlogPosting", "@id": "https://www.contractorschoiceagency.com/blog/posts/general-liability-insurance-for-mobile-detailing.html#blogposting" },
+            { "@type": "BlogPosting", "@id": "https://www.contractorschoiceagency.com/blog/posts/ceramic-coating-insurance-mobile-detailers.html#blogposting" },
+            { "@type": "BlogPosting", "@id": "https://www.contractorschoiceagency.com/blog/posts/mobile-auto-detailing-insurance-essentials.html#blogposting" },
+            { "@type": "BlogPosting", "@id": "https://www.contractorschoiceagency.com/blog/posts/business-liability-protection-mobile-detailing.html#blogposting" },
+            { "@type": "BlogPosting", "@id": "https://www.contractorschoiceagency.com/blog/posts/equipment-protection-mobile-detailing-business.html#blogposting" }
+          ]
         },
         {
-          "@type": "BlogPosting",
-          "headline": "Ceramic Coating Insurance: What Mobile Detailers Need to Know About Claims, Coverage & Liability",
-          "description": "A specialized guide to ceramic coating insurance for mobile detailers. Real-world claim scenarios, how standard general liability falls short, products-completed operations exposure, and how to price coverage for a high-ticket service.",
-          "url": "https://www.mobiledetailinsurance.com/blog/posts/ceramic-coating-insurance-mobile-detailers.html",
-          "datePublished": "2026-05-21",
-          "author": {
-            "@type": "Organization",
-            "name": "Detailer Shield Insurance"
-          }
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Mobile Auto Detailing Insurance Essentials: Complete Coverage Guide",
-          "description": "Comprehensive guide to mobile auto detailing insurance including liability coverage, equipment protection, and specialized coverage for mobile automotive detailing services.",
-          "url": "https://www.mobiledetailinsurance.com/blog/posts/mobile-auto-detailing-insurance-essentials.html",
-          "datePublished": "2025-01-15",
-          "author": {
-            "@type": "Organization",
-            "name": "Detailer Shield Insurance"
-          }
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Business Liability Protection for Mobile Detailing Services",
-          "description": "Comprehensive guide to business liability protection for mobile auto detailing services. Learn about customer property damage, slip-and-fall incidents, and professional liability coverage requirements.",
-          "url": "https://www.mobiledetailinsurance.com/blog/posts/business-liability-protection-mobile-detailing.html",
-          "datePublished": "2025-01-10",
-          "author": {
-            "@type": "Organization",
-            "name": "Detailer Shield Insurance"
-          }
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Equipment Protection for Mobile Detailing Business",
-          "description": "Comprehensive guide to protecting mobile detailing equipment including pressure washers, generators, tools, and supplies. Learn about inland marine coverage and theft protection.",
-          "url": "https://www.mobiledetailinsurance.com/blog/posts/equipment-protection-mobile-detailing-business.html",
-          "datePublished": "2025-01-05",
-          "author": {
-            "@type": "Organization",
-            "name": "Detailer Shield Insurance"
-          }
+          "@type": "BreadcrumbList",
+          "@id": "https://www.contractorschoiceagency.com/blog/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.contractorschoiceagency.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.contractorschoiceagency.com/blog/" }
+          ]
         }
       ]
     }
