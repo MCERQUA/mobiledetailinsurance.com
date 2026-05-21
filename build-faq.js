@@ -261,23 +261,35 @@ try {
   // Generate the FAQ HTML
   const faqHtml = generateFaqHtml(faqData);
 
-  // Generate the schemas (single @graph)
-  const { graphSchema } = generateSchemas(faqData);
-
   // Read the index.html file
   const indexPath = path.join(__dirname, 'index.html');
   console.log(`Reading index.html from ${indexPath}`);
   let indexHtml = fs.readFileSync(indexPath, 'utf8');
 
-  // Replace the FAQ section in the HTML
+  // Replace the FAQ section in the HTML. If there is no <section id="faq">
+  // in the current source we must NOT emit FAQPage schema — Google requires
+  // the Q&A to be visible on the page for FAQPage Rich Results.
   const faqSectionRegex = /<section id="faq"[^>]*>[\s\S]*?<\/section>/;
-  const newFaqSection = `<section id="faq" class="section faq-section">
+  const hasFaqSection = faqSectionRegex.test(indexHtml);
+
+  if (hasFaqSection) {
+    const newFaqSection = `<section id="faq" class="section faq-section">
     <div class="container">
       ${faqHtml}
     </div>
   </section>`;
+    indexHtml = indexHtml.replace(faqSectionRegex, () => newFaqSection);
+    console.log('Injected FAQ HTML into <section id="faq">');
+  } else {
+    console.log('No <section id="faq"> in source — FAQPage schema will be omitted to keep schema/body in sync.');
+  }
 
-  indexHtml = indexHtml.replace(faqSectionRegex, newFaqSection);
+  // Generate the schemas. If the FAQ body section is missing, pass an empty
+  // questions array so FAQPage is not appended to the @graph.
+  const schemaFaqData = hasFaqSection
+    ? faqData
+    : { title: faqData.title, questions: [] };
+  const { graphSchema } = generateSchemas(schemaFaqData);
 
   // Single canonical @graph schema for index.html
   // Includes Organization + LocalBusiness + WebSite + Service + BreadcrumbList + FAQPage
@@ -290,7 +302,9 @@ try {
   indexHtml = indexHtml.replace(/<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>\s*/g, '');
 
   // Add schema scripts before </head>
-  indexHtml = indexHtml.replace('</head>', `${schemaScripts}\n</head>`);
+  // Use a function replacement so JSON content like "$$" in priceRange isn't
+  // interpreted as a special replacement pattern by String.prototype.replace.
+  indexHtml = indexHtml.replace('</head>', () => `${schemaScripts}\n</head>`);
 
   // Write the updated index.html
   console.log(`Writing updated index.html to ${indexPath}`);
