@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Get Your Quote - DetailGuard Insurance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .racing-stripe {
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, #06B6D4 0%, #1E3A8A 100%);
+        }
+        .scale-98-active:active {
+            transform: scale(0.98);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#161c22",
+                        "outline": "#757682",
+                        "on-background": "#111c2d",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "primary-container": "#1e3a8a",
+                        "background": "#f9f9ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-secondary-fixed": "#001f26",
+                        "error-container": "#ffdad6",
+                        "electric-cyan": "#06B6D4",
+                        "on-tertiary-container": "#a6adb4",
+                        "inverse-primary": "#b6c4ff",
+                        "outline-variant": "#c5c5d3",
+                        "on-primary-fixed-variant": "#264191",
+                        "secondary-container": "#57dffe",
+                        "on-surface-variant": "#444651",
+                        "tertiary-fixed": "#dde3eb",
+                        "secondary": "#00687a",
+                        "inverse-on-surface": "#ecf1ff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#111c2d",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#acedff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e7eeff",
+                        "success-green": "#10B981",
+                        "error": "#ba1a1a",
+                        "glossy-silver": "#F1F5F9",
+                        "surface-variant": "#d8e3fb",
+                        "primary": "#00236f",
+                        "alert-amber": "#EAB308",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "midnight-blue": "#1E3A8A",
+                        "on-primary-container": "#90a8ff",
+                        "tertiary": "#252b31",
+                        "surface-tint": "#4059aa",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-secondary-container": "#006172",
+                        "surface-bright": "#f9f9ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-surface": "#263143",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "tertiary-container": "#3a4147",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "tertiary-fixed-dim": "#c1c7cf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-surface">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-on-tertiary-fixed/80 border-b border-white/20 shadow-sm">
+<nav class="flex items-center justify-between px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-midnight-blue dark:text-primary-fixed">DetailGuard</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer" href="#">Auto Coverage</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer" href="#">Liability</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer" href="#">Equipment</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer" href="#">Blog</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer" href="#">States</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-electric-cyan transition-colors px-4 py-2 cursor-pointer active:opacity-80">Login</button>
+<button class="bg-alert-amber text-midnight-blue font-headline-md text-label-md font-bold px-6 py-3 rounded-lg hover:bg-yellow-500 transition-colors cursor-pointer active:opacity-80">Get Quote</button>
+</div>
+</nav>
+</header>
+<!-- Main Content Area -->
+<main class="pt-32 pb-20 px-margin-mobile md:px-margin-desktop min-h-screen relative overflow-hidden">
+<!-- Atmospheric Background Element -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
+<img alt="" class="w-full h-full object-cover" data-alt="A high-resolution close-up photograph of a professional automotive detailer applying a ceramic coating to a sleek black luxury vehicle. The lighting is dramatic and studio-focused, highlighting the macro details of perfectly circular water beads sitting on a glossy, reflective paint surface. The color palette is dominated by deep midnight blues and bright electric cyan highlights from the garage equipment, reflecting a premium, high-performance aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKcfAVixjq9sCw6sEQ6yo7UzwEB_yjlNvIr7YP53p2sZwKhEbzQCqCeL_OCN_0GmPUbtCmWXR_HaRG2MOSuJNtoibVUUbcteofLC0pSSTzUMAJf8CfYJafUs42yDHSVMEFKpiKfful45-yEAWpTDIAVRp1Jz0YUyoYl-QyXMkELWcJSprcSJTUewXZNRJZaexzb-DJNi_-VOF97sBysR0Tx9pEJcICzw0ashX9z3_XcdLI1b1Rktwf9Sy8osSCFTsbJA-70bV4Ammw"/>
+</div>
+<div class="max-w-[800px] mx-auto relative z-10">
+<!-- Limited Time Banner -->
+<div class="mb-8 bg-alert-amber/10 border border-alert-amber/30 rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-alert-amber" data-icon="auto_awesome">auto_awesome</span>
+<p class="font-label-md text-label-md text-on-surface font-bold">Limited Time: Save 15% on Multi-Equipment Bundles today!</p>
+</div>
+<span class="font-caption text-caption text-alert-amber font-bold uppercase tracking-widest">Expires in 2h 45m</span>
+</div>
+<!-- Form Container -->
+<div class="glass-card rounded-2xl shadow-xl overflow-hidden">
+<div class="racing-stripe"></div>
+<div class="p-8 md:p-12">
+<!-- Progress Bar -->
+<div class="mb-12">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary">Personal Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Let's start with the basics to secure your professional rate.</p>
+</div>
+<span class="font-label-md text-label-md text-electric-cyan font-bold">Step 1 of 3</span>
+</div>
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-electric-cyan w-[33%] transition-all duration-700 ease-out"></div>
+</div>
+</div>
+<!-- Step 1 Form -->
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="fullName">Full Legal Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="person">person</span>
+<input class="w-full bg-glossy-silver border-midnight-blue/20 rounded-lg py-4 pl-12 pr-4 focus:ring-2 focus:ring-electric-cyan focus:border-electric-cyan transition-all outline-none font-body-md text-body-md" id="fullName" placeholder="Johnathan Detailer" type="text"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="mail">mail</span>
+<input class="w-full bg-glossy-silver border-midnight-blue/20 rounded-lg py-4 pl-12 pr-4 focus:ring-2 focus:ring-electric-cyan focus:border-electric-cyan transition-all outline-none font-body-md text-body-md" id="email" placeholder="john@detailguard.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="phone">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="phone">phone</span>
+<input class="w-full bg-glossy-silver border-midnight-blue/20 rounded-lg py-4 pl-12 pr-4 focus:ring-2 focus:ring-electric-cyan focus:border-electric-cyan transition-all outline-none font-body-md text-body-md" id="phone" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</div>
+</div>
+<div class="pt-6 flex flex-col items-center gap-6">
+<button class="w-full md:w-auto px-12 py-4 bg-electric-cyan text-white font-headline-md text-headline-md rounded-lg shadow-lg hover:bg-midnight-blue transition-all duration-300 scale-98-active" type="button">
+                                Next Step
+                            </button>
+<!-- Secure Badges -->
+<div class="flex items-center gap-8 pt-4 border-t border-outline/10 w-full justify-center">
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-caption text-caption">256-bit SSL Secure</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-caption text-caption">Privacy Guaranteed</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px]" data-icon="gpp_good" data-weight="fill" style="font-variation-settings: 'FILL' 1;">gpp_good</span>
+<span class="font-caption text-caption">HIPAA Compliant</span>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Resource Center Sidebar Component logic (integrated as helper) -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low/50 backdrop-blur-xl border border-white/10 rounded-xl p-6 flex flex-col gap-3">
+<div class="flex items-center gap-3 text-electric-cyan">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+<h3 class="font-label-md text-label-md font-bold">Safe Data Promise</h3>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">We never sell your detailing business information to third-party advertisers.</p>
+</div>
+<div class="bg-surface-container-low/50 backdrop-blur-xl border border-white/10 rounded-xl p-6 flex flex-col gap-3">
+<div class="flex items-center gap-3 text-electric-cyan">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<h3 class="font-label-md text-label-md font-bold">Insurance 101</h3>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Confused about liability? Check our guide for detailing professionals.</p>
+</div>
+<div class="bg-surface-container-low/50 backdrop-blur-xl border border-white/10 rounded-xl p-6 flex flex-col gap-3">
+<div class="flex items-center gap-3 text-electric-cyan">
+<span class="material-symbols-outlined" data-icon="stars">stars</span>
+<h3 class="font-label-md text-label-md font-bold">Success Stories</h3>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">See how we helped Elite Polish &amp; Shine recover after a flood.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background dark:bg-on-tertiary-fixed w-full py-12 border-t border-outline/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-surface-container-lowest mb-4">DetailGuard</div>
+<p class="font-caption text-caption text-outline-variant leading-relaxed">Providing high-performance insurance for the automotive detailing industry. Built by pros, for pros.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-electric-cyan font-bold">Resources</h4>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Coverage Details</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Claims Center</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Agent Portal</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-electric-cyan font-bold">Legal</h4>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">State Directory</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-electric-cyan font-bold">Stay Updated</h4>
+<p class="font-caption text-caption text-outline-variant">Get the latest safety tips and regulatory updates delivered to your inbox.</p>
+<div class="flex gap-2 mt-2">
+<input class="bg-white/10 border-white/20 rounded px-3 py-2 text-white text-sm focus:outline-none focus:border-electric-cyan w-full" placeholder="Email" type="email"/>
+<button class="bg-electric-cyan text-white p-2 rounded material-symbols-outlined" data-icon="send">send</button>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-white/5 text-center">
+<p class="font-caption text-caption text-outline-variant">© 2024 DetailGuard Insurance. All rights reserved. Licensed in all 50 states.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Input focus glow
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.style.boxShadow = '0 0 15px rgba(6, 182, 212, 0.2)';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.style.boxShadow = 'none';
+            });
+        });
+
+        // Simple form validation visual
+        const nextBtn = document.querySelector('button[type="button"]');
+        nextBtn.addEventListener('click', () => {
+            const emptyInputs = Array.from(inputs).filter(input => !input.value && input.id !== 'phone');
+            if(emptyInputs.length > 0) {
+                emptyInputs.forEach(input => {
+                    input.classList.add('border-error');
+                    input.classList.remove('border-midnight-blue/20');
+                });
+                alert('Please fill out all required fields.');
+            } else {
+                // Mock transition
+                nextBtn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="refresh">refresh</span>';
+                setTimeout(() => {
+                    alert('Progressing to Step 2: Vehicle & Equipment details...');
+                    nextBtn.innerText = 'Next Step';
+                }, 1000);
+            }
+        });
+    </script>
+</body></html>

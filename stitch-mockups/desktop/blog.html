@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog | DetailGuard Insurance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#161c22",
+                        "outline": "#757682",
+                        "on-background": "#111c2d",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "primary-container": "#1e3a8a",
+                        "background": "#f9f9ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-secondary-fixed": "#001f26",
+                        "error-container": "#ffdad6",
+                        "electric-cyan": "#06B6D4",
+                        "on-tertiary-container": "#a6adb4",
+                        "inverse-primary": "#b6c4ff",
+                        "outline-variant": "#c5c5d3",
+                        "on-primary-fixed-variant": "#264191",
+                        "secondary-container": "#57dffe",
+                        "on-surface-variant": "#444651",
+                        "tertiary-fixed": "#dde3eb",
+                        "secondary": "#00687a",
+                        "inverse-on-surface": "#ecf1ff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#111c2d",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#acedff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e7eeff",
+                        "success-green": "#10B981",
+                        "error": "#ba1a1a",
+                        "glossy-silver": "#F1F5F9",
+                        "surface-variant": "#d8e3fb",
+                        "primary": "#00236f",
+                        "alert-amber": "#EAB308",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "midnight-blue": "#1E3A8A",
+                        "on-primary-container": "#90a8ff",
+                        "tertiary": "#252b31",
+                        "surface-tint": "#4059aa",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-secondary-container": "#006172",
+                        "surface-bright": "#f9f9ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-surface": "#263143",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "tertiary-container": "#3a4147",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "tertiary-fixed-dim": "#c1c7cf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .scale-98-active:active { transform: scale(0.98); }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-on-tertiary-fixed/80 border-b border-white/20 shadow-sm h-20">
+<div class="flex items-center justify-between px-margin-desktop h-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-midnight-blue dark:text-primary-fixed">DetailGuard</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Auto Coverage</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Liability</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Equipment</a>
+<a class="font-label-md text-label-md text-electric-cyan border-b-2 border-electric-cyan pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Blog</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200 cursor-pointer active:opacity-80" href="#">States</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md px-6 py-2 rounded-full text-midnight-blue hover:text-electric-cyan transition-all">Login</button>
+<button class="font-label-md text-label-md px-8 py-3 rounded-full bg-alert-amber text-midnight-blue font-bold shadow-md hover:brightness-110 active:scale-95 transition-all">Get Quote</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-margin-desktop max-w-container-max mx-auto hero-gradient">
+<div class="flex gap-gutter">
+<!-- SideNavBar -->
+<aside class="w-64 flex flex-col gap-2 p-base bg-surface-container-low/50 backdrop-blur-xl rounded-xl h-fit sticky top-24 border border-white/10 shadow-md">
+<div class="px-4 py-4 mb-2">
+<h2 class="font-headline-md text-headline-md text-primary leading-tight">Resource Center</h2>
+<p class="font-caption text-caption text-on-surface-variant opacity-70">Expert Detailing Guides</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg scale-98-active" href="#">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+<span class="font-label-md text-label-md">Safety Tips</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg scale-98-active" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="font-label-md text-label-md">Marketing Guide</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg scale-98-active" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md">Insurance 101</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg scale-98-active" href="#">
+<span class="material-symbols-outlined" data-icon="stars">stars</span>
+<span class="font-label-md text-label-md">Success Stories</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg scale-98-active" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-md text-label-md">State Laws</span>
+</a>
+</nav>
+<div class="mt-8 px-4 py-6 rounded-xl bg-primary-container text-on-primary-container relative overflow-hidden group">
+<div class="relative z-10">
+<p class="font-label-md text-label-md mb-2">Exclusive Offer</p>
+<h4 class="font-headline-md text-[20px] mb-4">Protect Your Equipment Today</h4>
+<button class="bg-electric-cyan text-white px-4 py-2 rounded-lg font-label-md text-label-md w-full">Learn More</button>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="minor_crash">minor_crash</span>
+</div>
+</div>
+</aside>
+<!-- Blog Content -->
+<div class="flex-1">
+<!-- Featured Article -->
+<section class="mb-12">
+<div class="glass-card rounded-2xl overflow-hidden shadow-xl border-t-4 border-electric-cyan flex flex-col md:flex-row h-[460px]">
+<div class="w-full md:w-1/2 relative">
+<img class="w-full h-full object-cover" data-alt="A professional detailer in a clean uniform standing next to a perfectly polished luxury sports car. The lighting is crisp and cinematic, highlighting the deep gloss of the ceramic coating. The background is a modern, high-tech detailing studio with organized equipment and bright LED panels, reflecting a premium and protective corporate brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjQU89x6yoNRpMr0lGhaBSVdJ00tyUnSRqgoXg9ZTKomzxkTefZYJBHileCpq3_xAsdI78gTWuUg-ImFn_holYwKUrXRU5Fm1uZVeu-u1ZcJK7-AIQW8uR2_e6UBkQJjZ85qdHG5JO2zl5pBCLOXBqRtoo8zRM4EmwUSJqrVccVFHpwPUt2Ig0e9GBUfWO1Oe9Gz-nGiOto6f3TyTXbWVgqNne2SJnpvz8lWZ8fT34rMd4rIHdzl6QpXUwNYKWr1cBbpniuj3ZTnm2"/>
+<div class="absolute top-6 left-6 bg-electric-cyan text-white px-4 py-1 rounded-full font-label-md text-label-md">Featured Article</div>
+</div>
+<div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
+<p class="text-electric-cyan font-label-md text-label-md mb-4 uppercase tracking-widest">Risk Management</p>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-6 leading-tight">Protecting Your Business From Hidden Risks</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-8">From chemical spills to unexpected property damage, professional detailing comes with unique liabilities. Learn how to shield your assets.</p>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold font-headline-md text-body-md hover:bg-midnight-blue transition-all flex items-center gap-2 group">
+                                    Read Article
+                                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-12">
+<!-- Post 1 -->
+<div class="glass-card rounded-xl overflow-hidden border-t-4 border-electric-cyan group cursor-pointer hover:shadow-2xl transition-all">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-end mobile detailing van equipped with state-of-the-art pressure washers and steam cleaners. The setting is a scenic overlook at sunset, emphasizing the mobile and energetic nature of the detailing business. The lighting is warm and professional, suggesting a high-performance lifestyle and meticulous care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWgwIFQjDsPsxeVgxiwBgIQtaRXB3johhHElDsJ55dax1r5md2WFPfE6G-fLz8eQKjtSbXCrh4A6-sSLcnOLxSt05d2N5Ee2aJdv_VHu6ykw7BfOyYJIH_5nCJlKkKXEVPBYJ-6N41_3M56f6I7v6WDiFxwlV3ckyaQGicQjRdyXhoVH4dRLtVDoLmJq5hOaMQoK2xt07FDyNcKyqDabfJpXbEwk0hClHhGWMC25cVLeBA_hYM5ZWLG9hLFcUsuayY9rRTPgb2iMlA"/>
+</div>
+<div class="p-6">
+<p class="text-electric-cyan font-label-md text-label-md mb-2">Equipment Care</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Best Mobile Rigs 2024</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4 line-clamp-2">Invest in the best tools for efficiency and longevity. We rank the top-rated setups for the new season.</p>
+<span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Read more <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="glass-card rounded-xl overflow-hidden border-t-4 border-electric-cyan group cursor-pointer hover:shadow-2xl transition-all">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A diverse team of professional car detailers having a morning briefing in a bright, modern office space. The atmosphere is collaborative and optimistic, with whiteboards showing growth charts. The UI aesthetic is mirrored in the clean, high-contrast environment, representing business scaling and professional success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLt6DMqUBa1tHwzzgaalLu3XrgxHJCIyoCpBN-pMXEPVBUSGtS12vMHZ4Glo0wuxPMVgHP4T9P9rij8cvv8q29fBMHgnYIZWB7WOjdf3Ymes0SzXiGN2efQO4iVQSeT-Rhb66k7MgrLXwl9SMIz1l7t-40PHurrsIHUdVDFo3DHxrScsbDAecX4SeL-yKwaBrSA18Q5NA6jok5mogWZzltwqxdNm4gskJhglCNvYt6PPQTWRoaVtFbBMFPA8EUwG2o16-Fz8VhqdF"/>
+</div>
+<div class="p-6">
+<p class="text-electric-cyan font-label-md text-label-md mb-2">Business Tips</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Scaling From a Solo Op</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4 line-clamp-2">Moving from one van to a fleet requires strategic planning and the right insurance coverage.</p>
+<span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Read more <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Post 3 -->
+<div class="glass-card rounded-xl overflow-hidden border-t-4 border-electric-cyan group cursor-pointer hover:shadow-2xl transition-all">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of a professional contract or waiver being signed with a premium fountain pen on a glossy surface. In the blurred background, a luxury car is being detailed. The image conveys legal protection and professional trust, using the brand colors of Midnight Blue and pristine whites with high-clarity lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYjXYua-qqUfr49I0OQNekh_zd-AX_6nthG7jv0kfBa6zWJomywq4LmWJZ3QFTGfgcYr9AB827RvJVLfutLsaYAkrHV-RkHSFGAuusFjlu9VfjYJJ2le68ackrAqGRwyF4LtX8UP0FqBugIpeBNKx2xLkq92_EHkUCg_LeVTjUhOW8QU8Pt65eSIWPLP_4allvEqjC_djPGEd0ar7jR6IshE4z1Ik23bXZIikbyPSH_QKMJ-JluSWDK5-cPraO4QS9aEus76pYHj3o"/>
+</div>
+<div class="p-6">
+<p class="text-electric-cyan font-label-md text-label-md mb-2">Legal Guidance</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Customer Waivers</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4 line-clamp-2">Never start a job without a signed agreement. Download our template for professional detailing services.</p>
+<span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Read more <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="glass-card p-12 rounded-2xl relative overflow-hidden bg-primary-container text-white">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] -rotate-12" data-icon="mail">mail</span>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg mb-4">Stay Ahead of the Competition</h2>
+<p class="font-body-lg text-body-lg mb-8 opacity-80">Get monthly detailing tips, insurance news, and business growth strategies delivered straight to your inbox.</p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 bg-white/10 border border-white/20 rounded-xl px-6 py-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-electric-cyan focus:border-transparent outline-none transition-all" placeholder="Your professional email" type="email"/>
+<button class="bg-alert-amber text-midnight-blue font-bold px-10 py-4 rounded-xl font-headline-md text-body-md shadow-lg hover:bg-white transition-all scale-98-active">
+                                Subscribe
+                            </button>
+</form>
+<p class="mt-4 font-caption text-caption opacity-60">We respect your privacy. Unsubscribe at any time.</p>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-on-background dark:bg-on-tertiary-fixed border-t border-outline/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-surface-container-lowest">DetailGuard</div>
+<p class="font-body-md text-body-md text-outline-variant">Specialized insurance for mobile detailers and automotive restoration experts.</p>
+<div class="flex gap-4 mt-2">
+<a class="text-outline-variant hover:text-electric-cyan" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="text-outline-variant hover:text-electric-cyan" href="#"><span class="material-symbols-outlined" data-icon="thumb_up">thumb_up</span></a>
+<a class="text-outline-variant hover:text-electric-cyan" href="#"><span class="material-symbols-outlined" data-icon="video_library">video_library</span></a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-electric-cyan">Resources</h4>
+<nav class="flex flex-col gap-2">
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Coverage Details</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Claims Center</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">State Directory</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-electric-cyan">Company</h4>
+<nav class="flex flex-col gap-2">
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Agent Portal</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-electric-cyan">Contact</h4>
+<div class="flex flex-col gap-2">
+<p class="font-body-md text-body-md text-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="phone">phone</span>
+                        1-800-DET-GURD
+                    </p>
+<p class="font-body-md text-body-md text-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="mail">mail</span>
+                        hello@detailguard.com
+                    </p>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-white/5 px-margin-desktop max-w-container-max mx-auto">
+<p class="font-caption text-caption text-outline-variant text-center">
+                © 2024 DetailGuard Insurance. All rights reserved. Licensed in all 50 states.
+            </p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for sidebar active state
+        const navItems = document.querySelectorAll('aside nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(nav => {
+                    nav.classList.remove('bg-secondary-container/20', 'text-on-secondary-container', 'font-bold');
+                    nav.classList.add('text-on-surface-variant');
+                });
+                item.classList.add('bg-secondary-container/20', 'text-on-secondary-container', 'font-bold');
+                item.classList.remove('text-on-surface-variant');
+            });
+        });
+
+        // Set initial active state for Resource Center
+        navItems[0].classList.add('bg-secondary-container/20', 'text-on-secondary-container', 'font-bold');
+    </script>
+</body></html>

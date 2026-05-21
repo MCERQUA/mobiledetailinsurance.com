@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.1);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+        }
+        .accordion-item.active .rotate-icon {
+            transform: rotate(180deg);
+        }
+        .scale-98-active:active {
+            transform: scale(0.98);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#161c22",
+                        "outline": "#757682",
+                        "on-background": "#111c2d",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "primary-container": "#1e3a8a",
+                        "background": "#f9f9ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-secondary-fixed": "#001f26",
+                        "error-container": "#ffdad6",
+                        "electric-cyan": "#06B6D4",
+                        "on-tertiary-container": "#a6adb4",
+                        "inverse-primary": "#b6c4ff",
+                        "outline-variant": "#c5c5d3",
+                        "on-primary-fixed-variant": "#264191",
+                        "secondary-container": "#57dffe",
+                        "on-surface-variant": "#444651",
+                        "tertiary-fixed": "#dde3eb",
+                        "secondary": "#00687a",
+                        "inverse-on-surface": "#ecf1ff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#111c2d",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#acedff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e7eeff",
+                        "success-green": "#10B981",
+                        "error": "#ba1a1a",
+                        "glossy-silver": "#F1F5F9",
+                        "surface-variant": "#d8e3fb",
+                        "primary": "#00236f",
+                        "alert-amber": "#EAB308",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "midnight-blue": "#1E3A8A",
+                        "on-primary-container": "#90a8ff",
+                        "tertiary": "#252b31",
+                        "surface-tint": "#4059aa",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-secondary-container": "#006172",
+                        "surface-bright": "#f9f9ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-surface": "#263143",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "tertiary-container": "#3a4147",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "tertiary-fixed-dim": "#c1c7cf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "caption": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-white/20 h-20">
+<div class="flex items-center justify-between px-margin-desktop h-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-midnight-blue">DetailGuard</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">Auto Coverage</a>
+<a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">Liability</a>
+<a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">Equipment</a>
+<a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">Blog</a>
+<a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">States</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-electric-cyan cursor-pointer">Login</button>
+<button class="bg-alert-amber text-midnight-blue font-headline-md text-label-md px-6 py-3 rounded-lg font-bold hover:brightness-110 active:opacity-80 transition-all">Get Quote</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<!-- Hero Header -->
+<section class="mb-20 text-center">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Trust &amp; Expert Guidance</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    We specialize in protecting mobile detailing businesses. See why thousands of professionals trust DetailGuard for their specialized insurance needs.
+                </p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Side Navigation / Resource Center -->
+<aside class="lg:col-span-3">
+<div class="w-64 flex flex-col gap-2 p-base bg-surface-container-low/50 backdrop-blur-xl rounded-xl h-fit sticky top-24 border border-white/10 shadow-md">
+<div class="px-4 py-2 mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Resource Center</h3>
+<p class="font-caption text-caption text-on-surface-variant">Expert Detailing Guides</p>
+</div>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-label-md text-label-md">Safety Tips</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-md text-label-md">Marketing Guide</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md text-label-md">Insurance 101</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container/20 text-on-secondary-container font-bold rounded-lg px-4 py-2 scale-98-active" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md text-label-md">Success Stories</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-md text-label-md">State Laws</span>
+</a>
+</div>
+</aside>
+<!-- Content Area -->
+<div class="lg:col-span-9">
+<!-- Testimonials Grid -->
+<div class="mb-20">
+<div class="flex items-center gap-2 mb-8 border-l-4 border-electric-cyan pl-4">
+<h2 class="font-headline-lg text-headline-lg text-primary">Member Testimonials</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Testimonial 1 -->
+<div class="glass-card rounded-xl p-8 border-t-4 border-electric-cyan">
+<div class="flex text-alert-amber mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6">
+                                    "Switching to DetailGuard was the best move for my mobile unit. The claims process is incredibly fast, and they actually understand the equipment I use daily. I feel protected on every job site."
+                                </p>
+<div class="flex items-center gap-4">
+<img alt="Jason R." class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A professional headshot of a friendly-looking middle-aged man with a short beard, wearing a clean charcoal grey polo shirt. He is outdoors with a blurred high-end mobile detailing van in the background, illuminated by bright, morning natural sunlight. The image has a professional, high-contrast look that fits a corporate modern aesthetic with vibrant cyan accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACoa7bed9AdcpriDE3y7CRlejZdrWGjpfNMDqKHkXe-AluzeDKk3X9KpMCLOGE8jwFQLRNRpf4XOyJ5QLOFOedT66LYOvjatmGcfYpkjb63lwsyAKLA2GjAZfUYZZhiZSSUWzuFkeRZ1MLu5ekU-I1YAAA-apMEF_tLvulx2USjhGhASsJRukxExowuXIiDOHcbZkAt-h5m_-4aKZm6g220DTAPjBtF4_cN7zy8iZaZyHxP6OB-ZZZDS9ZbwtTvHgjVhqBdYxPd_-L"/>
+<div>
+<p class="font-label-md text-label-md text-midnight-blue">Jason R.</p>
+<p class="font-caption text-caption text-outline">Pristine Auto Detail, TX</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-card rounded-xl p-8 border-t-4 border-electric-cyan">
+<div class="flex text-alert-amber mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6">
+                                    "As a solo detailer, I needed coverage that wasn't overpriced but provided real liability protection. DetailGuard's Garage Keepers policy gave me the peace of mind to handle high-end ceramic coatings."
+                                </p>
+<div class="flex items-center gap-4">
+<img alt="Sarah K." class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A professional portrait of a confident woman in her 30s with her hair tied back, wearing a navy blue branded apron. She is standing in a brightly lit, clean garage environment with soft focus on a polished luxury car behind her. The lighting is crisp and clean, reflecting a high-end automotive care environment with cool blue tones and a bright, trustworthy atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqLKKL1uDWOeCDtKCcazyg1VZnaYHQ31L5gsOG3epnLVdww5Bqb8BsKHFiz6UljsOssRk3FNiEbSMSZfNodyDkbPmrBr0Xapi4NK8TCkX0Hgnhxs_GKgHS1_yqfYA1oWtRUps3UUGPbm-HJG3MJdDmzKNt1HNTxn9YUyqfODwPc78szMFgX_qM_YVaxmAk6utU7hvwcmjM1GkFW5stsF3RduUXVR8S8eXfCZSmxerpSq7JhiU5B3ES00kvqYA2VAHuMjTMPpiqk_rm"/>
+<div>
+<p class="font-label-md text-label-md text-midnight-blue">Sarah K.</p>
+<p class="font-caption text-caption text-outline">Elite Shine Detailing, FL</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Accordion Section -->
+<section>
+<div class="flex items-center gap-2 mb-8 border-l-4 border-electric-cyan pl-4">
+<h2 class="font-headline-lg text-headline-lg text-primary">Frequently Asked Questions</h2>
+</div>
+<div class="space-y-4">
+<!-- Accordion Item 1 -->
+<div class="accordion-item glass-card rounded-xl overflow-hidden">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-variant/20 transition-colors" onclick="toggleAccordion(this)">
+<span class="font-headline-md text-headline-md text-midnight-blue">What types of insurance do I need?</span>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant border-t border-outline/10">
+                                        For mobile detailing, the core "must-haves" are General Liability (protection against property damage or injury) and Garage Keepers Liability (covers the customer's vehicle while in your care). Many also opt for Inland Marine to cover expensive equipment like pressure washers and polishers.
+                                    </div>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="accordion-item glass-card rounded-xl overflow-hidden">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-variant/20 transition-colors" onclick="toggleAccordion(this)">
+<span class="font-headline-md text-headline-md text-midnight-blue">Cost of insurance?</span>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant border-t border-outline/10">
+                                        Policies for mobile detailers typically start around $50-$80 per month depending on your location, business size, and coverage limits. We offer flexible payment plans to fit your cash flow.
+                                    </div>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="accordion-item glass-card rounded-xl overflow-hidden">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-variant/20 transition-colors" onclick="toggleAccordion(this)">
+<span class="font-headline-md text-headline-md text-midnight-blue">Garage Keepers Liability</span>
+<span class="material-symbols-outlined rotate-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant border-t border-outline/10">
+                                        This is a critical coverage that specifically protects you if a customer's vehicle is damaged while it is in your possession—whether you're detailing it, storing it, or moving it. It bridges the gap that standard general liability often leaves open.
+                                    </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Large CTA Footer -->
+<section class="bg-primary py-20 overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#06B6D4,transparent_50%)]"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop text-center relative z-10">
+<h2 class="font-headline-xl text-headline-xl text-surface-container-lowest mb-8">Ready to Protect Your Passion?</h2>
+<button class="bg-alert-amber text-midnight-blue font-headline-xl text-headline-lg px-12 py-6 rounded-xl font-extrabold hover:scale-105 active:scale-95 transition-all shadow-xl">
+                GET YOUR FAST QUOTE
+            </button>
+<p class="mt-6 font-label-md text-label-md text-on-primary-container">Get covered in under 5 minutes. No hidden fees.</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-on-background dark:bg-on-tertiary-fixed border-t border-outline/20 py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-surface-container-lowest mb-4">DetailGuard</div>
+<p class="font-caption text-caption text-outline-variant leading-relaxed">
+                    Providing specialized insurance solutions for the automotive detailing industry with precision and care.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-electric-cyan uppercase tracking-wider">Services</h4>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Coverage Details</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Claims Center</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Agent Portal</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-electric-cyan uppercase tracking-wider">Resources</h4>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">State Directory</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-electric-cyan uppercase tracking-wider">Connect</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-electric-cyan">share</span>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-electric-cyan">mail</span>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-electric-cyan">call</span>
+</div>
+<p class="font-caption text-caption text-outline-variant mt-4">Support: 1-800-DET-GUARD</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-12 pt-8 border-t border-outline/10 text-center">
+<p class="font-caption text-caption text-outline-variant">© 2024 DetailGuard Insurance. All rights reserved. Licensed in all 50 states.</p>
+</div>
+</footer>
+<script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Simple parallax effect for glass cards on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.glass-card');
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            cards.forEach(card => {
+                card.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body></html>

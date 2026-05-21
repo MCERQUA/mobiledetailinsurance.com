@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>State Coverage | DetailGuard Insurance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark-glass-card {
+            background: rgba(17, 28, 45, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .scale-98-active:active {
+            transform: scale(0.98);
+        }
+        .state-svg path {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            fill: #1e3a8a;
+            stroke: #ffffff;
+            stroke-width: 0.5;
+        }
+        .state-svg path:hover {
+            fill: #06B6D4;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#161c22",
+                      "outline": "#757682",
+                      "on-background": "#111c2d",
+                      "surface-container-high": "#dee8ff",
+                      "surface": "#f9f9ff",
+                      "primary-container": "#1e3a8a",
+                      "background": "#f9f9ff",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-secondary-fixed": "#001f26",
+                      "error-container": "#ffdad6",
+                      "electric-cyan": "#06B6D4",
+                      "on-tertiary-container": "#a6adb4",
+                      "inverse-primary": "#b6c4ff",
+                      "outline-variant": "#c5c5d3",
+                      "on-primary-fixed-variant": "#264191",
+                      "secondary-container": "#57dffe",
+                      "on-surface-variant": "#444651",
+                      "tertiary-fixed": "#dde3eb",
+                      "secondary": "#00687a",
+                      "inverse-on-surface": "#ecf1ff",
+                      "on-error": "#ffffff",
+                      "on-surface": "#111c2d",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#acedff",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#e7eeff",
+                      "success-green": "#10B981",
+                      "error": "#ba1a1a",
+                      "glossy-silver": "#F1F5F9",
+                      "surface-variant": "#d8e3fb",
+                      "primary": "#00236f",
+                      "alert-amber": "#EAB308",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#00164e",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-dim": "#cfdaf2",
+                      "midnight-blue": "#1E3A8A",
+                      "on-primary-container": "#90a8ff",
+                      "tertiary": "#252b31",
+                      "surface-tint": "#4059aa",
+                      "surface-container-highest": "#d8e3fb",
+                      "on-secondary-container": "#006172",
+                      "surface-bright": "#f9f9ff",
+                      "primary-fixed": "#dce1ff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#41474e",
+                      "surface-container-low": "#f0f3ff",
+                      "inverse-surface": "#263143",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "tertiary-container": "#3a4147",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "tertiary-fixed-dim": "#c1c7cf"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "margin-desktop": "40px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Montserrat"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "caption": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-on-tertiary-fixed/80 border-b border-white/20 shadow-sm h-20">
+<div class="flex items-center justify-between px-margin-desktop h-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-midnight-blue dark:text-primary-fixed">DetailGuard</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">Auto Coverage</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">Liability</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">Equipment</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-electric-cyan transition-colors duration-200" href="#">Blog</a>
+<a class="font-label-md text-label-md text-electric-cyan border-b-2 border-electric-cyan pb-1" href="#">States</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim hover:text-electric-cyan transition-colors">Login</button>
+<button class="bg-alert-amber text-midnight-blue px-6 py-2 rounded-lg font-headline-md text-label-md font-bold hover:bg-alert-amber/90 transition-colors shadow-sm">Get Quote</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section with Dark Automotive Theme -->
+<section class="relative min-h-[600px] flex items-center bg-on-background overflow-hidden">
+<!-- Background Image with prompt -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40" data-alt="A cinematic, low-angle shot of a high-end luxury sports car's hood showing perfect ceramic coating water beading. The lighting is dramatic and moody, dominated by deep midnight blue and charcoal tones, with bright electric cyan reflections mimicking neon city lights. The aesthetic is ultra-modern, professional, and high-performance, emphasizing the protective nature of the DetailGuard brand through a high-contrast automotive environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZh4kf8g3a8wnIK-cX810Qpmd90N6fTWVSyzs6N4qTDkoUHtt-9E1YXhMc3IHbHVjc3U_myFVxHQykkaP9nJfd5O1F4Eh9UXGDKKnsbA4ki-JFdzpOfdpCJc2t-Ejc4KMgkwKkyjOd4hqA-meHYvvU18glvq37d0x2jWPZrciQmN1vQr7s4G04vJbzaLTrpURIAPT3WXCXo7GshXilvpx-w7pjmcJIYvsKdu4bcQEaXTIhqQ06lB1Ba6JLYKfNpnw1uj4crWCa0X-m"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-background via-on-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="text-white space-y-6">
+<span class="inline-block py-1 px-3 rounded bg-electric-cyan/20 border border-electric-cyan/30 text-electric-cyan font-label-md text-label-md">NATIONWIDE PROTECTION</span>
+<h1 class="font-headline-xl text-headline-xl">Coverage for Detailers in Every State</h1>
+<p class="font-body-lg text-body-lg text-outline-variant max-w-lg">We provide specialized liability and equipment coverage tailored to the specific environmental and business laws of your region.</p>
+<div class="relative max-w-md">
+<input class="w-full bg-glossy-silver/10 border border-white/20 rounded-xl px-6 py-4 text-white focus:outline-none focus:ring-2 focus:ring-electric-cyan transition-all backdrop-blur-md" placeholder="Search your state..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant">search</span>
+</div>
+</div>
+<!-- Interactive SVG Map Placeholder -->
+<div class="hidden md:block">
+<div class="dark-glass-card p-6 rounded-2xl">
+<h3 class="text-white font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-cyan">map</span> Coverage Map
+                        </h3>
+<div class="aspect-[1.6/1] bg-midnight-blue/30 rounded-xl flex items-center justify-center border border-white/10 relative overflow-hidden group">
+<!-- Simplified USA SVG Map -->
+<svg class="state-svg w-full h-full p-4" viewbox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+<path class="hover:fill-electric-cyan" d="M100,100 L200,100 L200,200 L100,200 Z" title="Sample State"></path>
+<!-- Interactive visual representing a map -->
+<g transform="translate(50,50) scale(0.9)">
+<path class="opacity-30" d="M150,150 Q450,50 850,150 T850,450 Q450,550 150,450 T150,150" fill="none" stroke="#06B6D4" stroke-dasharray="10,5" stroke-width="2"></path>
+<circle cx="200" cy="200" fill="#06B6D4" r="8"></circle>
+<circle cx="800" cy="200" fill="#06B6D4" r="8"></circle>
+<circle cx="500" cy="350" fill="#06B6D4" r="8"></circle>
+<circle cx="300" cy="450" fill="#06B6D4" r="8"></circle>
+<circle cx="700" cy="450" fill="#06B6D4" r="8"></circle>
+</g>
+<text class="font-headline-md text-headline-md opacity-20 pointer-events-none" fill="#FFFFFF" text-anchor="middle" x="500" y="300">INTERACTIVE USA MAP</text>
+</svg>
+<div class="absolute bottom-4 left-4 flex gap-4">
+<div class="flex items-center gap-2 text-white font-caption text-caption">
+<span class="w-3 h-3 bg-midnight-blue border border-white/40"></span> Standard
+                                </div>
+<div class="flex items-center gap-2 text-white font-caption text-caption">
+<span class="w-3 h-3 bg-electric-cyan"></span> Eco-Zone
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Area with SideNav -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-20 flex flex-col md:flex-row gap-12">
+<!-- Side Navigation Component -->
+<aside class="w-full md:w-64 flex flex-col gap-2 p-base bg-surface-container-low/50 backdrop-blur-xl rounded-xl h-fit sticky top-24 border border-white/10 shadow-md">
+<div class="px-4 py-4 mb-2">
+<h4 class="font-headline-md text-headline-md text-primary">Resource Center</h4>
+<p class="font-caption text-caption text-on-surface-variant">Expert Detailing Guides</p>
+</div>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-electric-cyan">shield</span>
+<span class="font-label-md text-label-md">Safety Tips</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-electric-cyan">campaign</span>
+<span class="font-label-md text-label-md">Marketing Guide</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-electric-cyan">menu_book</span>
+<span class="font-label-md text-label-md">Insurance 101</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-electric-cyan">stars</span>
+<span class="font-label-md text-label-md">Success Stories</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container/20 text-on-secondary-container font-bold rounded-lg px-4 py-2" href="#">
+<span class="material-symbols-outlined text-electric-cyan">map</span>
+<span class="font-label-md text-label-md">State Laws</span>
+</a>
+</aside>
+<!-- Main Grid Canvas -->
+<div class="flex-1 space-y-12">
+<!-- Info Card -->
+<div class="glass-card border-t-4 border-electric-cyan p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center shadow-md">
+<div class="p-4 bg-primary-container rounded-full text-white">
+<span class="material-symbols-outlined text-[40px]">gavel</span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-midnight-blue mb-2">State Regulations Vary</h2>
+<p class="text-on-surface-variant font-body-md">From California's strict water runoff laws to Florida's humidity-specific workplace safety standards, we ensure your policy is compliant with local requirements. Our agents specialize in navigating regional detailing mandates.</p>
+</div>
+</div>
+<!-- Major States Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Alabama -->
+<div class="glass-card group hover:border-electric-cyan/50 transition-all cursor-pointer rounded-xl overflow-hidden shadow-sm scale-98-active">
+<div class="h-32 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A sun-drenched coastal road in Alabama with high-key lighting and a soft atmospheric haze. The scene features lush green pine trees lining a modern asphalt highway under a bright blue sky, conveying a sense of southern freedom and professional reliability within the DetailGuard design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFjfzAiBoxGPig8mvPp1SrB5sFIlfBnCfbpFjxBZXuvoeV0NeHWZxwK71C07amYMvjtOYZfc_nUoHBd1GEKPNfUB3JAksy30JyIL86KAwgY008-zN05csH9Zkgkj2SV1bYeUELbTqIWAMs98BcV5lqUFZVAdXq1ZlxTwKxS687jTyEyFAu4xj_MRbi-Pm1LzqYTj6qiS_LTiaQm31jjy_ONnykjtwo0INREJd5ei3mOu2ILKwcWvjHFJ6GeKNhpshBEnUQM1fG3LZL"/>
+<div class="absolute top-4 right-4 bg-success-green text-white px-3 py-1 rounded-full font-label-md text-caption">AVAILABLE</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 flex justify-between items-center">
+                                ALABAMA
+                                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform text-electric-cyan">arrow_forward</span>
+</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Standard Detailing Coverage</p>
+</div>
+</div>
+<!-- California -->
+<div class="glass-card group hover:border-electric-cyan/50 transition-all cursor-pointer rounded-xl overflow-hidden shadow-sm scale-98-active">
+<div class="h-32 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A scenic view of the California coast with clear turquoise water and golden hour lighting. The image emphasizes environmental purity and high-end automotive care locations, using a vibrant and clean aesthetic that matches the DetailGuard professional corporate modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6ZXxx41sVvScPBHFLCrOO1MxD2OsWP7lAIh4JENAmFL9TlH2u30RrhtPP9_JdNqpx08202mOfnft87RShUI4O8BV3rnCYzYlTUpDU6mAkwzEWs50OChvips-eAOtOD6IECSpv7Xi6bKCGIt1rFxOu4Se74shqqFkERjK1ZcawLQ2x8Aj2UfSabn86h828Loi0-5qD-G6ZuU9HmqWHiru_HrwaPiSTJHAl2Trm6WhmDjjWYj-IH_Teci3oPaC0OxlP_SxlER6p3Tn8"/>
+<div class="absolute top-4 left-4 bg-electric-cyan text-white px-3 py-1 rounded-full font-label-md text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">eco</span> ECO-ZONE
+                            </div>
+<div class="absolute top-4 right-4 bg-success-green text-white px-3 py-1 rounded-full font-label-md text-caption">AVAILABLE</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 flex justify-between items-center">
+                                CALIFORNIA
+                                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform text-electric-cyan">arrow_forward</span>
+</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Runoff &amp; Water Compliance</p>
+</div>
+</div>
+<!-- Florida -->
+<div class="glass-card group hover:border-electric-cyan/50 transition-all cursor-pointer rounded-xl overflow-hidden shadow-sm scale-98-active">
+<div class="h-32 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A bright, tropical Florida setting with vibrant palm trees and modern architecture. The lighting is high-key and sunny, showcasing a clean, well-maintained commercial area. The color palette includes soft blues and warm whites, consistent with the DetailGuard accessible yet expert brand personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJVQ9bc6Pr4r9apPDZuv45guxklZCBTUsu-PzzYLpAITi7oZmJYvKbqWZsHuUmKBFgNzA2sgnYp1iEPdzvdgttQRrpG9fb_YcQV4tocSztlVXpqYzf9JslRR-euI4-Px212sHw3eWiu96CNNvStBuNpzkOLr8RUK-3s32GGxmeT_J6ICwZCAyhKnGfM0Q7ikNP8Ns7EhZaymmYmz7f1vQajX4568wSLPCsYRLtkXvdTDc7Z_gmBNZrOl7ozd8kQq7SwaJgzgDTxa3"/>
+<div class="absolute top-4 right-4 bg-success-green text-white px-3 py-1 rounded-full font-label-md text-caption">AVAILABLE</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 flex justify-between items-center">
+                                FLORIDA
+                                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform text-electric-cyan">arrow_forward</span>
+</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Humidity &amp; UV Equipment Riders</p>
+</div>
+</div>
+<!-- New York -->
+<div class="glass-card group hover:border-electric-cyan/50 transition-all cursor-pointer rounded-xl overflow-hidden shadow-sm scale-98-active">
+<div class="h-32 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A modern urban New York cityscape with sleek glass skyscrapers reflecting a clear blue sky. The visual style is crisp, professional, and corporate, highlighting the high-performance and expert nature of the DetailGuard brand. The lighting is bright and architectural." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qEq9AzXXcmo_2ZhKEb15gSH-VScfWdRMheHywlFG9z2raL3KwyrZ0DqZRVeSKTBQo7e8l65cJSmSuaApViCgKNMyyd8JE_0mTIQQKc0C7VXx5GCjlSxm2cGTsnrQ5FVv-HjrFU5TUNVcuu6d4bMbuqLr-Mo7btUo9KHcSeVyefzdM8ojTBhfdVU1KMnbF4NbMWwFk8sMZxwy0KNfzTXd9jdWkoCD21VQT3ddTaFu2xEmVpNeB_PsEZzoffTILkpgsUdGDypV4ITY"/>
+<div class="absolute top-4 right-4 bg-success-green text-white px-3 py-1 rounded-full font-label-md text-caption">AVAILABLE</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 flex justify-between items-center">
+                                NEW YORK
+                                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform text-electric-cyan">arrow_forward</span>
+</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Mobile Unit Liability Plus</p>
+</div>
+</div>
+<!-- Texas -->
+<div class="glass-card group hover:border-electric-cyan/50 transition-all cursor-pointer rounded-xl overflow-hidden shadow-sm scale-98-active">
+<div class="h-32 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="An expansive Texas landscape with a vast horizon and wide open roads. The lighting is bold and warm, emphasizing a sense of scale and protection. The design maintains the professional DetailGuard aesthetic with high-contrast colors and a clean, high-performance feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiOShtfX8QfO_tpMQiVPBtR543Mwy1Tnmq640Fsi-zhck47Qj3R22yr8004qJrnmdHV4RBaM0I2AcQQ5oAyyud3JZNWTw5n96Hf2hzTbI95T6asNdSuQycs9RXDBaM5UNVlYRnNcfEK7I8jNvuADLSFJgyyGi2F3oJVO6g4c5sPTsmybZ6OArVIQlWY_psE8p4ZBaBM0EAM-WRPwmv8V8WbSKRlodx859l8JNi2tBFU5ni2H2fBUwaH7wyirMjs7DkrYdq8AAXEgF_"/>
+<div class="absolute top-4 right-4 bg-success-green text-white px-3 py-1 rounded-full font-label-md text-caption">AVAILABLE</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 flex justify-between items-center">
+                                TEXAS
+                                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform text-electric-cyan">arrow_forward</span>
+</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Fleet &amp; Multi-Unit Coverage</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="bg-midnight-blue py-20">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-headline-xl text-headline-xl text-white mb-4">Ready to protect your business?</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim mb-10 max-w-2xl mx-auto">Join thousands of professional detailers across the country who trust DetailGuard for their specialized insurance needs.</p>
+<button class="bg-alert-amber text-midnight-blue px-12 py-5 rounded-xl font-headline-md text-headline-md font-extrabold hover:scale-105 active:scale-95 transition-all shadow-xl">
+                    START YOUR QUOTE
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-on-background dark:bg-on-tertiary-fixed w-full py-12 border-t border-outline/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md text-surface-container-lowest font-bold">DetailGuard</div>
+<p class="font-caption text-caption text-outline-variant">© 2024 DetailGuard Insurance. All rights reserved. Licensed in all 50 states.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-white font-label-md text-label-md">Coverage</h5>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Coverage Details</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Claims Center</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Agent Portal</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-white font-label-md text-label-md">Company</h5>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">State Directory</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-outline-variant hover:text-alert-amber transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-white font-label-md text-label-md">Connect With Us</h5>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-glossy-silver/10 flex items-center justify-center text-electric-cyan hover:bg-electric-cyan hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-glossy-silver/10 flex items-center justify-center text-electric-cyan hover:bg-electric-cyan hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-glossy-silver/10 flex items-center justify-center text-electric-cyan hover:bg-electric-cyan hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined">call</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the map
+        document.querySelectorAll('.state-svg path').forEach(path => {
+            path.addEventListener('mouseenter', () => {
+                path.style.filter = 'drop-shadow(0 0 8px rgba(6, 182, 212, 0.5))';
+            });
+            path.addEventListener('mouseleave', () => {
+                path.style.filter = 'none';
+            });
+        });
+    </script>
+</body></html>
