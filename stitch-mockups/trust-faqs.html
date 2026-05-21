@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mobile Detail Insurance | Testimonials &amp; FAQ</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Montserrat & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#001f26",
+                    "alert-amber": "#EAB308",
+                    "inverse-surface": "#263143",
+                    "primary": "#00236f",
+                    "on-background": "#111c2d",
+                    "on-tertiary-fixed": "#161c22",
+                    "glossy-silver": "#F1F5F9",
+                    "outline-variant": "#c5c5d3",
+                    "surface-bright": "#f9f9ff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "success-green": "#10B981",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#004e5c",
+                    "on-surface-variant": "#444651",
+                    "surface-container-high": "#dee8ff",
+                    "on-primary-fixed-variant": "#264191",
+                    "surface-tint": "#4059aa",
+                    "midnight-blue": "#1E3A8A",
+                    "surface-variant": "#d8e3fb",
+                    "inverse-primary": "#b6c4ff",
+                    "secondary-fixed-dim": "#4cd7f6",
+                    "background": "#f9f9ff",
+                    "on-surface": "#111c2d",
+                    "on-secondary": "#ffffff",
+                    "electric-cyan": "#06B6D4",
+                    "surface-container": "#e7eeff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#00164e",
+                    "tertiary-fixed-dim": "#c1c7cf",
+                    "on-tertiary-fixed-variant": "#41474e",
+                    "on-error-container": "#93000a",
+                    "surface": "#f9f9ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#dde3eb",
+                    "surface-dim": "#cfdaf2",
+                    "outline": "#757682",
+                    "on-tertiary-container": "#a6adb4",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#90a8ff",
+                    "secondary-fixed": "#acedff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#006172",
+                    "surface-container-highest": "#d8e3fb",
+                    "secondary-container": "#57dffe",
+                    "surface-container-low": "#f0f3ff",
+                    "secondary": "#00687a",
+                    "primary-container": "#1e3a8a",
+                    "tertiary": "#252b31",
+                    "tertiary-container": "#3a4147",
+                    "primary-fixed": "#dce1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .racing-stripe {
+            border-top: 4px solid #06B6D4;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-open .accordion-content {
+            max-height: 500px;
+        }
+        .accordion-open .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-white/20 shadow-sm shadow-midnight-blue/10 docked full-width top-0 sticky z-40 flex justify-between items-center w-full px-margin-mobile h-16">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed cursor-pointer">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-midnight-blue dark:text-primary-fixed">Mobile Detail Insurance</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a successful business owner in a modern corporate setting. The lighting is bright and high-key, emphasizing a clean and professional look with a soft background blur. The color palette features cool blues and crisp whites to match a premium insurance brand aesthetic. The individual has a confident, approachable expression, representing expert service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCledS4k0M8p12K5e9hskl143ODsL-lzRp8_69hdYYokEofs8phNqOLJcTTEWkbvXGVfbiYoAdrI5nFJ69B4YrBP46zkxgVXPhG6KlVm5KhmVrI0ETXET7Gg-R9ZZTozEcH8GR09G2rACeMYkSo1j71ShvdDr3-hh2fpJdozdQ1uc1-x7K_IYSHDlwg9emKViANDPldt3TnQWiadgyUp72pzcy3jSz68PAShRzKyTSaIhxGINHFUYsauyb_KYkDcsjyVlZwE6jEdj64"/>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-12 pb-32">
+<!-- Hero Section -->
+<section class="mb-16 text-center">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-midnight-blue mb-4">Trust Built on Polish &amp; Performance</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">See how we protect the businesses that keep the world shining, and get answers to your most pressing coverage questions.</p>
+</section>
+<!-- Testimonials Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-20">
+<!-- Jason R. -->
+<div class="glass-card racing-stripe rounded-xl p-8 flex flex-col justify-between shadow-2xl shadow-midnight-blue/5">
+<div>
+<div class="flex items-center gap-1 text-alert-amber mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-8">"Switched to Mobile Detail Insurance after a competitor dragged their feet on a simple glass claim. These guys understood exactly what my mobile setup needed. Fast, professional, and they speak my language."</p>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Jason R." class="w-14 h-14 rounded-full border-2 border-electric-cyan shadow-sm object-cover" data-alt="A high-quality, professional headshot of a man in his late 30s, Jason R., appearing as a small business owner. The setting is an outdoor, bright environment with a clean mobile detailing van visible in the soft-focus background. The lighting is natural and crisp, highlighting a polished and reliable professional image. The overall vibe is trustworthy and successful, consistent with a high-end automotive care brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmY9zV32AveApd0By7azi4LV-xn465depXRBJdmYnQuRoueZ7plfdCAaEf-v_uvu6DSoSWoDFX8Ns5xu4wTi_RKpessS9fjzOcOKqVwG2cT4Dp0BlYQZ72JgIAdS2SZhuuA-Z8BjRaNdWAM_xoFquECqHPTDAX6VfmCEVYhCgJmmi8KSwdqz803TrnCoRUkAJhTfr2qhwu3FjZ0CWz8XiCnLfTtsbaVar56my6AcvdvQxvDv951CRThqMZMlRw-G-YEZQmIktWVZwL"/>
+<div>
+<p class="font-label-md text-label-md text-midnight-blue">Jason R.</p>
+<p class="font-caption text-caption text-on-surface-variant">Owner, Elite Shine Detailing</p>
+</div>
+</div>
+</div>
+<!-- Sarah K. -->
+<div class="glass-card racing-stripe rounded-xl p-8 flex flex-col justify-between shadow-2xl shadow-midnight-blue/5">
+<div>
+<div class="flex items-center gap-1 text-alert-amber mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-8">"The Garage Keepers Liability coverage gave me the peace of mind to handle high-end exotics. Sarah K. here—my premium actually went down while my coverage limits increased. Best decision for my business growth."</p>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Sarah K." class="w-14 h-14 rounded-full border-2 border-electric-cyan shadow-sm object-cover" data-alt="A professional portrait of a woman in her 40s, Sarah K., who radiates confidence and expertise as a business leader. She is standing in a brightly lit, modern office space with clean lines and a high-end corporate aesthetic. The image uses a cool color palette with subtle cyan accents. Her expression is warm yet professional, embodying the reliable and protective personality of a premier insurance brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOCbquEpfz2HgqaDNPUNa6PfYdj_XyhHPCb3lUjVr64napqKTNvj704XOa0X-4l3D3YxdJ0qSZttdwRCLDh4k66eHlSsMSzsB3UWqAPQjFZLrZGIdmzARGFKn6hrwoPpaXS7zzFNUPy-MPbvB11Pc5rhEkwmjeEfHE5CfPGQykqXe1dpMo7IPOuFk_4G_Y0mYoh4H3T89Soq8J5KFXenX_nvn_CRqmU8yf-hDRrpo98KGN9lt59CrEc0cYrfAmxbq5PV2xiUOhXNOB"/>
+<div>
+<p class="font-label-md text-label-md text-midnight-blue">Sarah K.</p>
+<p class="font-caption text-caption text-on-surface-variant">Director, Ceramic Pro Solutions</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-3xl mx-auto">
+<div class="text-center mb-10">
+<span class="font-label-md text-label-md text-electric-cyan uppercase tracking-widest">Common Questions</span>
+<h2 class="font-headline-md text-headline-md text-midnight-blue mt-2">Coverage Clarity</h2>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="faq-item glass-card rounded-xl overflow-hidden shadow-sm transition-all duration-300">
+<button class="w-full flex justify-between items-center p-6 text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)">
+<span class="font-label-md text-label-md text-midnight-blue">What types of insurance do I need?</span>
+<span class="material-symbols-outlined chevron-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant">
+                            Most mobile detailers require General Liability to protect against third-party injury and property damage. We also strongly recommend Garage Keepers Liability for vehicle custody and Equipment Coverage for your high-end machines and tools.
+                        </div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item glass-card rounded-xl overflow-hidden shadow-sm transition-all duration-300">
+<button class="w-full flex justify-between items-center p-6 text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)">
+<span class="font-label-md text-label-md text-midnight-blue">Cost of insurance?</span>
+<span class="material-symbols-outlined chevron-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant">
+                            Premiums vary based on location, experience, and coverage limits. Basic mobile detailing policies start as low as $40/month. We offer flexible payment plans designed to match the seasonal nature of automotive care.
+                        </div>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item glass-card rounded-xl overflow-hidden shadow-sm transition-all duration-300">
+<button class="w-full flex justify-between items-center p-6 text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)">
+<span class="font-label-md text-label-md text-midnight-blue">Garage Keepers Liability</span>
+<span class="material-symbols-outlined chevron-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-6 pt-0 font-body-md text-on-surface-variant">
+                            This is critical for any detailer who takes possession of a client's car. While General Liability covers your operations, Garage Keepers covers the physical damage to a customer's vehicle while it is in your care, custody, or control.
+                        </div>
+</div>
+</div>
+</div>
+<!-- CTA -->
+<div class="mt-16 text-center">
+<button class="bg-alert-amber text-midnight-blue font-headline-md text-label-md px-10 py-4 rounded-full shadow-lg hover:brightness-110 active:scale-95 transition-all uppercase tracking-wider">
+                    Get Your Fast Quote
+                </button>
+<p class="font-caption text-caption text-on-surface-variant mt-4">Takes less than 2 minutes. No credit card required.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-t border-white/20 shadow-[0_-4px_12px_rgba(30,58,138,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-label-md text-label-md">Coverage</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="#">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="font-label-md text-label-md">Quotes</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</nav>
+<script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isOpen = item.classList.contains('accordion-open');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el.classList.remove('accordion-open');
+            });
+
+            // Toggle current item
+            if (!isOpen) {
+                item.classList.add('accordion-open');
+            }
+        }
+
+        // Initialize first FAQ as open for visual demonstration
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstFaq = document.querySelector('.faq-item');
+            if(firstFaq) firstFaq.classList.add('accordion-open');
+        });
+    </script>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mobile Detail Insurance | Precision Coverage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(30, 58, 138, 0.4), rgba(0, 35, 111, 0.9));
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#001f26",
+                      "alert-amber": "#EAB308",
+                      "inverse-surface": "#263143",
+                      "primary": "#00236f",
+                      "on-background": "#111c2d",
+                      "on-tertiary-fixed": "#161c22",
+                      "glossy-silver": "#F1F5F9",
+                      "outline-variant": "#c5c5d3",
+                      "surface-bright": "#f9f9ff",
+                      "inverse-on-surface": "#ecf1ff",
+                      "success-green": "#10B981",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "on-surface-variant": "#444651",
+                      "surface-container-high": "#dee8ff",
+                      "on-primary-fixed-variant": "#264191",
+                      "surface-tint": "#4059aa",
+                      "midnight-blue": "#1E3A8A",
+                      "surface-variant": "#d8e3fb",
+                      "inverse-primary": "#b6c4ff",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "background": "#f9f9ff",
+                      "on-surface": "#111c2d",
+                      "on-secondary": "#ffffff",
+                      "electric-cyan": "#06B6D4",
+                      "surface-container": "#e7eeff",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#00164e",
+                      "tertiary-fixed-dim": "#c1c7cf",
+                      "on-tertiary-fixed-variant": "#41474e",
+                      "on-error-container": "#93000a",
+                      "surface": "#f9f9ff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#dde3eb",
+                      "surface-dim": "#cfdaf2",
+                      "outline": "#757682",
+                      "on-tertiary-container": "#a6adb4",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#90a8ff",
+                      "secondary-fixed": "#acedff",
+                      "on-primary": "#ffffff",
+                      "on-secondary-container": "#006172",
+                      "surface-container-highest": "#d8e3fb",
+                      "secondary-container": "#57dffe",
+                      "surface-container-low": "#f0f3ff",
+                      "secondary": "#00687a",
+                      "primary-container": "#1e3a8a",
+                      "tertiary": "#252b31",
+                      "tertiary-container": "#3a4147",
+                      "primary-fixed": "#dce1ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Montserrat"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-xl": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Montserrat"],
+                      "caption": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-white/20 shadow-sm shadow-midnight-blue/10 docked full-width top-0 sticky z-50 flex justify-between items-center w-full px-margin-mobile h-16">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-white/10 transition-colors p-2 rounded-full">menu</button>
+<h1 class="font-headline-md text-headline-md font-bold text-midnight-blue dark:text-primary-fixed">Mobile Detail Insurance</h1>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant/30">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional headshot of a business owner in a clean polo shirt, looking confident and approachable. The background is a brightly lit, high-end professional detailing studio with polished concrete floors and soft industrial lighting. The color palette is clean, dominated by cool blues and crisp whites, reflecting a trustworthy corporate modern insurance aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKwPy8QxbuseAxjRWe3T9UJT20U7kjId_gjJ2wcrkxgmaIhHwSQAluPa69PsPvZVWgco8hC7uN3RgSa-Sbqv2RleEn6zqSgMeezWxefYqIy40hVklGKjpGB63QagbvXNBireuHbAySkDHdBFLy4NQpx7xEOi7d3SGLz6z5jqX24HyGvHAvdcOc4g4otWlyHX4c0BKHHMKtFRJVdO2YMQzgGeILLUD31HTUARFo0GDu9z_Mb7K4Y--grwvtK5wFmfcfYQkcfAcm7jR"/>
+</div>
+</header>
+<main class="pb-24">
+<!-- Hero Section -->
+<section class="relative min-h-[618px] flex flex-col justify-end px-margin-mobile pb-12 overflow-hidden">
+<img alt="Professional Detailing" class="absolute inset-0 w-full h-full object-cover" data-alt="Close-up of a professional detailer's hands using a high-performance foam cannon on a dark luxury car. Dense, thick white soap suds are sliding down the polished metallic paint under bright, clear daylight. The scene captures the high-energy, technical aspect of mobile detailing with a premium, expert feel. Lighting is sharp, emphasizing the water droplets and surface textures in a vibrant, professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1h1lf8hSMtXNqrukZWMnz2VZPNfBKxZYQzsQn9nk1KF6pzSYu0kYrUF013R1CcWzkTEW-69AUDTB7YVWG_rPZ7udgWKkElin3h9r0wQQ30s68PP5qUfcIUg6EbReuf_SAcr8Roi8YZ-NUS_iWb8Dhx9Nl97xPnsGC_svCdzKj9wrc1QBiwu3oRapvnO4Qx4PrwHlTNivHrKXVzjPU4Tqp3HfrNE4TjbFUpJ8n9O438YP37sy1-GOB3bQjEnezcNeIZPOMn2rvYWUZ"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative z-10 space-y-6">
+<span class="inline-block px-4 py-1 rounded-full bg-electric-cyan text-white font-label-md text-label-md">SPECIALIZED COVERAGE</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white max-w-sm">Specialized Insurance for Mobile Detailing &amp; Power Washing Businesses</h2>
+<button class="w-full bg-alert-amber text-midnight-blue font-headline-md text-headline-md py-4 rounded-xl shadow-lg active:scale-95 transition-all">
+                    Get Your Custom Quote
+                </button>
+</div>
+</section>
+<!-- Stats Section (Mobile Bento) -->
+<section class="px-margin-mobile -mt-8 relative z-20 grid grid-cols-2 gap-3">
+<div class="glass-card inner-glow p-4 rounded-xl flex flex-col items-center text-center shadow-md border-t-4 border-electric-cyan">
+<span class="material-symbols-outlined text-midnight-blue mb-2" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-headline-md text-headline-md text-midnight-blue">5 Min</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Fast Quote</span>
+</div>
+<div class="glass-card inner-glow p-4 rounded-xl flex flex-col items-center text-center shadow-md border-t-4 border-electric-cyan">
+<span class="material-symbols-outlined text-midnight-blue mb-2" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-headline-md text-headline-md text-midnight-blue">A+</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Rated Carrier</span>
+</div>
+</section>
+<!-- Comparison Section -->
+<section class="px-margin-mobile mt-16 space-y-8">
+<div class="text-center">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-midnight-blue">Why Standard Insurance Falls Short</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Standard General Liability has gaps that can bankrupt a detailing business.</p>
+</div>
+<div class="space-y-4">
+<!-- Comparison Card 1 -->
+<div class="glass-card rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="bg-surface-variant px-4 py-3 flex justify-between items-center">
+<span class="font-label-md text-label-md text-midnight-blue uppercase tracking-wider">Water Damage &amp; Runoff</span>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-start gap-3 opacity-60">
+<span class="material-symbols-outlined text-error mt-0.5">cancel</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Standard GL Policy</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Excludes "Care, Custody, or Control" damage to customer vehicles.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-success-green/5 p-3 rounded-lg border border-success-green/20">
+<span class="material-symbols-outlined text-success-green mt-0.5">check_circle</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Our Solution</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive Garagekeepers coverage included for all service locations.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Comparison Card 2 -->
+<div class="glass-card rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="bg-surface-variant px-4 py-3 flex justify-between items-center">
+<span class="font-label-md text-label-md text-midnight-blue uppercase tracking-wider">Equipment in Transit</span>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-start gap-3 opacity-60">
+<span class="material-symbols-outlined text-error mt-0.5">cancel</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Standard GL Policy</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Stolen or damaged pressure washers in your truck are rarely covered.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-success-green/5 p-3 rounded-lg border border-success-green/20">
+<span class="material-symbols-outlined text-success-green mt-0.5">check_circle</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Our Solution</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Inland Marine coverage for $50k+ of mobile equipment anywhere.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Comparison Card 3 -->
+<div class="glass-card rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="bg-surface-variant px-4 py-3 flex justify-between items-center">
+<span class="font-label-md text-label-md text-midnight-blue uppercase tracking-wider">Chemical Spills</span>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex items-start gap-3 opacity-60">
+<span class="material-symbols-outlined text-error mt-0.5">cancel</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Standard GL Policy</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Pollution exclusions often deny claims for detailing chemical runoff.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-success-green/5 p-3 rounded-lg border border-success-green/20">
+<span class="material-symbols-outlined text-success-green mt-0.5">check_circle</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Our Solution</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Custom pollution liability endorsement specifically for car care products.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Area -->
+<section class="px-margin-mobile mt-16 pb-12">
+<div class="bg-midnight-blue rounded-3xl p-8 text-center space-y-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-electric-cyan/20 blur-3xl rounded-full translate-x-16 -translate-y-16"></div>
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md text-white">Ready to Protect Your Shine?</h4>
+<p class="font-body-md text-body-md text-surface-variant mt-2">Join 2,500+ mobile detailers who trust us to keep them washing.</p>
+<button class="mt-8 bg-electric-cyan text-white px-8 py-3 rounded-full font-label-md text-label-md hover:bg-white hover:text-midnight-blue transition-colors">
+                        View Coverage Plans
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 border-t border-white/20 shadow-[0_-4px_12px_rgba(30,58,138,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-label-md text-label-md">Coverage</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="#">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="font-label-md text-label-md">Quotes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'scale(0.98)';
+                card.style.transition = 'transform 0.1s ease';
+            });
+            card.addEventListener('touchend', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
