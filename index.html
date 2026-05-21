@@ -354,7 +354,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="pb-24 md:pb-0">
         <!-- ============================================================ -->
         <!-- HERO                                                          -->
         <!-- ============================================================ -->
@@ -383,8 +383,8 @@
                         Standard insurance ignores the risks of high-end paint correction, ceramic coatings, and mobile equipment in transit. We don't. Get the rock-solid reliability your craft deserves.
                     </p>
 
-                    <!-- Mobile CTA: single full-width cyan button -->
-                    <a href="get-a-quote.html" class="md:hidden block w-full text-center bg-electric-cyan text-white font-headline-md text-headline-md py-4 rounded-xl shadow-lg active:scale-95 transition-all">
+                    <!-- Mobile CTA: single full-width amber button (per mobile mockup) -->
+                    <a href="get-a-quote.html" class="md:hidden block w-full text-center bg-alert-amber text-midnight-blue font-headline-md text-headline-md py-4 rounded-xl shadow-lg active:scale-95 transition-all">
                         Get Your Custom Quote
                     </a>
 
@@ -431,11 +431,13 @@
 
         <!-- ============================================================ -->
         <!-- COMPARISON: WHY STANDARD INSURANCE FALLS SHORT                -->
+        <!-- (Desktop also surfaces a Resource Center sidebar from mockup) -->
         <!-- ============================================================ -->
         <section class="px-margin-mobile md:px-margin-desktop mt-16 md:mt-8 md:py-16 max-w-container-max mx-auto">
-            <div class="text-center md:text-left md:max-w-3xl md:mx-auto md:text-center mb-10 md:mb-16">
-                <h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-midnight-blue">Why Standard Insurance Falls Short</h2>
-                <p class="font-body-md text-body-md md:font-body-lg md:text-body-lg text-on-surface-variant mt-2 md:mt-4">Standard General Liability has gaps that can bankrupt a detailing business. Here's how we close them.</p>
+            <!-- Mobile heading -->
+            <div class="md:hidden text-center mb-10">
+                <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-midnight-blue">Why Standard Insurance Falls Short</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-2">Standard General Liability has gaps that can bankrupt a detailing business. Here's how we close them.</p>
             </div>
 
             <!-- MOBILE: per-topic comparison cards -->
@@ -508,58 +510,100 @@
                 </article>
             </div>
 
-            <!-- DESKTOP: two-column side-by-side comparison -->
-            <div class="hidden md:grid md:grid-cols-2 gap-8">
-                <!-- Standard Insurance column -->
-                <div class="glass-card rounded-xl p-8 border-t-4 border-outline/30">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="material-symbols-outlined text-outline text-3xl">cancel</span>
-                        <h3 class="font-headline-md text-headline-md text-outline">Standard Insurance</h3>
+            <!-- DESKTOP: Resource Center sidebar + two-column side-by-side comparison -->
+            <div class="hidden md:grid lg:grid-cols-[260px_1fr] gap-12">
+                <!-- Resource Center sidebar (desktop-only, sticky) -->
+                <aside class="hidden lg:block">
+                    <div class="bg-surface-container-low/50 backdrop-blur-xl rounded-xl h-fit sticky top-24 border border-white/10 shadow-md flex flex-col gap-2 p-base">
+                        <div class="p-4 mb-2">
+                            <h3 class="font-headline-md text-headline-md text-primary">Resource Center</h3>
+                            <p class="font-caption text-caption text-on-surface-variant">Expert Detailing Guides</p>
+                        </div>
+                        <nav class="flex flex-col gap-1">
+                            <a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg" href="blog/">
+                                <span class="material-symbols-outlined">shield</span>
+                                <span class="font-label-md text-label-md">Safety Tips</span>
+                            </a>
+                            <a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg" href="blog/">
+                                <span class="material-symbols-outlined">campaign</span>
+                                <span class="font-label-md text-label-md">Marketing Guide</span>
+                            </a>
+                            <a class="flex items-center gap-3 bg-secondary-container/20 text-on-secondary-container font-bold rounded-lg px-4 py-2" href="coverage.html">
+                                <span class="material-symbols-outlined">menu_book</span>
+                                <span class="font-label-md text-label-md">Insurance 101</span>
+                            </a>
+                            <a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg" href="trust-faqs.html">
+                                <span class="material-symbols-outlined">stars</span>
+                                <span class="font-label-md text-label-md">Success Stories</span>
+                            </a>
+                            <a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant/30 hover:text-on-surface transition-all rounded-lg" href="coverage-by-state.html">
+                                <span class="material-symbols-outlined">map</span>
+                                <span class="font-label-md text-label-md">State Laws</span>
+                            </a>
+                        </nav>
                     </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-error mt-1">remove_circle</span>
-                            <p class="text-on-surface-variant font-body-md">Excludes "Care, Custody, and Control" — no coverage for the vehicle you're working on.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-error mt-1">remove_circle</span>
-                            <p class="text-on-surface-variant font-body-md">Generic "janitorial" classifications that don't cover specialized chemical use.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-error mt-1">remove_circle</span>
-                            <p class="text-on-surface-variant font-body-md">Expensive equipment like extractors and pressure washers are often excluded.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-error mt-1">remove_circle</span>
-                            <p class="text-on-surface-variant font-body-md">No protection against paint damage caused during correction or polishing.</p>
-                        </li>
-                    </ul>
-                </div>
+                </aside>
 
-                <!-- Detailer Shield Solution column -->
-                <div class="glass-card rounded-xl p-8 racing-stripe shadow-xl shadow-electric-cyan/5">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="material-symbols-outlined text-electric-cyan text-3xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                        <h3 class="font-headline-md text-headline-md text-midnight-blue">The Detailer Shield Solution</h3>
+                <div>
+                    <!-- Desktop heading (updated per desktop mockup) -->
+                    <div class="mb-16 text-center lg:text-left">
+                        <h2 class="font-headline-lg text-headline-lg text-midnight-blue mb-4">Engineered for the Enthusiast Professional</h2>
+                        <p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto lg:mx-0">Why 90% of detailing businesses are underinsured without even knowing it. Standard General Liability has gaps that can bankrupt a detailing business — here's how we close them.</p>
                     </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-success-green mt-1">check_circle</span>
-                            <p class="text-on-surface font-body-md font-semibold">Full Care, Custody &amp; Control coverage for every vehicle in your shop or driveway.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-success-green mt-1">check_circle</span>
-                            <p class="text-on-surface font-body-md font-semibold">Specialized Professional Liability for ceramic coating &amp; paint correction.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-success-green mt-1">check_circle</span>
-                            <p class="text-on-surface font-body-md font-semibold">Inland Marine protection for all your mobile gear, even on the road.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="material-symbols-outlined text-success-green mt-1">check_circle</span>
-                            <p class="text-on-surface font-body-md font-semibold">Business Interruption support tailored for the detailing industry.</p>
-                        </li>
-                    </ul>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Standard Insurance column -->
+                        <div class="glass-card rounded-xl p-8 border-t-4 border-outline/30">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="material-symbols-outlined text-outline text-3xl">cancel</span>
+                                <h3 class="font-headline-md text-headline-md text-outline">Standard Insurance</h3>
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error mt-1">remove_circle</span>
+                                    <p class="text-on-surface-variant font-body-md">Excludes "Care, Custody, and Control" — no coverage for the vehicle you're working on.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error mt-1">remove_circle</span>
+                                    <p class="text-on-surface-variant font-body-md">Generic "janitorial" classifications that don't cover specialized chemical use.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error mt-1">remove_circle</span>
+                                    <p class="text-on-surface-variant font-body-md">Expensive equipment like extractors and pressure washers are often excluded.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-error mt-1">remove_circle</span>
+                                    <p class="text-on-surface-variant font-body-md">No protection against paint damage caused during correction or polishing.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Detailer Shield Solution column -->
+                        <div class="glass-card rounded-xl p-8 racing-stripe shadow-xl shadow-electric-cyan/5">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="material-symbols-outlined text-electric-cyan text-3xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <h3 class="font-headline-md text-headline-md text-midnight-blue">The Detailer Shield Solution</h3>
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-success-green mt-1">check_circle</span>
+                                    <p class="text-on-surface font-body-md font-semibold">Full Care, Custody &amp; Control coverage for every vehicle in your shop or driveway.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-success-green mt-1">check_circle</span>
+                                    <p class="text-on-surface font-body-md font-semibold">Specialized Professional Liability for ceramic coating &amp; paint correction.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-success-green mt-1">check_circle</span>
+                                    <p class="text-on-surface font-body-md font-semibold">Inland Marine protection for all your mobile gear, even on the road.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-success-green mt-1">check_circle</span>
+                                    <p class="text-on-surface font-body-md font-semibold">Business Interruption support tailored for the detailing industry.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -699,19 +743,33 @@
 
         <!-- ============================================================ -->
         <!-- FINAL CTA                                                     -->
+        <!-- (Desktop uses full background image per desktop mockup;        -->
+        <!--  mobile keeps the simpler blur-orb panel from the mobile mockup)-->
         <!-- ============================================================ -->
-        <section class="px-margin-mobile md:px-margin-desktop mt-16 md:mt-24 pb-12 md:pb-24 max-w-container-max mx-auto">
-            <div class="bg-midnight-blue rounded-3xl p-8 md:p-16 text-center space-y-6 relative overflow-hidden">
-                <!-- Cyan blur orb -->
-                <div class="absolute top-0 right-0 w-32 md:w-96 h-32 md:h-96 bg-electric-cyan/20 blur-3xl rounded-full translate-x-16 md:translate-x-32 -translate-y-16 md:-translate-y-32"></div>
-                <div class="absolute bottom-0 left-0 w-32 md:w-72 h-32 md:h-72 bg-electric-cyan/10 blur-3xl rounded-full -translate-x-16 md:-translate-x-24 translate-y-16 md:translate-y-24 hidden md:block"></div>
-
+        <section class="relative px-margin-mobile md:px-0 mt-16 md:mt-24 pb-12 md:pb-0 max-w-container-max md:max-w-none mx-auto md:mx-0">
+            <!-- Mobile CTA card -->
+            <div class="md:hidden bg-midnight-blue rounded-3xl p-8 text-center space-y-6 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-electric-cyan/20 blur-3xl rounded-full translate-x-16 -translate-y-16"></div>
                 <div class="relative z-10">
-                    <h2 class="font-headline-md md:font-headline-xl text-headline-md md:text-headline-xl text-white">Ready to Protect Your Shine?</h2>
-                    <p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-surface-variant mt-2 md:mt-6 max-w-2xl mx-auto">Join over 5,000 professional detailers who trust us with their livelihood. Get covered in under 5 minutes.</p>
+                    <h2 class="font-headline-md text-headline-md text-white">Ready to Protect Your Shine?</h2>
+                    <p class="font-body-md text-body-md text-surface-variant mt-2">Join 5,000+ mobile detailers who trust us to keep them washing.</p>
+                    <a href="get-a-quote.html" class="inline-block mt-8 bg-alert-amber text-midnight-blue font-bold text-headline-md px-8 py-4 rounded-xl shadow-2xl shadow-alert-amber/40 hover:scale-105 transition-transform scale-98-active">
+                        Get My Instant Quote
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Desktop benefit cards -->
-                    <div class="hidden md:flex flex-col sm:flex-row justify-center gap-6 mt-12">
+            <!-- Desktop CTA: full-width background image panel -->
+            <div class="hidden md:block relative py-24 overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <!-- TODO: source image — was: A macro shot of soap suds cascading down the side of a freshly waxed car, illuminated by dramatic sunlight. High-contrast atmospheric visual emphasizing the beauty of professional detailing — reinforces 'Protect Your Shine' message. -->
+                    <img class="w-full h-full object-cover" alt="Soap suds cascading down a freshly waxed car under dramatic sunlight" src="/images/cta-protect-your-shine.webp">
+                    <div class="absolute inset-0 bg-midnight-blue/80 backdrop-blur-sm"></div>
+                </div>
+                <div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center">
+                    <h2 class="font-headline-xl text-headline-xl text-white mb-6">Ready to Protect Your Shine?</h2>
+                    <p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto mb-10">Join over 5,000 professional detailers who trust us with their livelihood. Get covered in under 5 minutes.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-6">
                         <div class="glass-card border-white/20 p-6 rounded-xl text-left max-w-xs">
                             <span class="material-symbols-outlined text-electric-cyan mb-2 text-3xl" style="font-variation-settings: 'FILL' 1;">timer</span>
                             <h4 class="text-white font-bold mb-1 font-headline-md">Fast Processing</h4>
@@ -728,14 +786,35 @@
                             <p class="text-surface-variant text-sm">Policies starting as low as $45 per month.</p>
                         </div>
                     </div>
-
-                    <a href="get-a-quote.html" class="inline-block mt-8 md:mt-12 bg-alert-amber text-midnight-blue font-bold text-headline-md md:text-headline-md px-8 md:px-10 py-4 md:py-5 rounded-xl shadow-2xl shadow-alert-amber/40 hover:scale-105 transition-transform scale-98-active">
+                    <a href="get-a-quote.html" class="inline-block mt-12 bg-alert-amber text-midnight-blue font-bold text-headline-md px-10 py-5 rounded-lg shadow-2xl shadow-alert-amber/40 hover:scale-105 transition-transform scale-98-active">
                         Get My Instant Quote
                     </a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- ============================================================ -->
+    <!-- MOBILE BOTTOM NAV BAR (mobile mockup pattern, hidden on md+)  -->
+    <!-- ============================================================ -->
+    <nav class="md:hidden bg-surface/80 backdrop-blur-xl fixed bottom-0 left-0 w-full z-40 flex justify-around items-center px-4 pb-2 h-20 border-t border-white/20 shadow-[0_-4px_12px_rgba(30,58,138,0.05)] rounded-t-xl">
+        <a class="flex flex-col items-center justify-center bg-primary-container/10 text-midnight-blue rounded-xl px-3 py-1" href="/">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="font-label-md text-label-md">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="coverage.html">
+            <span class="material-symbols-outlined">shield</span>
+            <span class="font-label-md text-label-md">Coverage</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="get-a-quote.html">
+            <span class="material-symbols-outlined">request_quote</span>
+            <span class="font-label-md text-label-md">Quote</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-cyan transition-colors" href="trust-faqs.html">
+            <span class="material-symbols-outlined">help_center</span>
+            <span class="font-label-md text-label-md">Support</span>
+        </a>
+    </nav>
 
     <!-- ============================================================ -->
     <!-- FOOTER                                                        -->
