@@ -367,3 +367,74 @@ The following audit findings require structural rewrites better owned by the pag
 
 See "Missing cross-links" section above. Not applied — those are content additions, not bug fixes.
 
+---
+
+## Round 2 fix log — applied 2026-05-21 by josh-desk-2@mesh (page-team-a)
+
+Round 2 closed every item from the round-1 "deferred / out of scope" list plus all 7 cross-link recommendations. Two parallel subagents handled the structural rewrites; the main agent applied cross-links + footer harmonization.
+
+### Structural rewrites (Inconsistencies #1–8 from round 1)
+
+1. ✅ **`coverage-by-state.html`** — swapped Tailwind 2.2.19 CDN for the Tailwind 3 runtime + the shared design-token config block, replaced legacy dark-blue `header-section` + announcement bar with the refreshed glass sticky header (Coverage by State set active with `text-electric-cyan border-b-2`), replaced legacy 3-column `footer` with the refreshed 4-column footer (now 8-item Coverage column — see "Footer harmonization" below), brand wordmark "Mobile Detail Insurance" → "Detailer Shield Insurance" throughout `<head>` + body. Mobile drawer ids preserved so existing `js/main.js` toggle continues to work.
+2. ✅ **`get-a-quote.html`** — same head/header/footer rewrite. No standalone nav item is active (the amber "Get Quote" CTA in the header is the destination). All nav items use the inactive `text-on-surface-variant` styling.
+3. ✅ **`blog/posts/business-liability-protection-mobile-detailing.html`** — added the refreshed Tailwind 3 + design-token head, replaced the inline `<nav class="breadcrumb">` + flat `<header class="blog-header">` with the refreshed glass header (paths prefixed `../../`, Blog item active). Preserved the breadcrumb inside `<main>` above the article body. Added the refreshed 4-column footer + `<script src="../../js/main.js">` for the mobile drawer toggle. Schema author/publisher renamed.
+4. ✅ **`blog/posts/equipment-protection-mobile-detailing-business.html`** — same treatment as post #3.
+5. ✅ **`blog/posts/mobile-auto-detailing-insurance-essentials.html`** — same treatment; this one had a green inline mini-header (the legacy `style="background-color: #10b981"` block) which was fully replaced by the refreshed glass header. Legacy gray copyright footer also replaced.
+6. ✅ **Mobile bottom-nav bar (`md:hidden fixed bottom-0`)** — added to:
+   - `coverage.html` — Coverage active (`bg-primary-container/10 text-midnight-blue rounded-xl`, icon `FILL: 1`, `aria-current="page"`)
+   - `trust-faqs.html` — Support active (same styling)
+   - `blog/index.html` — no active item (closest match doesn't exist in 4-item nav); all 4 use inactive styling, paths prefixed `../`
+7. ✅ **Two new dedicated coverage sections on `coverage.html`** — inserted `<article id="workers-comp">` (line 496) and `<article id="environmental">` (line 512) as siblings of `#equipment` / `#liability` / `#business` inside the same coverage grid. Both use the same `md:col-span-4 glass-card header-accent` styling. Icons: `groups` for workers-comp, `eco` for environmental. Each has 3 paragraphs of coverage detail (statutory WC requirements + 1099-employee guidance for workers-comp; chemical runoff, ceramic overspray, soap/wax disposal for environmental).
+
+### Footer harmonization
+
+The refreshed footer Coverage column now has 8 items in a consistent order across all 10 pages (`index.html`, `coverage.html`, `coverage-by-state.html`, `get-a-quote.html`, `trust-faqs.html`, `blog/index.html`, `blog/posts/ceramic-coating-insurance-mobile-detailers.html`, plus the 3 legacy posts):
+
+```
+Equipment Protection → coverage.html#equipment
+Liability Coverage   → coverage.html#liability
+Business Protection  → coverage.html#business
+Workers' Comp        → coverage.html#workers-comp       (NEW — deep-links to new section)
+Environmental        → coverage.html#environmental      (NEW — deep-links to new section)
+Pressure Washing Insurance → pressure-washing-insurance.html
+Auto Detailing Insurance   → auto-detailing-insurance.html
+Coverage by State    → coverage-by-state.html
+```
+
+Two invented links on `coverage-by-state.html` from the round-1 subagent (`pressure-washing-insurance.html` and `auto-detailing-insurance.html`) were verified — both files exist at site root — so those links were kept and replicated to all other refreshed pages for consistency.
+
+### Cross-link recommendations applied (7 of 7)
+
+1. ✅ **Blog post bodies → `../../coverage.html#<anchor>`** —
+   - `business-liability-protection-...html`: added "See also: Our full Liability Coverage breakdown →" link right under the "Essential Liability Coverage Types" H2.
+   - `equipment-protection-...html`: same pattern, linking to `#equipment` under "Types of Equipment Protection Coverage".
+   - `mobile-auto-detailing-insurance-essentials.html`: added a 4-target inline link row (coverage / liability / equipment / business) under "Essential Insurance Coverage Types".
+2. ✅ **Blog post quote CTAs → `../../get-a-quote.html`** — verified all CTAs in the 3 posts already route to `get-a-quote.html` (closed in round 1).
+3. ✅ **`coverage.html` Resource Center "Insurance 101" link** — was pointing to `trust-faqs.html`; switched to `blog/` per the audit's contextual recommendation (Insurance 101 content is more naturally a blog destination than the FAQ page).
+4. ✅ **`trust-faqs.html` FAQ answers → coverage anchors** — added inline "See / Learn more about..." anchor links inside three of the most-relevant FAQ answer blocks:
+   - Q1 ("What types of insurance...") → `coverage.html` (overview)
+   - Q4 ("What is Garage Keepers Liability...") → `coverage.html#liability`
+   - Q6 ("Are my detailing tools and equipment covered...") → `coverage.html#equipment`
+5. ✅ **`coverage-by-state.html` body → `trust-faqs.html`** — added "Read our trust badges & state FAQs →" contextual link inside the "Licensing & Compliance" feature card in the "Why State-Specific Coverage Matters" section.
+6. ✅ **`blog/index.html` post cards → matching coverage anchor** — added a "Related: <Coverage Type>" mini-link above the Read More row on each of the 4 cards:
+   - Ceramic Coating card → `../coverage.html#liability` (specialty + permanent-product = liability concern)
+   - Mobile Auto Detailing Essentials card → `../coverage.html#business`
+   - Liability Protection card → `../coverage.html#liability`
+   - Equipment Protection card → `../coverage.html#equipment`
+7. ✅ **`get-a-quote.html` form preamble → `coverage.html`** — added "Not sure what coverage you need? View our coverage options →" link directly under the "Tell us about your detailing business" form header, before the form opens.
+
+### Verification
+
+- 0 remaining `header-section` `<header>` elements (only CSS rule definitions remain in critical-CSS blocks of 5 files — orphaned but harmless; leave for a future css cleanup task).
+- 0 remaining "Mobile Detail Insurance" brand text in body content / nav / footer of the 5 rewritten files. `index.html` still has 5 occurrences (page title, OG/Twitter titles, FAQ schema name) — these are outside round 2's scope (the home page title/SEO rebrand is a separate concern).
+- All 4 refreshed top-level pages + blog index now have the mobile bottom-nav bar.
+- `coverage.html` `#workers-comp` and `#environmental` anchors render as siblings of `#equipment` / `#liability` / `#business` and the footer deep-links resolve cleanly.
+- 10 footer Coverage columns are consistent (Equipment / Liability / Business / Workers' Comp / Environmental / PW / AD / Coverage by State).
+
+### Out of scope (deferred — still open)
+
+- `index.html` `<title>` / OG / Twitter / FAQ-schema name still uses "Mobile Detail Insurance" wording. Out of round 2 scope (round 2 was structural cleanup, not home-page SEO rebrand). Recommend a separate "Title + SEO rebrand sweep" task.
+- Legacy `.header-section` / `.cta-button` / `.hero-title` CSS rules remain in the critical-CSS `<style>` block of several refreshed pages. They no longer match any element, but they're not removed either. Cosmetic — defer to a CSS cleanup pass.
+- 44-tile coverage-by-state grid `?state=XX` targets were redirected to the quote form in round 1; long-term, building dedicated state landing pages remains open.
+
+
