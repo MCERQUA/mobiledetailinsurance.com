@@ -188,7 +188,7 @@
                                 <label class="quote-label" for="street">Street Address <span style="color:#DC2626;">*</span></label>
                                 <input class="quote-input" type="text" id="street" name="street" required>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4" style="grid-template-columns:;">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-3 md:gap-4">
                                 <div class="quote-field">
                                     <label class="quote-label" for="city">City <span style="color:#DC2626;">*</span></label>
                                     <input class="quote-input" type="text" id="city" name="city" required>
@@ -219,8 +219,8 @@
                             </div>
 
                             <!-- Business Profile -->
-                            <h3 style="font-size: 1.125rem; font-weight: 700; color: #1E3A8A; margin: 1.5rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #E5E7EB;">3. Business Profile</h3>
-                            <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;" class="md-grid-2">
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">3. Business Profile</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-5">
                                 <div class="quote-field">
                                     <label class="quote-label" for="years_in_business">Years in Business <span style="color:#DC2626;">*</span></label>
                                     <select class="quote-input" id="years_in_business" name="years_in_business" required>
@@ -268,9 +268,9 @@
                             </div>
 
                             <!-- Services -->
-                            <h3 style="font-size: 1.125rem; font-weight: 700; color: #1E3A8A; margin: 1.5rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #E5E7EB;">4. Services Offered <span style="color:#DC2626;">*</span></h3>
-                            <p style="color: #6B7280; font-size: 0.875rem; margin: 0 0 0.75rem 0;">Check all that apply.</p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-bottom: 0.5rem;">
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">4. Services Offered <span style="color:#DC2626;">*</span></h3>
+                            <p class="text-sm mb-2 md:mb-3" style="color: #6B7280;">Check all that apply.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mb-2">
                                 <label class="quote-checkbox-row"><input type="checkbox" name="services[]" value="Mobile Detailing"> Mobile Detailing</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="services[]" value="Paint Correction"> Paint Correction</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="services[]" value="Ceramic Coating"> Ceramic Coating</label>
@@ -280,25 +280,25 @@
                             </div>
 
                             <!-- Primary Client Base -->
-                            <h3 style="font-size: 1.125rem; font-weight: 700; color: #1E3A8A; margin: 1.5rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #E5E7EB;">5. Primary Client Base <span style="color:#DC2626;">*</span></h3>
-                            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 0.5rem;">
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">5. Primary Client Base <span style="color:#DC2626;">*</span></h3>
+                            <div class="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 lg:gap-6 mb-2">
                                 <label class="quote-checkbox-row"><input type="radio" name="client_base" value="Residential" required> Residential</label>
                                 <label class="quote-checkbox-row"><input type="radio" name="client_base" value="Commercial"> Commercial</label>
                                 <label class="quote-checkbox-row"><input type="radio" name="client_base" value="Both"> Both</label>
                             </div>
 
                             <!-- Insurance Status -->
-                            <h3 style="font-size: 1.125rem; font-weight: 700; color: #1E3A8A; margin: 1.5rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #E5E7EB;">6. Current Insurance Status <span style="color:#DC2626;">*</span></h3>
-                            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 0.5rem;">
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">6. Current Insurance Status <span style="color:#DC2626;">*</span></h3>
+                            <div class="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 lg:gap-6 mb-2">
                                 <label class="quote-checkbox-row"><input type="radio" name="insurance_status" value="Currently insured" required> Currently insured</label>
                                 <label class="quote-checkbox-row"><input type="radio" name="insurance_status" value="Lapsed"> Lapsed</label>
                                 <label class="quote-checkbox-row"><input type="radio" name="insurance_status" value="Never insured"> Never insured</label>
                             </div>
 
                             <!-- Coverage Needs -->
-                            <h3 style="font-size: 1.125rem; font-weight: 700; color: #1E3A8A; margin: 1.5rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #E5E7EB;">7. Coverage Needs</h3>
-                            <p style="color: #6B7280; font-size: 0.875rem; margin: 0 0 0.75rem 0;">Check what you're interested in — not sure? Just tick "Not Sure" and we'll guide you.</p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-bottom: 0.5rem;">
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">7. Coverage Needs</h3>
+                            <p class="text-sm mb-2 md:mb-3" style="color: #6B7280;">Check what you're interested in — not sure? Just tick "Not Sure" and we'll guide you.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mb-2">
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="General Liability"> General Liability</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="Equipment / Inland Marine"> Equipment / Inland Marine</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="Commercial Auto"> Commercial Auto</label>
@@ -309,7 +309,7 @@
                             </div>
 
                             <!-- Additional Info -->
-                            <h3 style="font-size: 1.125rem; font-weight: 700; color: #1E3A8A; margin: 1.5rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #E5E7EB;">8. Additional Information</h3>
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">8. Additional Information</h3>
                             <div class="quote-field">
                                 <label class="quote-label" for="additional_info">Anything else we should know? (claims history, special equipment, fleet size, etc.)</label>
                                 <textarea class="quote-input" id="additional_info" name="additional_info" rows="4"></textarea>
@@ -329,7 +329,7 @@
                 </div>
 
                 <!-- Sidebar -->
-                <aside style="flex: 0 1 320px; min-width: 280px;">
+                <aside class="w-full lg:w-80 xl:w-96 lg:flex-shrink-0">
                     <div class="sidebar-card" style="margin-bottom: 1.5rem;">
                         <h3 style="font-size: 1.125rem; font-weight: bold; margin-top: 0; margin-bottom: 1rem; color: #1E3A8A;">Why Get a Quote With Us</h3>
                         <ul style="list-style: none; padding: 0; margin: 0;">
