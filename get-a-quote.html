@@ -97,12 +97,12 @@
     </div>
 
     <!-- Header Section -->
-    <header class="header-section">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <div style="font-size: 1.5rem; font-weight: bold;"><a href="index.html" style="color: white; text-decoration: none;">Mobile Detail Insurance</a></div>
-                <nav style="display: block;">
-                    <ul style="display: flex; gap: 1.5rem;">
+    <header class="header-section py-6 md:py-10 lg:py-14">
+        <div class="container px-4 md:px-8 lg:px-16">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 gap-4 md:gap-6">
+                <div class="text-xl md:text-2xl lg:text-3xl font-bold"><a href="index.html" style="color: white; text-decoration: none;">Mobile Detail Insurance</a></div>
+                <nav class="hidden md:block">
+                    <ul class="flex gap-4 md:gap-6 lg:gap-8">
                         <li><a href="coverage.html" style="color: white;">Coverage</a></li>
                         <li><a href="coverage-by-state.html" style="color: white;">By State</a></li>
                         <li><a href="trust-faqs.html" style="color: white;">Trust &amp; FAQs</a></li>
@@ -110,7 +110,7 @@
                         <li><a href="get-a-quote.html" class="cta-button" style="padding: 0.5rem 1rem;">Get a Quote</a></li>
                     </ul>
                 </nav>
-                <button id="menuButton" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; border: none;">Menu</button>
+                <button id="menuButton" class="md:hidden" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; border: none;">Menu</button>
             </div>
 
             <div id="mobileMenu" style="display: none; margin-bottom: 1.5rem;">
@@ -124,10 +124,10 @@
             </div>
 
             <!-- Hero -->
-            <div style="text-align: center; padding: 1rem 0 1.5rem;">
-                <h1 class="hero-title" style="font-size: 2.25rem; max-width: 48rem; margin-left: auto; margin-right: auto;">Get Your Mobile Detail Insurance Quote</h1>
-                <p style="font-size: 1.125rem; max-width: 40rem; margin: 0 auto 1.5rem auto; opacity: 0.92;">No-obligation quotes from detailer-focused agents. We respond within 24 hours with competitive coverage from A-rated carriers.</p>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+            <div class="text-center py-4 md:py-6 lg:py-8">
+                <h1 class="hero-title text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 max-w-3xl mx-auto leading-tight">Get Your Mobile Detail Insurance Quote</h1>
+                <p class="text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-6 md:mb-8 leading-relaxed" style="opacity: 0.92;">No-obligation quotes from detailer-focused agents. We respond within 24 hours with competitive coverage from A-rated carriers.</p>
+                <div class="flex flex-wrap justify-center gap-2 md:gap-3 lg:gap-4">
                     <span class="trust-pill">
                         <svg xmlns="http://www.w3.org/2000/svg" style="width: 1rem; height: 1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                         No-obligation quote
@@ -146,14 +146,14 @@
     </header>
 
     <!-- Quote Form Section -->
-    <section id="quote-form-section" class="section contact-section" style="background-color: #F9FAFB; padding: 3rem 0;">
-        <div class="container">
-            <div class="flex-row" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+    <section id="quote-form-section" class="section contact-section py-10 md:py-14 lg:py-20" style="background-color: #F9FAFB;">
+        <div class="container px-4 md:px-8 lg:px-16">
+            <div class="flex-row flex flex-col lg:flex-row flex-wrap gap-6 md:gap-8 lg:gap-12 items-start">
                 <!-- Main Form Column -->
-                <div style="flex: 1 1 600px; min-width: 0;">
-                    <div style="background-color: #fff; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); padding: 2rem;">
-                        <h2 style="font-size: 1.75rem; font-weight: bold; margin-bottom: 0.5rem; color: #111827;">Tell us about your detailing business</h2>
-                        <p style="color: #6B7280; margin-bottom: 1.75rem;">All fields help us tailor your quote. Takes about 3 minutes.</p>
+                <div class="w-full lg:flex-1 lg:min-w-0">
+                    <div class="bg-white rounded-lg shadow-md p-5 md:p-7 lg:p-10">
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 text-gray-900">Tell us about your detailing business</h2>
+                        <p class="text-sm md:text-base mb-5 md:mb-7" style="color: #6B7280;">All fields help us tailor your quote. Takes about 3 minutes.</p>
 
                         <form name="get-a-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
                             <input type="hidden" name="form-name" value="get-a-quote">
@@ -162,8 +162,8 @@
                             </p>
 
                             <!-- Contact Info -->
-                            <h3 style="font-size: 1.125rem; font-weight: 700; color: #1E3A8A; margin: 0 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #E5E7EB;">1. Contact Information</h3>
-                            <div class="grid-2" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">1. Contact Information</h3>
+                            <div class="grid-2 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-5">
                                 <div class="quote-field">
                                     <label class="quote-label" for="full_name">Full Name <span style="color:#DC2626;">*</span></label>
                                     <input class="quote-input" type="text" id="full_name" name="full_name" required>
@@ -183,12 +183,12 @@
                             </div>
 
                             <!-- Business Address -->
-                            <h3 style="font-size: 1.125rem; font-weight: 700; color: #1E3A8A; margin: 1.5rem 0 1rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid #E5E7EB;">2. Business Address</h3>
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">2. Business Address</h3>
                             <div class="quote-field">
                                 <label class="quote-label" for="street">Street Address <span style="color:#DC2626;">*</span></label>
                                 <input class="quote-input" type="text" id="street" name="street" required>
                             </div>
-                            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem;">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4" style="grid-template-columns:;">
                                 <div class="quote-field">
                                     <label class="quote-label" for="city">City <span style="color:#DC2626;">*</span></label>
                                     <input class="quote-input" type="text" id="city" name="city" required>
