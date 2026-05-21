@@ -158,3 +158,76 @@ For manager:
 
 - worker-b: meta tags, OG, Twitter cards, JSON-LD @graph on all 17 SEO pages; `docs/meta-and-schema-audit.md`; full `build-faq.js` rewrite to canonical @graph emitter
 - worker-c: `sitemap.xml`, `robots.txt`, `llms.txt`, `netlify.toml` security/cache headers, `docs/technical-seo-sweep.md`
+
+---
+
+## Round 5 — Forms Readiness (worker-c)
+
+Audit + fix pass for Netlify Forms native capture. Every existing form on the site is now compliant with Netlify's build-time form parser requirements.
+
+### Issues found and fixed across all 14 pages
+
+| # | Issue | Pages affected | Fix |
+|---|---|---|---|
+| 1 | Garbage `netlify ` standalone attribute on form tag | 12 (every modal-contact + newsletter form) | Removed |
+| 2 | `netlify-honeypot="bot-field"` missing `data-` prefix | 14 (every form site-wide) | Renamed to `data-netlify-honeypot="bot-field"` |
+| 3 | `action="/success"` → 404 (file is `/success.html`) | 14 | Updated to `action="/success.html"` |
+| 4 | `<form>` tag missing `data-netlify-recaptcha="true"` on forms that already host `<div data-netlify-recaptcha="true">` widget | 13 (modal-contact + get-a-quote, NOT newsletter) | Added attribute |
+| 5 | Form name `modal-contact` did not match brief standard | 12 | Renamed to `contact` (form tag + hidden form-name input) |
+
+### Final form registry
+
+| Name | Pages | reCAPTCHA | Honeypot | Fields |
+|---|---|---|---|---|
+| `contact` | every page with floating contact button (13 pages) | ✓ | ✓ | name, email, phone, company |
+| `get-a-quote` | `get-a-quote.html` | ✓ | ✓ | full_name, email, phone, company, street, city, state, zip, years_in_business, num_employees, annual_revenue, equipment_value, services[], client_base, insurance_status, coverage_needs[], additional_info |
+| `newsletter` | `blog/index.html` | — | ✓ | email |
+
+### Netlify requirements — verification
+
+For every form on every page:
+1. ✓ `name="<unique>"` on `<form>` tag
+2. ✓ `data-netlify="true"` on `<form>` tag
+3. ✓ `method="POST"`
+4. ✓ Hidden `<input type="hidden" name="form-name" value="<unique>">` as first child
+5. ✓ Honeypot field — `data-netlify-honeypot="bot-field"` on form tag + `<p class="hidden" style="display:none;"><label>... <input name="bot-field"></label></p>` inside form
+6. ✓ reCAPTCHA — `data-netlify-recaptcha="true"` on form tag + `<div data-netlify-recaptcha="true"></div>` widget (contact + get-a-quote only)
+7. ✓ `action="/success.html"` — success page exists at site root
+
+### New file: `forms.html`
+
+Created a build-time discovery file at site root:
+- Lists every named form with full field list
+- `<meta name="robots" content="noindex,nofollow">` — not user-facing
+- All inputs `hidden` so the page itself renders blank
+- Insurance: Netlify form parser will still register the form names if any production page lazy-loads or removes its form at runtime
+
+### netlify.toml — no changes needed
+
+Current `netlify.toml` has no `[[redirects]]` or form-handling config that would conflict with Netlify Forms. Forms are enabled by default when forms are detected in built HTML.
+
+### Files modified in Round 5 (forms work)
+
+- `index.html`
+- `get-a-quote.html`
+- `coverage.html`
+- `coverage-by-state.html`
+- `trust-faqs.html`
+- `pressure-washing-insurance.html`
+- `auto-detailing-insurance.html`
+- `blog/index.html`
+- `blog/posts/general-liability-insurance-for-mobile-detailing.html`
+- `blog/posts/ceramic-coating-insurance-mobile-detailers.html`
+- `states/california.html`
+- `states/florida.html`
+- `states/texas.html`
+- `states/arizona.html`
+
+### New files in Round 5 (forms work)
+
+- `forms.html` (form-discovery file at site root)
+
+### Note for round 5 follow-up
+
+Worker-a is generating 8 new state stub pages (NV, OR, WA, GA, NC, OK, NM, LA). If those pages include the modal-contact form via the same template, worker-c will re-run the same 4-pattern sed pass on them during Task 2 verification to bring them to the same standard.
+

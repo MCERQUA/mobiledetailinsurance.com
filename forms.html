@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Form Registry</title>
+</head>
+<body>
+  <!--
+    Netlify Forms discovery file.
+    Netlify's build-time form parser reads every static HTML file in the deploy
+    and registers any <form> tag with `data-netlify="true"`. This page is the
+    single source of truth for form NAMES + FIELD shape: if a form is ever
+    dynamically rendered, lazy-loaded, or temporarily removed from a page,
+    Netlify still picks it up from here.
+    Not user-facing. noindex + hidden inputs. Do not delete.
+  -->
+
+  <!-- Modal contact form (floating contact button on every page) -->
+  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/success.html" hidden>
+    <input type="hidden" name="form-name" value="contact">
+    <input type="text" name="bot-field">
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="tel" name="phone">
+    <input type="text" name="company">
+    <div data-netlify-recaptcha="true"></div>
+  </form>
+
+  <!-- Long quote form on get-a-quote.html -->
+  <form name="get-a-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/success.html" hidden>
+    <input type="hidden" name="form-name" value="get-a-quote">
+    <input type="text" name="bot-field">
+    <input type="text" name="full_name">
+    <input type="email" name="email">
+    <input type="tel" name="phone">
+    <input type="text" name="company">
+    <input type="text" name="street">
+    <input type="text" name="city">
+    <input type="text" name="state">
+    <input type="text" name="zip">
+    <input type="text" name="years_in_business">
+    <input type="text" name="num_employees">
+    <input type="text" name="annual_revenue">
+    <input type="text" name="equipment_value">
+    <input type="checkbox" name="services[]">
+    <input type="radio" name="client_base">
+    <input type="radio" name="insurance_status">
+    <input type="checkbox" name="coverage_needs[]">
+    <textarea name="additional_info"></textarea>
+    <div data-netlify-recaptcha="true"></div>
+  </form>
+
+  <!-- Blog newsletter signup (blog/index.html footer) -->
+  <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success.html" hidden>
+    <input type="hidden" name="form-name" value="newsletter">
+    <input type="text" name="bot-field">
+    <input type="email" name="email">
+  </form>
+
+</body>
+</html>
