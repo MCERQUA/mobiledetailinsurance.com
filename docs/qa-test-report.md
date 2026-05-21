@@ -93,9 +93,18 @@ These are the TODO placeholders called out in the brief; not a deploy blocker bu
 
 ## Deploy Blockers / Watch Items
 
-1. **`build-faq.js` strips ALL `<script type="application/ld+json">` from index.html on every build** (line 243 regex). If worker-b has added Service/BreadcrumbList/Article/etc schemas to `index.html`, the Netlify build will nuke them and re-inject only LocalBusiness + FAQPage. Schemas on every OTHER page are safe — build only touches index.html. **Decision needed:** either (a) edit build-faq.js to preserve additional schemas, (b) move all rich schema work off index.html, or (c) accept the limitation and have manager re-add any extra index.html schema as a hardcoded block in build-faq.js.
-2. **`images/optimized/` directory missing** — preload links and `<picture>` srcsets reference it. Either run `npm run optimize:images` pre-deploy, or accept benign 404s with `<img src>` fallback.
-3. **Missing content images** — ~13 hero/CTA images are TODO placeholders. Site is live-deployable but visibly incomplete on the affected pages.
+**Blockers:** none — all hard blockers resolved this round.
+
+**Watch items (non-blocking, follow-up rounds):**
+
+1. **`success.html` missing `<meta name="robots" content="noindex">`** — post-form-submit thank-you page. Currently has no description / canonical / OG / Twitter / JSON-LD either (worker-b intentionally skipped since conversion pages shouldn't be indexed). One-line fix: add `<meta name="robots" content="noindex,follow">` to its `<head>`. Recommended next round.
+2. **`images/optimized/` directory does not exist** — every page preloads `images/optimized/company-logo-{large,medium,small}.webp`. The `<picture>` srcset 404s and the browser falls back to the unoptimized `<img src>` (which works). Wastes preload bandwidth and shows 404s in DevTools. Fix: either run `npm run optimize:images` to generate them, or remove the preload/srcset references.
+3. **Missing neighbor state pages** — `states/{arizona,california,florida,texas}.html` link to non-existent neighbors (nevada, oregon, washington, georgia, north-carolina, oklahoma, new-mexico, louisiana). Currently 404 on click. Fix: stub the missing state pages or remove the cross-links.
+4. **Bare `href="#"` Privacy Policy + form disclaimer links** — every page's footer + lead form use `href="#"` for "Privacy Policy". A `/privacy-policy.html` page does not exist. Fix: create the page and update the shared template.
+5. **~13 content `<img>` TODO placeholders** — hero/CTA imagery on index/coverage/pressure-washing/auto-detailing pages. Expected per round-3 artwork pipeline. Site ships visibly but with broken image icons until art lands.
+6. **`success.html` Tailwind anomaly** — uses Tailwind v2 (jsdelivr) instead of v3 (cdn.tailwindcss.com) like every other page. Renders correctly; standardize next round.
+
+**`build-faq.js` schema integrity (was a blocker, now RESOLVED):** worker-b rewrote `build-faq.js` to emit a canonical `@graph` (Organization + LocalBusiness + WebSite + Service + BreadcrumbList, plus FAQPage only when a `<section id="faq">` exists in the source HTML). This eliminates the previous risk where every Netlify build clobbered any extra schemas on index.html. Verified by running `npm run build` locally — index.html now ships with the full @graph reproducibly.
 
 ---
 
@@ -111,25 +120,41 @@ These are the TODO placeholders called out in the brief; not a deploy blocker bu
 
 ## Pre-deploy Git State
 
-(filled in after worker-b done message)
+- **Branch:** `master`
+- **Working tree:** clean
+- **Unpushed commits ahead of `origin/master`:** 54 (full round-2 / 3 / 4 work — all three workers + auto-saver)
+- **Remote:** `git@github-mobiledetailinsurance.com:MCERQUA/mobiledetailinsurance.com.git` (per-repo SSH alias for MCERQUA write key, per `agent-git-push-workflow` skill)
+- **Auto-saver:** active — every file save is auto-committed by the host watcher. No further `git add` / `git commit` from worker-a needed.
+
+## Post-build Verification
+
+- `npm run build` ran twice (once for the build-faq.js patch, once after worker-b's rewrite) — both succeeded
+- 21 JSON-LD blocks across 18 files all parse with `json.loads()` — 0 invalid
+- `index.html` @graph contains: Organization, LocalBusiness, WebSite, Service, BreadcrumbList (FAQPage omitted because no `<section id="faq">` in source — by design of new build-faq.js)
+- Per-page schema coverage (worker-b's audit): 17/17 BreadcrumbList, 11/17 Service, 9/17 FAQPage, 5/17 Article/BlogPosting
 
 ---
 
 ## Deploy Decision Options
 
 For manager:
-- **Option A — `git push origin master`** → triggers Netlify auto-deploy from master branch (per netlify.toml `command = "npm run build"`)
-- **Option B — `netlify deploy --prod`** → manual CLI deploy if configured (Netlify CLI auth status unknown)
-- **Option C — manager handles deploy manually** out-of-band
+- **Option A — `git push origin master`** → 54 commits go to GitHub, Netlify auto-deploys from master via webhook (runs `npm run build` per netlify.toml). Worker-a is configured with the MCERQUA write key and can execute. **Recommended.**
+- **Option B — `netlify deploy --prod`** → NOT viable from this container: `netlify` CLI is not installed and `.netlify/` config not present.
+- **Option C — Manager handles `git push` manually** out-of-band (no SSH key sharing needed).
 
-Worker-a recommends Option A after manager review of "Deploy Blockers / Watch Items" above.
+**Worker-a recommends Option A**, gated on explicit manager approval per the round-4 brief ("do NOT push without manager approval — this is a production deploy"). Awaiting go-signal.
 
 ---
 
 ## Files Changed by worker-a in Round 4
 
-- `build-faq.js` — patched `publisherConfig.address` with real Chandler AZ values; replaced placeholder `sameAs` URLs with empty array
-- `images/reviews/Man.webp` → `images/reviews/man.webp` — case fix for Linux/Netlify
-- `index.html`, `css/styles.min.css` — regenerated by `npm run build` after `build-faq.js` patch
-- `scripts/link-audit.py` — new re-runnable link/image audit tool
+- `build-faq.js` — patched `publisherConfig.address` with real Chandler AZ values + cleared placeholder `sameAs` URLs (later superseded by worker-b's full @graph rewrite; address values carried forward)
+- `images/reviews/Man.webp` → `images/reviews/man.webp` — case fix for Linux/Netlify (prevents 404 in production)
+- `css/styles.min.css` — regenerated by `npm run build`
+- `scripts/link-audit.py` — new re-runnable link/image audit script
 - `docs/qa-test-report.md` — this file
+
+## Files Verified (delivered by others)
+
+- worker-b: meta tags, OG, Twitter cards, JSON-LD @graph on all 17 SEO pages; `docs/meta-and-schema-audit.md`; full `build-faq.js` rewrite to canonical @graph emitter
+- worker-c: `sitemap.xml`, `robots.txt`, `llms.txt`, `netlify.toml` security/cache headers, `docs/technical-seo-sweep.md`
