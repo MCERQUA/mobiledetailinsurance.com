@@ -326,3 +326,44 @@ No other nav links (no Coverage, Coverage by State, Trust & FAQs, or Get a Quote
 ---
 
 End of audit.
+
+---
+
+## Fix log — applied 2026-05-21 by josh-desk-2@mesh (page-team-a)
+
+### Critical fixes applied (9 of 9)
+
+1. ✅ `coverage-by-state.html` — removed `Testimonials → index.html#testimonials` from desktop + mobile nav, replaced with `Home → index.html` and relabeled `FAQ` → `Trust & FAQs` to match refreshed nav vocabulary.
+2. ✅ `blog/posts/business-liability-protection-mobile-detailing.html` — both `../../index.html#contact` CTAs (lines 215, 298) repointed to `../../get-a-quote.html`.
+3. ✅ `blog/posts/equipment-protection-mobile-detailing-business.html` — both `../../index.html#contact` CTAs (lines 281, 392) repointed to `../../get-a-quote.html`.
+4. ✅ `blog/posts/mobile-auto-detailing-insurance-essentials.html` — both `../../#contact` links (header Contact line 84, body CTA line 368) repointed to `../../get-a-quote.html`.
+5. ✅ `blog/posts/business-liability-protection-mobile-detailing.html` line 315 — "Get Insurance Quote →" closing footer link `../../index.html` → `../../get-a-quote.html`.
+6. ✅ `blog/posts/equipment-protection-mobile-detailing-business.html` line 409 — same closing-footer fix.
+7. ✅ `coverage-by-state.html` state grid — all 44 dead `href="#"` tiles repointed to `get-a-quote.html?state=XX` (state code drawn from the tile's own badge). The 6 in-page spotlight anchors (`#state-AZ`, `#state-CA`, `#state-FL`, `#state-GA`, `#state-NY`, `#state-TX`) preserved.
+8. ✅ `coverage-by-state.html` footer "About Us" — `href="#"` → `trust-faqs.html#trust`. Also fixed adjacent dead Equipment/Environmental footer links to `coverage.html#equipment` / `coverage.html#business`.
+9. ✅ `get-a-quote.html` footer Coverage column — 4 flat `coverage.html` links now use deep anchors: `coverage.html#liability`, `coverage.html#equipment`, `coverage.html#business` (Workers' Comp), `coverage.html#business` (Environmental). The `#business` reuse is intentional until dedicated `#workers-comp` / `#environmental` sections exist on coverage.html — flagged below.
+
+### Responsive class fix applied
+
+- `coverage-by-state.html`: **52 unique** sm/md/lg/xl prefixes (target was 30+).
+- `get-a-quote.html`: **62 unique** sm/md/lg/xl prefixes (target was 30+).
+
+Layout intent: mobile = stacked single column; tablet → 2-column grids; desktop → hero splits, multi-column form sidebar, 5-6 column state directory. Headers/footers/form sections all scale typography and spacing.
+
+### Verification
+
+Grep sweep confirms zero remaining broken `#testimonials` or `#contact` anchors anywhere in the site.
+
+### Out of scope (deferred — flagged for page-team-b / future task)
+
+The following audit findings require structural rewrites better owned by the page-team-b agent that originally shipped these pages, and are not surgical link fixes:
+
+- **Inconsistency #1–6:** legacy header + footer on `coverage-by-state.html` and `get-a-quote.html` should be rebuilt to match the refreshed glass nav from `coverage.html`/`trust-faqs.html`. Brand wordmark "Mobile Detail Insurance" should become "Detailer Shield Insurance".
+- **Inconsistency #7:** mobile bottom nav bar exists only on `index.html` — should be added to `coverage.html`, `trust-faqs.html`, `blog/index.html`.
+- **Inconsistency #8:** all 3 blog posts have NO site header or footer — they need the refreshed shell with `../../` paths.
+- **Coverage anchors:** `coverage.html` has only `#equipment`, `#liability`, `#business`. Two of the footer fixes (Workers' Comp, Environmental) both map to `#business` for now. Adding dedicated `#workers-comp` and `#environmental` sections on `coverage.html` would let those footers deep-link cleanly.
+
+### Cross-link recommendations (still open — nice-to-have)
+
+See "Missing cross-links" section above. Not applied — those are content additions, not bug fixes.
+
