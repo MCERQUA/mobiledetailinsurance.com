@@ -178,26 +178,46 @@
     </style>
 </head>
 
-<body>
-    <!-- Navigation -->
-    <header style="background-color: #10b981; color: white; padding: 1rem 0;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.25rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="../../" style="font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none;">Mobile Detail Insurance</a>
-                <nav>
-                    <a href="../../" style="color: white; text-decoration: none; margin-left: 1.5rem;">Home</a>
-                    <a href="../" style="color: white; text-decoration: none; margin-left: 1.5rem;">Blog</a>
-                    <a href="../../get-a-quote.html" style="color: white; text-decoration: none; margin-left: 1.5rem;">Contact</a>
+<body class="bg-background text-on-background font-body-md selection:bg-electric-cyan selection:text-white">
+
+    <!-- ============================================================ -->
+    <!-- TOP NAV (sticky, glass)                                       -->
+    <!-- ============================================================ -->
+    <header class="bg-surface/80 backdrop-blur-xl border-b border-white/20 shadow-sm shadow-midnight-blue/10 sticky top-0 z-50 w-full">
+        <div class="flex items-center justify-between max-w-container-max mx-auto h-16 md:h-20 px-margin-mobile md:px-margin-desktop">
+            <div class="flex items-center gap-3 md:gap-8">
+                <button id="menuButton" aria-label="Open menu" class="md:hidden material-symbols-outlined text-primary hover:bg-white/10 transition-colors p-2 rounded-full">menu</button>
+                <a href="../../" class="font-headline-md text-headline-md font-bold text-midnight-blue whitespace-nowrap">Detailer Shield Insurance</a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors" href="../../">Home</a>
+                    <a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors" href="../../coverage.html">Coverage</a>
+                    <a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors" href="../../coverage-by-state.html">Coverage by State</a>
+                    <a class="font-label-md text-label-md text-on-surface-variant pb-1 hover:text-electric-cyan transition-colors" href="../../trust-faqs.html">Trust &amp; FAQs</a>
+                    <a class="font-label-md text-label-md text-electric-cyan border-b-2 border-electric-cyan pb-1" href="../">Blog</a>
                 </nav>
             </div>
+            <div class="flex items-center gap-3">
+                <a href="../../get-a-quote.html" class="bg-alert-amber text-midnight-blue font-bold text-sm md:text-label-md px-4 md:px-6 py-2.5 md:py-3 rounded-lg hover:brightness-110 transition-all scale-98-active">Get Quote</a>
+            </div>
+        </div>
+
+        <div id="mobileMenu" style="display: none;" class="md:hidden border-t border-outline-variant/30 bg-surface">
+            <nav class="flex flex-col px-margin-mobile py-2">
+                <a class="py-3 font-label-md text-label-md text-on-surface border-b border-outline-variant/30" href="../../">Home</a>
+                <a class="py-3 font-label-md text-label-md text-on-surface border-b border-outline-variant/30" href="../../coverage.html">Coverage</a>
+                <a class="py-3 font-label-md text-label-md text-on-surface border-b border-outline-variant/30" href="../../coverage-by-state.html">Coverage by State</a>
+                <a class="py-3 font-label-md text-label-md text-on-surface border-b border-outline-variant/30" href="../../get-a-quote.html">Get a Quote</a>
+                <a class="py-3 font-label-md text-label-md text-on-surface border-b border-outline-variant/30" href="../../trust-faqs.html">Trust &amp; FAQs</a>
+                <a class="py-3 font-label-md text-label-md text-electric-cyan font-bold" href="../">Blog</a>
+            </nav>
         </div>
     </header>
 
     <!-- Article Header -->
-    <section style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 3rem 0;">
+    <section class="bg-midnight-blue text-white py-10 md:py-16">
         <div style="max-width: 800px; margin: 0 auto; padding: 0 1.25rem;">
             <h1 style="font-size: 2.5rem; font-weight: bold; line-height: 1.2; margin-bottom: 1rem;">Mobile Auto Detailing Insurance Essentials: Complete Coverage Guide</h1>
-            <p style="font-size: 1.125rem; opacity: 0.9; margin-bottom: 1rem;">January 15, 2025 | Business Protection & Coverage</p>
+            <p style="font-size: 1.125rem; opacity: 0.9; margin-bottom: 1rem;">January 15, 2025 | Business Protection &amp; Coverage</p>
         </div>
     </section>
 
@@ -479,11 +499,45 @@
         </div>
     </article>
 
-    <!-- Footer -->
-    <footer style="background-color: #374151; color: white; padding: 2rem 0;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; text-align: center;">
-            <p>&copy; 2025 Mobile Detail Insurance. All rights reserved.</p>
+    <!-- ============================================================ -->
+    <!-- FOOTER                                                        -->
+    <!-- ============================================================ -->
+    <footer class="bg-on-background py-12 md:py-16 border-t border-outline/20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div>
+                <h3 class="font-headline-md text-headline-md text-surface-container-lowest mb-4" style="color: #FFFFFF;">Detailer Shield Insurance</h3>
+                <p class="text-outline-variant font-body-md mb-4">Specialized insurance for mobile detailing and power washing businesses nationwide. A program of Contractors Choice Agency.</p>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <h4 class="text-electric-cyan font-bold font-headline-md text-base mb-2">Coverage</h4>
+                <a class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md" href="../../coverage.html#equipment">Equipment Protection</a>
+                <a class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md" href="../../coverage.html#liability">Liability Coverage</a>
+                <a class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md" href="../../coverage.html#business">Business Protection</a>
+                <a class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md" href="../../coverage-by-state.html">Coverage by State</a>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <h4 class="text-electric-cyan font-bold font-headline-md text-base mb-2">Company</h4>
+                <a class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md" href="../../trust-faqs.html">Trust &amp; FAQs</a>
+                <a class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md" href="../../get-a-quote.html">Get a Quote</a>
+                <a class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md" href="../">Blog</a>
+                <a class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md" href="#">Privacy Policy</a>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <h4 class="text-electric-cyan font-bold font-headline-md text-base mb-2">Contact</h4>
+                <p class="text-outline-variant font-label-md text-label-md m-0">12220 E Riggs Road, Suite #105</p>
+                <p class="text-outline-variant font-label-md text-label-md m-0">Chandler, AZ 85249</p>
+                <a href="tel:8449675247" class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md">844-967-5247</a>
+                <a href="mailto:josh@contractorschoiceagency.com" class="text-outline-variant hover:text-alert-amber transition-colors font-label-md text-label-md break-all">josh@contractorschoiceagency.com</a>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-10 md:mt-12 pt-6 md:pt-8 border-t border-white/5 text-center">
+            <p class="font-caption text-caption text-outline-variant">© 2026 Detailer Shield Insurance · Contractors Choice Agency. All rights reserved. Licensed in all 50 states.</p>
         </div>
     </footer>
+
+    <script src="../../js/main.js"></script>
 </body>
 </html>
