@@ -1,3 +1,7 @@
 
 deploy_key
 deploy_key.pub
+
+# added 2026-05-24 josh-desktop@mesh after filter-repo cleanup of 5056 node_modules files
+node_modules/
+.next/
