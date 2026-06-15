@@ -42,9 +42,6 @@
     </style>
 
     <!-- Preload critical assets -->
-    <link rel="preload" href="images/optimized/company-logo-large.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="images/optimized/company-logo-medium.webp" as="image" media="(max-width: 1200px)">
-    <link rel="preload" href="images/optimized/company-logo-small.webp" as="image" media="(max-width: 600px)">
 
     <!-- Tailwind CDN with required plugins (replaces legacy tailwindcss@2.2.19) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -346,7 +343,7 @@
                 <!-- TODO: source image — clean professional detail shop bay with a luxury car on a four-post lift, polished concrete floor, cool LED lighting, polishers and pads on a tool wall, electric cyan and midnight blue palette -->
                 <img alt="Clean detail shop bay with a luxury car on a lift and pro polishing tools on the wall" class="w-full h-full object-cover" src="/images/auto-detailing-shop-hero.webp">
                 <div class="absolute inset-0 bg-gradient-to-t from-midnight-blue/80 to-transparent flex flex-col justify-end p-6">
-                    <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white m-0">Auto Detailing Insurance for Detail Shops &amp; Studios</h1>
+                    <p class="font-headline-lg-mobile text-headline-lg-mobile text-white m-0" aria-hidden="true">Auto Detailing Insurance for Detail Shops &amp; Studios</p>
                     <p class="font-label-md text-label-md text-electric-cyan mt-1 mb-0">Built for the Bay, Not the Truck</p>
                 </div>
             </div>

@@ -42,9 +42,6 @@
     </style>
 
     <!-- Preload critical assets -->
-    <link rel="preload" href="images/optimized/company-logo-large.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="images/optimized/company-logo-medium.webp" as="image" media="(max-width: 1200px)">
-    <link rel="preload" href="images/optimized/company-logo-small.webp" as="image" media="(max-width: 600px)">
 
     <!-- Tailwind CDN with required plugins (replaces legacy tailwindcss@2.2.19) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -289,7 +286,7 @@
                 <!-- TODO: source image — was: Macro photography of water droplets bead up on a deep blue metallic car surface that has been professionally ceramic coated. The lighting is dramatic and crisp, showcasing the extreme gloss and precision of the detailing work. The color palette is dominated by electric cyan and midnight blue tones, creating a high-performance, polished, and protective atmosphere for the insurance brand. -->
                 <img alt="Water droplets beading on a ceramic-coated deep blue car surface" class="w-full h-full object-cover" src="/images/coverage-hero-ceramic.webp">
                 <div class="absolute inset-0 bg-gradient-to-t from-midnight-blue/80 to-transparent flex flex-col justify-end p-6">
-                    <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white m-0">Comprehensive Coverage</h1>
+                    <p class="font-headline-lg-mobile text-headline-lg-mobile text-white m-0" aria-hidden="true">Comprehensive Coverage</p>
                     <p class="font-label-md text-label-md text-electric-cyan mt-1 mb-0">Specialized for Mobile Detailers</p>
                 </div>
             </div>

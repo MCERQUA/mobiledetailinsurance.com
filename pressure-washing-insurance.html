@@ -42,9 +42,6 @@
     </style>
 
     <!-- Preload critical assets -->
-    <link rel="preload" href="images/optimized/company-logo-large.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="images/optimized/company-logo-medium.webp" as="image" media="(max-width: 1200px)">
-    <link rel="preload" href="images/optimized/company-logo-small.webp" as="image" media="(max-width: 600px)">
 
     <!-- Tailwind CDN with required plugins (replaces legacy tailwindcss@2.2.19) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -292,7 +289,7 @@
                 <!-- TODO: source image — commercial-grade pressure washer wand blasting foam soap onto a concrete driveway, dramatic backlight, cyan-blue water spray frozen mid-action -->
                 <img alt="Commercial pressure washer cleaning a concrete driveway with foam soap" class="w-full h-full object-cover" src="/images/pressure-washing-hero.webp">
                 <div class="absolute inset-0 bg-gradient-to-t from-midnight-blue/80 to-transparent flex flex-col justify-end p-6">
-                    <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white m-0">Pressure Washing Insurance</h1>
+                    <p class="font-headline-lg-mobile text-headline-lg-mobile text-white m-0" aria-hidden="true">Pressure Washing Insurance</p>
                     <p class="font-label-md text-label-md text-electric-cyan mt-1 mb-0">Built for Power Washing Pros</p>
                 </div>
             </div>
