@@ -5,3 +5,15 @@ deploy_key.pub
 # added 2026-05-24 josh-desktop@mesh after filter-repo cleanup of 5056 node_modules files
 node_modules/
 .next/
+
+# --- key/secret exclusion (host 2026-06-15, SEC-007/008 prevention) ---
+*-write
+*-write.pub
+id_ed25519*
+id_rsa*
+*.pem
+*.key
+.ssh/
+deploy-key*
+*.env
+.env.*
