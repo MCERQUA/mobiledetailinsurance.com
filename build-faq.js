@@ -93,8 +93,9 @@ function generateFaqHtml(faqData) {
 const publisherConfig = {
   name: "Detailer Shield Insurance",
   parentName: "Contractors Choice Agency",
+  parentUrl: "https://www.contractorschoiceagency.com",
   url: "https://www.mobiledetailinsurance.com",
-  logo: "https://www.mobiledetailinsurance.com/images/optimized/company-logo-large.webp",
+  logo: "https://www.mobiledetailinsurance.com/images/placeholder-logo.webp",
   phone: "+1-844-967-5247",
   email: "josh@contractorschoiceagency.com",
   address: {
@@ -120,14 +121,14 @@ function generateSchemas(faqData) {
 
   const graph = [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "InsuranceAgency"],
       "@id": orgRef,
       "name": publisherConfig.name,
       "alternateName": "Detailer Shield",
       "parentOrganization": {
         "@type": "Organization",
         "name": publisherConfig.parentName,
-        "url": publisherConfig.url
+        "url": publisherConfig.parentUrl
       },
       "url": publisherConfig.url,
       "logo": {
