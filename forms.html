@@ -27,6 +27,16 @@
     <div data-netlify-recaptcha="true"></div>
   </form>
 
+  <!-- Modal contact form embedded inline on state pages (8 state pages) -->
+  <form name="modal-contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success.html" hidden>
+    <input type="hidden" name="form-name" value="modal-contact">
+    <input type="text" name="bot-field">
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="tel" name="phone">
+    <input type="text" name="company">
+  </form>
+
   <!-- Long quote form on get-a-quote.html -->
   <form name="get-a-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/success.html" hidden>
     <input type="hidden" name="form-name" value="get-a-quote">
