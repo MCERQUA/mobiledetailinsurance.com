@@ -5,6 +5,33 @@
 [build.environment]
   NODE_VERSION = "16"
 
+# ---------------------------------------------------------------------------
+# Form submission webhooks — every form posts lead data to the JamBot lead API
+# ---------------------------------------------------------------------------
+[[notifications]]
+  form = "contact"
+  [notifications.webhook]
+    url = "https://josh.jam-bot.com/social-api/api/leads/webhook/netlify?tenant=josh&site=mobiledetailinsurance.com"
+    type = "json"
+
+[[notifications]]
+  form = "modal-contact"
+  [notifications.webhook]
+    url = "https://josh.jam-bot.com/social-api/api/leads/webhook/netlify?tenant=josh&site=mobiledetailinsurance.com"
+    type = "json"
+
+[[notifications]]
+  form = "get-a-quote"
+  [notifications.webhook]
+    url = "https://josh.jam-bot.com/social-api/api/leads/webhook/netlify?tenant=josh&site=mobiledetailinsurance.com"
+    type = "json"
+
+[[notifications]]
+  form = "newsletter"
+  [notifications.webhook]
+    url = "https://josh.jam-bot.com/social-api/api/leads/webhook/netlify?tenant=josh&site=mobiledetailinsurance.com"
+    type = "json"
+
 # Default 404 — Netlify auto-serves /404.html if present
 [[redirects]]
   from = "/*"
