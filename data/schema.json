@@ -1,21 +1,36 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "[COMPANY NAME]",
-    "description": "[COMPANY DESCRIPTION - 1-2 SENTENCES ABOUT YOUR MAIN SERVICE]",
-    "url": "[COMPANY WEBSITE URL]",
-    "sameAs": [
-      "[FACEBOOK URL]",
-      "[LINKEDIN URL]"
-    ],
+    "@type": "InsuranceAgency",
+    "@id": "https://www.mobiledetailinsurance.com/#organization",
+    "name": "Detailer Shield Insurance",
+    "alternateName": "Detailer Shield",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Contractors Choice Agency",
+      "url": "https://www.contractorschoiceagency.com"
+    },
+    "description": "Specialized business insurance for mobile auto detailing operators — general liability, equipment, tools, vehicle, and pollution coverage tailored to mobile detailing operations.",
+    "url": "https://www.mobiledetailinsurance.com",
+    "telephone": "+18449675247",
+    "email": "josh@contractorschoiceagency.com",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://www.mobiledetailinsurance.com/#founder",
+      "name": "Josh Cotner",
+      "jobTitle": "Founder & Licensed Insurance Agent"
+    },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "[STREET ADDRESS]",
-      "addressLocality": "[CITY]",
-      "addressRegion": "[STATE]",
-      "postalCode": "[ZIP CODE]",
+      "streetAddress": "12220 E Riggs Road, Suite #105",
+      "addressLocality": "Chandler",
+      "addressRegion": "AZ",
+      "postalCode": "85249",
       "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
     }
   },
   {
@@ -24,26 +39,26 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "[FAQ QUESTION 1]",
+        "name": "What does mobile detailing insurance cover?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "[FAQ ANSWER 1]"
+          "text": "Mobile detailing insurance typically covers general liability (third-party bodily injury and property damage), inland marine coverage for tools and equipment, commercial auto for your mobile unit, and pollution liability for chemical and wastewater runoff. Policies are tailored to the services you offer, such as paint correction, ceramic coating, and pressure washing."
         }
       },
       {
         "@type": "Question",
-        "name": "[FAQ QUESTION 2]",
+        "name": "How much does insurance cost for a mobile detailing business?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "[FAQ ANSWER 2]"
+          "text": "Cost depends on your services, number of employees, vehicle use, equipment value, annual revenue, and the states you operate in. A licensed agent can quote tailored coverage in about 15 minutes. Contact Contractors Choice Agency for a personalized quote."
         }
       },
       {
         "@type": "Question",
-        "name": "[FAQ QUESTION 3]",
+        "name": "Does general liability cover damage to a customer's vehicle while I'm detailing it?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "[FAQ ANSWER 3]"
+          "text": "General liability alone usually does not cover damage to a customer's vehicle in your care. That is typically covered under a garage-keepers or inland marine endorsement. We recommend bundling coverages so the customer's vehicle is protected while you work on it."
         }
       }
     ]
