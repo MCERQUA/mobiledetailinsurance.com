@@ -3,7 +3,7 @@
   publish = "."
 
 [build.environment]
-  NODE_VERSION = "16"
+  NODE_VERSION = "20"
 
 # ---------------------------------------------------------------------------
 # Form submission webhooks — every form posts lead data to the JamBot lead API
