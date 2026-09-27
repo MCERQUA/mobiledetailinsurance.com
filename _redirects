@@ -1,0 +1,15 @@
+# Internal build/tooling files are not part of the site (host task 2026-09-27-004).
+/Run-Optimize-image-script.bat  /404.html  404!
+/SEO_REPORT.md  /404.html  404!
+/ai/*  /404.html  404!
+/build-faq.js  /404.html  404!
+/docs/*  /404.html  404!
+/netlify-faq-implementation-plan.md  /404.html  404!
+/netlify.toml  /404.html  404!
+/package.json  /404.html  404!
+/pnpm-lock.yaml  /404.html  404!
+/pnpm-workspace.yaml  /404.html  404!
+/postcss.config.js  /404.html  404!
+/scripts/*  /404.html  404!
+/stitch-mockups/*  /404.html  404!
+/tailwind.config.js  /404.html  404!
