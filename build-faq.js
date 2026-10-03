@@ -99,7 +99,7 @@ const publisherConfig = {
   phone: "+1-844-967-5247",
   email: "josh@contractorschoiceagency.com",
   address: {
-    street: "12220 E Riggs Road, Suite #105",
+    street: "12220 E Riggs Rd, Suite #104",
     city: "Chandler",
     state: "AZ",
     zip: "85249"
