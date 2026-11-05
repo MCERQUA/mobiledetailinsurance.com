@@ -470,6 +470,33 @@
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="Not Sure"> Not Sure</label>
                             </div>
 
+                            <div class="quote-field">
+                                <label class="quote-label" for="effective_date">Requested Coverage Start Date</label>
+                                <input class="quote-input" type="date" id="effective_date" name="effective_date">
+                            </div>
+                            <div class="quote-field">
+                                <label class="quote-label" for="limits_requested">Liability Limits Wanted</label>
+                                <select class="quote-input" id="limits_requested" name="limits_requested">
+                                    <option value="">Select...</option>
+                                    <option value="1M/2M">1M/2M</option>
+                                    <option value="1M/3M">1M/3M</option>
+                                    <option value="2M/4M">2M/4M</option>
+                                    <option value="Not sure">Not sure</option>
+                                </select>
+                            </div>
+                            <div class="quote-field">
+                                <label class="quote-label" for="current_carrier">Current or Most Recent Insurance Carrier</label>
+                                <input class="quote-input" type="text" id="current_carrier" name="current_carrier">
+                            </div>
+                            <div class="quote-field">
+                                <label class="quote-label" for="losses_3yr_count">Claims in the Last 3 Years</label>
+                                <input class="quote-input" type="number" id="losses_3yr_count" name="losses_3yr_count">
+                            </div>
+                            <div class="quote-field">
+                                <label class="quote-label" for="losses_3yr_details">Claim Details: Dates, What Happened, Amounts</label>
+                                <textarea class="quote-input" id="losses_3yr_details" name="losses_3yr_details" rows="3"></textarea>
+                            </div>
+
                             <!-- Additional Info -->
                             <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">8. Additional Information</h3>
                             <div class="quote-field">
