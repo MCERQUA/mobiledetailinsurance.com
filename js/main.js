@@ -111,9 +111,67 @@ const initScrollAnimations = () => {
     });
 };
 
+// Quote form (get-a-quote.html): enforce "check at least one" checkbox groups.
+// HTML5 `required` cannot express "at least one of these checkboxes" across a
+// same-name group (it would force every box checked), so this is a manual gate
+// that blocks submit + shows a visible message until satisfied.
+const initQuoteFormValidation = () => {
+    const quoteForm = document.forms['get-a-quote'];
+    if (!quoteForm) return;
+
+    const checkboxGroups = [
+        { name: 'services[]', groupId: 'servicesGroup', errorId: 'servicesGroupError' },
+        { name: 'coverage_needs[]', groupId: 'coverageNeedsGroup', errorId: 'coverageNeedsGroupError' }
+    ];
+
+    quoteForm.addEventListener('submit', (event) => {
+        let blocked = false;
+
+        checkboxGroups.forEach(({ name, groupId, errorId }) => {
+            const group = document.getElementById(groupId);
+            const errorEl = document.getElementById(errorId);
+            if (!group || !errorEl) return;
+
+            const checked = group.querySelectorAll(`input[name="${name}"]:checked`).length;
+            if (checked === 0) {
+                errorEl.style.display = 'block';
+                errorEl.classList.remove('hidden');
+                blocked = true;
+            } else {
+                errorEl.style.display = 'none';
+                errorEl.classList.add('hidden');
+            }
+        });
+
+        if (blocked) {
+            event.preventDefault();
+            // Scroll to the first visible error so it isn't missed on long forms.
+            const firstError = quoteForm.querySelector('[id$="GroupError"]:not(.hidden)');
+            if (firstError && firstError.scrollIntoView) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    });
+
+    // Clear an error as soon as the visitor fixes it, without waiting for re-submit.
+    checkboxGroups.forEach(({ name, groupId, errorId }) => {
+        const group = document.getElementById(groupId);
+        const errorEl = document.getElementById(errorId);
+        if (!group || !errorEl) return;
+        group.addEventListener('change', () => {
+            const checked = group.querySelectorAll(`input[name="${name}"]:checked`).length;
+            if (checked > 0) {
+                errorEl.style.display = 'none';
+                errorEl.classList.add('hidden');
+            }
+        });
+    });
+};
+
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     initModal();
     initScrollAnimations();
+    initQuoteFormValidation();
 });

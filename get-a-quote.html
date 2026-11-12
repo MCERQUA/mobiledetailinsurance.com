@@ -339,16 +339,16 @@
                                     <input class="quote-input" type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
                                 </div>
                                 <div class="quote-field">
-                                    <label class="quote-label" for="company">Business / Company Name <span style="color:#DC2626;">*</span></label>
-                                    <input class="quote-input" type="text" id="company" name="company" required>
+                                    <label class="quote-label" for="businessName">Business / Company Name <span style="color:#DC2626;">*</span></label>
+                                    <input class="quote-input" type="text" id="businessName" name="businessName" required>
                                 </div>
                             </div>
 
                             <!-- Business Address -->
                             <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">2. Business Address</h3>
                             <div class="quote-field">
-                                <label class="quote-label" for="street">Street Address <span style="color:#DC2626;">*</span></label>
-                                <input class="quote-input" type="text" id="street" name="street" required>
+                                <label class="quote-label" for="streetAddress">Street Address <span style="color:#DC2626;">*</span></label>
+                                <input class="quote-input" type="text" id="streetAddress" name="streetAddress" required>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-3 md:gap-4">
                                 <div class="quote-field">
@@ -379,6 +379,10 @@
                                     <input class="quote-input" type="text" id="zip" name="zip" maxlength="10" required>
                                 </div>
                             </div>
+                            <div class="quote-field">
+                                <label class="quote-label" for="statesOfOperation">States Where You Provide Detailing Services <span style="color:#DC2626;">*</span></label>
+                                <input class="quote-input" type="text" id="statesOfOperation" name="statesOfOperation" placeholder="e.g. AZ, or AZ, NV, CA if you work across state lines" required>
+                            </div>
 
                             <!-- Business Profile -->
                             <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">3. Business Profile</h3>
@@ -406,8 +410,8 @@
                                     </select>
                                 </div>
                                 <div class="quote-field">
-                                    <label class="quote-label" for="annual_revenue">Total Annual Revenue <span style="color:#DC2626;">*</span></label>
-                                    <select class="quote-input" id="annual_revenue" name="annual_revenue" required>
+                                    <label class="quote-label" for="annualRevenue">Total Annual Revenue <span style="color:#DC2626;">*</span></label>
+                                    <select class="quote-input" id="annualRevenue" name="annualRevenue" required>
                                         <option value="">Select</option>
                                         <option value="Under $50k">Under $50k</option>
                                         <option value="$50k-$150k">$50k - $150k</option>
@@ -427,12 +431,45 @@
                                         <option value="$100k+">$100k+</option>
                                     </select>
                                 </div>
+                                <div class="quote-field">
+                                    <label class="quote-label" for="entityType">Business Entity <span style="color:#DC2626;">*</span></label>
+                                    <select class="quote-input" id="entityType" name="entityType" required>
+                                        <option value="">Select</option>
+                                        <option value="Individual/Sole prop">Individual / Sole Proprietor</option>
+                                        <option value="Partnership">Partnership</option>
+                                        <option value="Corporation">Corporation</option>
+                                        <option value="LLC">LLC</option>
+                                        <option value="Joint venture">Joint Venture</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="quote-field">
+                                    <label class="quote-label" for="vehicleCount">Number of Business Vehicles / Trailers</label>
+                                    <select class="quote-input" id="vehicleCount" name="vehicleCount">
+                                        <option value="">Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3-5">3-5</option>
+                                        <option value="6+">6+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 lg:gap-6 mt-4 md:mt-5" id="usesSubcontractorsGroup">
+                                <label class="quote-label" style="margin-bottom:0; align-self:center;">Do you use subcontractors / 1099 help? <span style="color:#DC2626;">*</span></label>
+                                <label class="quote-checkbox-row"><input type="radio" name="usesSubcontractors" value="Yes" required> Yes</label>
+                                <label class="quote-checkbox-row"><input type="radio" name="usesSubcontractors" value="No"> No</label>
+                            </div>
+
+                            <div class="quote-field mt-4 md:mt-5">
+                                <label class="quote-label" for="businessDescription">Describe Your Detailing Operations <span style="color:#DC2626;">*</span></label>
+                                <textarea class="quote-input" id="businessDescription" name="businessDescription" rows="3" placeholder="What services you perform, where you typically work (customers' homes, dealerships, commercial lots, etc.)" required></textarea>
                             </div>
 
                             <!-- Services -->
                             <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">4. Services Offered <span style="color:#DC2626;">*</span></h3>
                             <p class="text-sm mb-2 md:mb-3" style="color: #6B7280;">Check all that apply.</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mb-2">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mb-2" id="servicesGroup">
                                 <label class="quote-checkbox-row"><input type="checkbox" name="services[]" value="Mobile Detailing"> Mobile Detailing</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="services[]" value="Paint Correction"> Paint Correction</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="services[]" value="Ceramic Coating"> Ceramic Coating</label>
@@ -440,6 +477,7 @@
                                 <label class="quote-checkbox-row"><input type="checkbox" name="services[]" value="Interior Cleaning"> Interior Cleaning</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="services[]" value="Other"> Other</label>
                             </div>
+                            <p id="servicesGroupError" class="hidden" style="display:none; color:#DC2626; font-size:0.875rem; margin:-0.25rem 0 0.75rem 0;">Please select at least one service.</p>
 
                             <!-- Primary Client Base -->
                             <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">5. Primary Client Base <span style="color:#DC2626;">*</span></h3>
@@ -458,9 +496,9 @@
                             </div>
 
                             <!-- Coverage Needs -->
-                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">7. Coverage Needs</h3>
+                            <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">7. Coverage Needs <span style="color:#DC2626;">*</span></h3>
                             <p class="text-sm mb-2 md:mb-3" style="color: #6B7280;">Check what you're interested in — not sure? Just tick "Not Sure" and we'll guide you.</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mb-2">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mb-2" id="coverageNeedsGroup">
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="General Liability"> General Liability</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="Equipment / Inland Marine"> Equipment / Inland Marine</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="Commercial Auto"> Commercial Auto</label>
@@ -469,14 +507,15 @@
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="Environmental"> Environmental</label>
                                 <label class="quote-checkbox-row"><input type="checkbox" name="coverage_needs[]" value="Not Sure"> Not Sure</label>
                             </div>
+                            <p id="coverageNeedsGroupError" class="hidden" style="display:none; color:#DC2626; font-size:0.875rem; margin:-0.25rem 0 0.75rem 0;">Please select at least one coverage need (tick "Not Sure" if you're not sure).</p>
 
                             <div class="quote-field">
-                                <label class="quote-label" for="effective_date">Requested Coverage Start Date</label>
-                                <input class="quote-input" type="date" id="effective_date" name="effective_date">
+                                <label class="quote-label" for="desiredEffectiveDate">Requested Coverage Start Date <span style="color:#DC2626;">*</span></label>
+                                <input class="quote-input" type="date" id="desiredEffectiveDate" name="desiredEffectiveDate" required>
                             </div>
                             <div class="quote-field">
-                                <label class="quote-label" for="limits_requested">Liability Limits Wanted</label>
-                                <select class="quote-input" id="limits_requested" name="limits_requested">
+                                <label class="quote-label" for="requestedLimits">Liability Limits Wanted</label>
+                                <select class="quote-input" id="requestedLimits" name="requestedLimits">
                                     <option value="">Select...</option>
                                     <option value="1M/2M">1M/2M</option>
                                     <option value="1M/3M">1M/3M</option>
@@ -484,24 +523,29 @@
                                     <option value="Not sure">Not sure</option>
                                 </select>
                             </div>
-                            <div class="quote-field">
-                                <label class="quote-label" for="current_carrier">Current or Most Recent Insurance Carrier</label>
-                                <input class="quote-input" type="text" id="current_carrier" name="current_carrier">
+                            <div class="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 lg:gap-6 mb-2" id="additionalInsuredGroup">
+                                <label class="quote-label" style="margin-bottom:0; align-self:center;">Need a Certificate of Insurance / additional insured for a commercial client or property?</label>
+                                <label class="quote-checkbox-row"><input type="radio" name="additionalInsuredNeeded" value="Yes"> Yes</label>
+                                <label class="quote-checkbox-row"><input type="radio" name="additionalInsuredNeeded" value="No"> No</label>
                             </div>
                             <div class="quote-field">
-                                <label class="quote-label" for="losses_3yr_count">Claims in the Last 3 Years</label>
-                                <input class="quote-input" type="number" id="losses_3yr_count" name="losses_3yr_count">
+                                <label class="quote-label" for="currentCarrier">Current or Most Recent Insurance Carrier</label>
+                                <input class="quote-input" type="text" id="currentCarrier" name="currentCarrier">
                             </div>
                             <div class="quote-field">
-                                <label class="quote-label" for="losses_3yr_details">Claim Details: Dates, What Happened, Amounts</label>
-                                <textarea class="quote-input" id="losses_3yr_details" name="losses_3yr_details" rows="3"></textarea>
+                                <label class="quote-label" for="lossCount">Claims in the Last 3 Years <span style="color:#DC2626;">*</span></label>
+                                <input class="quote-input" type="number" id="lossCount" name="lossCount" min="0" step="1" placeholder="0 if none" required>
+                            </div>
+                            <div class="quote-field">
+                                <label class="quote-label" for="lossDescription">Claim Details: Dates, What Happened, Amounts</label>
+                                <textarea class="quote-input" id="lossDescription" name="lossDescription" rows="3"></textarea>
                             </div>
 
                             <!-- Additional Info -->
                             <h3 class="text-base md:text-lg lg:text-xl font-bold mt-5 md:mt-6 mb-3 md:mb-4 pb-2 border-b" style="color: #1E3A8A; border-color: #E5E7EB;">8. Additional Information</h3>
                             <div class="quote-field">
-                                <label class="quote-label" for="additional_info">Anything else we should know? (claims history, special equipment, fleet size, etc.)</label>
-                                <textarea class="quote-input" id="additional_info" name="additional_info" rows="4"></textarea>
+                                <label class="quote-label" for="notes">Anything else we should know? (claims history, special equipment, fleet size, etc.)</label>
+                                <textarea class="quote-input" id="notes" name="notes" rows="4"></textarea>
                             </div>
 
                             <div style="margin: 1.25rem 0;">
