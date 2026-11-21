@@ -68,6 +68,63 @@
     <input type="text" name="currentCarrier">
     <input type="number" name="lossCount">
     <textarea name="lossDescription"></textarea>
+    <!-- ACORD intake additions (optional) -->
+    <input type="text" name="fein">
+    <input type="text" name="dba">
+    <input type="text" name="physicalCounty">
+    <input type="number" name="fullTimeEmployees">
+    <input type="number" name="partTimeEmployees">
+    <input type="number" name="annualPayroll">
+    <input type="radio" name="mailingSameAsPhysical" value="Yes">
+    <input type="radio" name="mailingSameAsPhysical" value="No">
+    <input type="text" name="mailingAddress">
+    <input type="text" name="mailingCity">
+    <input type="text" name="mailingState">
+    <input type="text" name="mailingZip">
+    <select name="glEachOccurrence"><option value="$100,000">$100,000</option><option value="$300,000">$300,000</option><option value="$500,000">$500,000</option><option value="$1,000,000">$1,000,000</option><option value="$2,000,000">$2,000,000</option><option value="$3,000,000">$3,000,000</option><option value="$4,000,000">$4,000,000</option><option value="$5,000,000">$5,000,000</option></select>
+    <select name="glGeneralAggregate"><option value="$100,000">$100,000</option><option value="$300,000">$300,000</option><option value="$500,000">$500,000</option><option value="$1,000,000">$1,000,000</option><option value="$2,000,000">$2,000,000</option><option value="$3,000,000">$3,000,000</option><option value="$4,000,000">$4,000,000</option><option value="$5,000,000">$5,000,000</option></select>
+    <select name="glProductsCompOpsAggregate"><option value="$100,000">$100,000</option><option value="$300,000">$300,000</option><option value="$500,000">$500,000</option><option value="$1,000,000">$1,000,000</option><option value="$2,000,000">$2,000,000</option><option value="$3,000,000">$3,000,000</option><option value="$4,000,000">$4,000,000</option><option value="$5,000,000">$5,000,000</option></select>
+    <select name="glPersonalAdvertisingInjury"><option value="$100,000">$100,000</option><option value="$300,000">$300,000</option><option value="$500,000">$500,000</option><option value="$1,000,000">$1,000,000</option><option value="$2,000,000">$2,000,000</option><option value="$3,000,000">$3,000,000</option><option value="$4,000,000">$4,000,000</option><option value="$5,000,000">$5,000,000</option></select>
+    <select name="glDamageToRentedPremises"><option value="$50,000">$50,000</option><option value="$100,000">$100,000</option><option value="$300,000">$300,000</option><option value="$500,000">$500,000</option></select>
+    <select name="glMedicalExpense"><option value="None">None</option><option value="$5,000">$5,000</option><option value="$10,000">$10,000</option><option value="$15,000">$15,000</option></select>
+    <input type="radio" name="yn_customerVehiclesInCareCustody" value="Yes">
+    <input type="radio" name="yn_customerVehiclesInCareCustody" value="No">
+    <textarea name="ynExplain_customerVehiclesInCareCustody"></textarea>
+    <input type="radio" name="yn_exposureFlammables" value="Yes">
+    <input type="radio" name="yn_exposureFlammables" value="No">
+    <textarea name="ynExplain_exposureFlammables"></textarea>
+    <input type="radio" name="yn_hazardousMaterialOps" value="Yes">
+    <input type="radio" name="yn_hazardousMaterialOps" value="No">
+    <textarea name="ynExplain_hazardousMaterialOps"></textarea>
+    <input type="radio" name="yn_guaranteesWarranties" value="Yes">
+    <input type="radio" name="yn_guaranteesWarranties" value="No">
+    <textarea name="ynExplain_guaranteesWarranties"></textarea>
+    <input type="radio" name="yn_rentOrLoanEquipment" value="Yes">
+    <input type="radio" name="yn_rentOrLoanEquipment" value="No">
+    <textarea name="ynExplain_rentOrLoanEquipment"></textarea>
+    <input type="radio" name="yn_subsWorkWithoutCOI" value="Yes">
+    <input type="radio" name="yn_subsWorkWithoutCOI" value="No">
+    <textarea name="ynExplain_subsWorkWithoutCOI"></textarea>
+    <input type="radio" name="yn_coverageTerminated" value="Yes">
+    <input type="radio" name="yn_coverageTerminated" value="No">
+    <textarea name="ynExplain_coverageTerminated"></textarea>
+    <input type="number" name="percentSubcontracted">
+    <input type="radio" name="subsProvideCOI" value="Yes">
+    <input type="radio" name="subsProvideCOI" value="No">
+    <input type="text" name="additionalInsuredName">
+    <input type="text" name="certificateHolderName">
+    <input type="date" name="currentPolicyExpiration">
+    <textarea name="certificateHolderAddress"></textarea>
+    <input type="radio" name="lossesLast3Years" value="Yes">
+    <input type="radio" name="lossesLast3Years" value="No">
+    <input type="date" name="lossDate">
+    <select name="lossLineOfBusiness"><option value="General Liability">General Liability</option><option value="Property">Property</option><option value="Workers' Compensation">Workers' Compensation</option><option value="Commercial Auto">Commercial Auto</option><option value="Other">Other</option></select>
+    <input type="number" name="lossAmountPaid">
+    <input type="number" name="lossAmountReserved">
+    <select name="lossHistoryStatus"><option value="Open">Open</option><option value="Closed">Closed</option></select>
+    <textarea name="lossAdditional"></textarea>
+    <input type="text" name="applicantSignature">
+    <input type="date" name="signatureDate">
     <textarea name="notes"></textarea>
     <div data-netlify-recaptcha="true"></div>
   </form>
